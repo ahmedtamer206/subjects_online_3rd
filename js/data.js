@@ -2225,7 +2225,7 @@ const MATERIALS = {
                                 num: 2,
                                 title: "",
                                 lectures: [
-                                    { id: 103, title: "Lect2(Dr.Zatoot)'HandWriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week2/Lect2_Dr_Zatoot_Hand_Writing.pdf" }
+                                    { id: 103, title: "Lect 2 Dr.Zatout 'HandWriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week2/Lect2_Dr_Zatoot_Hand_Writing.pdf" }
                                 ]
                             },
                             {
