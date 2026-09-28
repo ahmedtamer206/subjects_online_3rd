@@ -2017,15 +2017,15 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1(Dr.Saeed)'Handwriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/CA_lect_1_(Dr.Saeed)_'handwriting'.pdf" },
-                                    { id: 102, title: "Lect 1 (Dr.Saeed)", type: "video", url: "materials/Videos/Business/First_Term/Chapter_1/week1/Lect1_(CA)_(Dr.Saeed).mp4" }
+                                    { id: 101, title: "Lect 1 Dr.Saeed", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/Lect1_CA_(Dr.Saeed).pdf" },
+                                    { id: 102, title: "Lect1 Dr.Saeed 'Handwriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/CA_lect_1_(Dr.Saeed)_'handwriting'.pdf" },
+                                    { id: 103, title: "Lect 1 Dr.Saeed", type: "video", url: "materials/Videos/Business/First_Term/Chapter_1/week1/Lect1_(CA)_(Dr.Saeed).mp4" }
                                 ]
                             },
                             {
                                 num: 2,
                                 title: "",
                                 lectures: [
-                                    // { id: 103, title: "", type: "video", url: "" }
                                 ]
                             },
                             {
