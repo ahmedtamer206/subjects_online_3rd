@@ -2207,7 +2207,7 @@ const MATERIALS = {
                 ]
             }
          },
-        { id: 'b5', title: 'Principles of Cost Accounting', icon: '🧮', color: '#fef9c3', accent: '#ca8a04',
+        { id: 'b5', title: ' Cost Accounting', icon: '🧮', color: '#fef9c3', accent: '#ca8a04',
             content: {
                 chapters: [
                     {
@@ -2225,7 +2225,7 @@ const MATERIALS = {
                                 num: 2,
                                 title: "",
                                 lectures: [
-                                    // { id: 103, title: "", type: "video", url: "" }
+                                    { id: 103, title: "Lect2(Dr.Zatoot)'HandWriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week2/Lect2_Dr_Zatoot_Hand_Writing.pdf" }
                                 ]
                             },
                             {
