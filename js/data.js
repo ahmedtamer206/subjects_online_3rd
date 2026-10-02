@@ -13,22 +13,22 @@ const MATERIALS = {
                         weeks: [
                             {
                                 num: 1,
-                                title: "m-d",
+                                title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect 1", type: "video", url:"materials/Videos/Accounting/First Term/CA/Chapter 1/week1/Lect1_(CA)_Dr.Ebtsam.mp4" },
-                                    { id: 102, title: "Lect 2", type: "video", url:"materials/Videos/Accounting/First Term/CA/Chapter 1/week1/Lect2_(CA)_Dr.Ebtsam.mp4" }
+                                    { id: 101, title: "Lect 1 Dr.Ebtsam", type: "video", url:"materials/Videos/Accounting/First Term/CA/Chapter 1/week1/Lect1_(CA)_Dr.Ebtsam.mp4" },
+                                    { id: 102, title: "Lect 2 Dr.Ebtsam", type: "video", url:"/materials/Videos/Accounting/First Term/CA/Chapter 1/week1/Lect2_(CA)_Dr.Ebtsam.mp4" }
                                 ]
                             },
                             {
                                 num: 2,
-                                title: "m-d",
+                                title: "",
                                 lectures: [
                                     // { id: 103, title: "Ch6", type: "video", url: "" }
                                 ]
                             },
                              {
                                 num: 3,
-                                title: "m-d",
+                                title: "",
                                 lectures: [
                                     // { id: 103, title: "Ch6", type: "video", url: "" }
                                 ]
@@ -1417,8 +1417,8 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1(Dr.Samar)", type: "pdf", url: "materials/Pdfs/Accounting/First Term/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
-                                    { id: 102, title: "Lect 1 (Dr.Samar)", type: "video", url: "/materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_1_(dr.samar).mp4" }
+                                    { id: 101, title: "Lect1(Dr.Samar)", type: "pdf", url: "materials/Pdfs/Accounting/First Term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
+                                    { id: 102, title: "Lect 1 (Dr.Samar)", type: "video", url: "materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_1_(dr.samar).mp4" }
                                 ]
                             },
                             {
