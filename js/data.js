@@ -216,7 +216,7 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
-                                    // { id: 102, title: "", type: "video", url: "" }
+                                    { id: 102, title: "Lect 1 Dr.Hana", type: "video", url: "materials/Videos/Accounting/First Term/Cost/Chapter 1/week1/Lect1_Cost_Dr.Hana.mp4" }
                                 ]
                             },
                             {
