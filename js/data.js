@@ -816,7 +816,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1 Dr.Wessam 'Handwriting'", type: "pdf", url: "/materials/Pdfs/Accounting/First Term/FM/Chapter 1/Week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
+                                    { id: 101, title: "Lect1 Dr.Wessam 'Handwriting'", type: "pdf", url: "materials/Pdfs/Accounting/First Term/FM/Chapter 1/Week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
                                     // { id: 102, title: "", type: "video", url: "" }
                                 ]
                             },
