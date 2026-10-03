@@ -615,8 +615,8 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1(Dr.Samar)", type: "pdf", url: "materials/Pdfs/Accounting/First Term/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
-                                    { id: 102, title: "Lect 1(Dr.samar)", type: "video", url: "materials/Videos/Accounting/First Term/Chapter 1/week1/lect_1_(dr.samar).mp4" }
+                                    { id: 101, title: "Lect1(Dr.Samar)", type: "pdf", url: "/materials/Pdfs/Accounting/First Term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
+                                    { id: 102, title: "Lect 1(Dr.samar)", type: "video", url: "/materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_1_(dr.samar).mp4" }
                                 ]
                             },
                             {
@@ -815,7 +815,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1(Dr.Wessam)'Handwriting'", type: "pdf", url: "materials/Pdfs/Accounting/First Term/Chapter 1/week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
+                                    { id: 101, title: "Lect1 Dr.Wessam 'Handwriting'", type: "pdf", url: "/materials/Pdfs/Accounting/First Term/FM/Chapter 1/Week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
                                     // { id: 102, title: "", type: "video", url: "" }
                                 ]
                             },
