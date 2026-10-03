@@ -16,7 +16,7 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     { id: 101, title: "Lect 1 Dr.Ebtsam", type: "video", url:"materials/Videos/Accounting/First Term/CA/Chapter 1/week1/Lect1_(CA)_Dr.Ebtsam.mp4" },
-                                    { id: 102, title: "Lect 2 Dr.Ebtsam", type: "video", url:"/materials/Videos/Accounting/First Term/CA/Chapter 1/week1/Lect2_(CA)_Dr.Ebtsam.mp4" }
+                                    { id: 102, title: "Lect 2 Dr.Ebtsam", type: "video", url:"materials/Videos/Accounting/First Term/CA/Chapter 1/week1/Lect2_(CA)_Dr.Ebtsam.mp4" }
                                 ]
                             },
                             {
