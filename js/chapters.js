@@ -108,7 +108,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.markLectureDone = function (event, element, lecId) {
         if (event) event.stopPropagation();
-        element.classList.add('done');
+        const lecItem = element.closest('.lecture-item');
+        if (lecItem) {
+            lecItem.classList.add('done');
+            const circleBtn = lecItem.querySelector('.lec-circle-btn');
+            if (circleBtn) {
+                circleBtn.classList.add('is-done');
+                circleBtn.classList.add('burst');
+                setTimeout(() => circleBtn.classList.remove('burst'), 600);
+            }
+        }
         const key = subjectId + '_' + lecId;
         const completed = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
         completed[key] = Date.now();

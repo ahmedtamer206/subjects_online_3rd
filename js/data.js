@@ -45,6 +45,7 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     // { id: 1001, title: "", type: "pdf", url: "" },
+                                    
                                 ]
                             },
                             {

@@ -108,7 +108,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.markLectureDone = function (event, element, lecId) {
         if (event) event.stopPropagation();
-        element.classList.add('done');
+        const lecItem = element.closest('.lecture-item');
+        if (lecItem) {
+            lecItem.classList.add('done');
+            const circleBtn = lecItem.querySelector('.lec-circle-btn');
+            if (circleBtn) {
+                circleBtn.classList.add('is-done');
+                circleBtn.classList.add('burst');
+                setTimeout(() => circleBtn.classList.remove('burst'), 600);
+            }
+        }
         const key = subjectId + '_' + lecId;
         const completed = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
         completed[key] = Date.now();
@@ -185,8 +194,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 url: url,
                 addedAt: Date.now()
             });
-            btn.classList.add('in-lib');
-            btn.title = "Remove from Library";
+            // Flash green checkmark briefly before settling into in-lib (red) state
+            btn.classList.add('lib-saved-flash');
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.classList.remove('lib-saved-flash');
+                btn.classList.add('in-lib');
+                btn.disabled = false;
+                btn.title = "Remove from Library";
+            }, 700);
         }
         localStorage.setItem('so_offline_library', JSON.stringify(offlineLib));
     };
@@ -278,53 +294,33 @@ document.addEventListener('DOMContentLoaded', () => {
                         ? '<svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>'
                         : '<svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>');
 
-                const clickHandler = isPdf ? ('onclick="markLectureDone(event, this, ' + lec.id + ')"') : '';
-
                 const inLib = isPdf && offlineLib.some(item => 
                     (item.subjectId === subjectId && String(item.lecId) === String(lec.id)) ||
                     (item.title === lec.title && item.url === lec.url) ||
                     (item.id === (subjectId + '_' + lec.id))
                 );
 
-                return '<div class="lecture-item ' + (isPdf ? 'is-pdf' : 'is-video') + ' ' + (isDone ? 'done' : '') + '" ' + clickHandler + '>' +
-                    '<div class="lec-info">' +
-                        '<div class="lec-icon">' +
+                return '<div class="lecture-item ' + (isPdf ? 'is-pdf' : 'is-video') + ' ' + (isDone ? 'done' : '') + '">' +
+                    '<div class="lec-icon">' +
+                        (isPdf
+                            ? '<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>'
+                            : '<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>'
+                        ) +
+                    '</div>' +
+                    '<div class="lec-body">' +
+                        '<span class="lec-title">' + lec.title + '</span>' +
+                        '<span class="lec-dur-text" id="dur-' + lec.id + '">Loading...</span>' +
+                        '<div class="lec-btns">' +
                             (isPdf
-                                ? '<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>'
-                                : '<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>'
+                                ? '<a href="' + lec.url + '" download class="lec-pill-btn lec-download-pill" onclick="event.stopPropagation(); markLectureDone(event, this, ' + lec.id + ');">Download <svg xmlns=\'http://www.w3.org/2000/svg\' style=\'display:inline;vertical-align:middle;margin-left:2px\' width=\'13\' height=\'13\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\' stroke-width=\'2.5\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4\'/></svg></a>' +
+                                  '<button class="lec-pill-btn lec-lib-pill ' + (inLib ? 'in-lib' : '') + '" data-id="' + lec.id + '" data-title="' + encodeURIComponent(lec.title) + '" data-url="' + encodeURIComponent(lec.url) + '" onclick="togglePdfLibrary(event, this)" title="' + (inLib ? 'Remove from Library' : 'Save to Library') + '"><svg xmlns=\'http://www.w3.org/2000/svg\' style=\'display:inline;vertical-align:middle\' width=\'13\' height=\'13\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\' stroke-width=\'2\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\'/></svg><span class="lib-plus-sym">+</span><span class="lib-minus-sym">\u2212</span></button>'
+                                : '<a href="player.html?id=' + subjectId + '&type=' + lec.type + '&title=' + encodeURIComponent(lec.title) + '&url=' + encodeURIComponent(lec.url) + '&lecId=' + lec.id + '&chapTitle=' + encodeURIComponent(ch.title) + '&chapNum=' + ch.num + '&sec=' + SECTION_KEY + nextParams + '" class="lec-pill-btn lec-play-pill" onclick="event.stopPropagation();"><span id="action-text-' + lec.id + '">' + actionText + '</span> <svg xmlns=\'http://www.w3.org/2000/svg\' style=\'display:inline;vertical-align:middle;margin-left:1px\' width=\'13\' height=\'13\' viewBox=\'0 0 20 20\' fill=\'currentColor\'><path fill-rule=\'evenodd\' d=\'M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z\' clip-rule=\'evenodd\' /></svg></a>'
                             ) +
                         '</div>' +
-                        '<div class="lec-text min-w-0 flex-1">' +
-                            '<span class="lec-title truncate block font-bold text-slate-800 text-sm md:text-base">' + lec.title + '</span>' +
-                            '<div class="lec-meta text-xs text-slate-400 flex items-center gap-2 mt-0.5">' +
-                                '<span class="lec-type-badge font-bold uppercase tracking-wider text-[10px] px-1.5 py-0.5 rounded ' + (isPdf ? 'bg-red-50 text-red-500 border border-red-100' : 'bg-' + THEME_COLOR + '-50 text-' + THEME_COLOR + '-600 border border-' + THEME_COLOR + '-100') + '">' + lec.type + '</span>' +
-                                '<span>&bull;</span>' +
-                                '<span class="lec-dur font-medium" id="dur-' + lec.id + '">' + (lec.type === 'pdf' ? 'Loading...' : 'Loading...') + '</span>' +
-                            '</div>' +
-                        '</div>' +
                     '</div>' +
-                    '<div class="lec-actions flex items-center gap-2 flex-shrink-0">' +
-                        '<div class="lec-action-wrapper relative">' +
-                            (isPdf ? (
-                            '<div class="flex items-center gap-1.5">' +
-                                '<button class="lec-lib-btn ' + (inLib ? 'in-lib' : '') + '" data-id="' + lec.id + '" data-title="' + encodeURIComponent(lec.title) + '" data-url="' + encodeURIComponent(lec.url) + '" onclick="togglePdfLibrary(event, this)" title="' + (inLib ? 'Remove from Library' : 'Save to Library') + '">' +
-                                    '<svg class="w-3.5 h-3.5 lib-add-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>' +
-                                    '<svg class="w-3.5 h-3.5 lib-check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>' +
-                                '</button>' +
-                                '<a href="player.html?id=' + subjectId + '&type=' + lec.type + '&title=' + encodeURIComponent(lec.title) + '&url=' + encodeURIComponent(lec.url) + '&lecId=' + lec.id + '&chapTitle=' + encodeURIComponent(ch.title) + '&chapNum=' + ch.num + '&sec=' + SECTION_KEY + nextParams + '" class="lec-btn is-pdf" style="background: #ef4444; box-shadow: 0 2px 8px rgba(239,68,68,0.3);" onclick="event.stopPropagation();">' +
-                                    'Open ' + actionIcon +
-                                '</a>' +
-                            '</div>'
-                            ) : (
-                            '<a href="player.html?id=' + subjectId + '&type=' + lec.type + '&title=' + encodeURIComponent(lec.title) + '&url=' + encodeURIComponent(lec.url) + '&lecId=' + lec.id + '&chapTitle=' + encodeURIComponent(ch.title) + '&chapNum=' + ch.num + '&sec=' + SECTION_KEY + nextParams + '" class="lec-btn is-video" onclick="event.stopPropagation();">' +
-                                '<span id="action-text-' + lec.id + '">' + actionText + '</span> ' + actionIcon +
-                            '</a>'
-                            )) +
-                        '</div>' +
-                        '<button class="lec-circle-btn ' + (isDone ? 'is-done' : '') + '" onclick="toggleCircleDone(event, this, ' + lec.id + ')" title="Mark as done">' +
-                            '<svg class="circle-check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>' +
-                        '</button>' +
-                    '</div>' +
+                    '<button class="lec-circle-btn ' + (isDone ? 'is-done' : '') + '" onclick="toggleCircleDone(event, this, ' + lec.id + ')" title="Mark as done">' +
+                        '<svg class="circle-check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>' +
+                    '</button>' +
                 '</div>';
             }).join('');
 

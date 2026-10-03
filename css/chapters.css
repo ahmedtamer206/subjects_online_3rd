@@ -124,13 +124,13 @@
     width: 58px;
     height: 58px;
     border-radius: 18px;
-    background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+    background: linear-gradient(135deg, var(--subject-accent, #0ea5e9) 0%, var(--subject-glow, #38bdf8) 100%);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 10px 24px -6px rgba(14, 165, 233, 0.5), 0 0 0 1px rgba(14, 165, 233, 0.1);
+    box-shadow: 0 10px 24px -6px var(--subject-accent, rgba(14, 165, 233, 0.5)), 0 0 0 1px rgba(14, 165, 233, 0.1);
 }
 
 .lecture-item.is-pdf .lec-icon {
@@ -182,8 +182,10 @@
     font-weight: 700;
     text-decoration: none;
     border: 1.5px solid rgba(14, 165, 233, 0.35);
-    color: #0ea5e9;
+    border-color: color-mix(in srgb, var(--subject-accent, #0ea5e9) 35%, transparent);
+    color: var(--subject-accent, #0ea5e9);
     background: rgba(14, 165, 233, 0.06);
+    background: color-mix(in srgb, var(--subject-accent, #0ea5e9) 6%, transparent);
     transition: all 0.22s ease;
     cursor: pointer;
     white-space: nowrap;
@@ -194,11 +196,11 @@
 }
 
 .lec-pill-btn:hover {
-    background: #0ea5e9;
+    background: var(--subject-accent, #0ea5e9);
     color: white;
-    border-color: #0ea5e9;
+    border-color: var(--subject-accent, #0ea5e9);
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px -2px rgba(14, 165, 233, 0.35);
+    box-shadow: 0 4px 14px -2px color-mix(in srgb, var(--subject-accent, #0ea5e9) 35%, transparent);
 }
 
 .lec-lib-pill .lib-minus-sym { display: none; }
@@ -247,7 +249,7 @@
 @keyframes libCheckPop {
     0%   { transform: scale(0.4) rotate(-15deg); opacity: 0; }
     60%  { transform: scale(1.25) rotate(0deg);  opacity: 1; }
-    100% { transform: scale(1);   rotate(0deg);  opacity: 1; }
+    100% { transform: scale(1)   rotate(0deg);  opacity: 1; }
 }
 
 /* legacy fields kept for compatibility */
