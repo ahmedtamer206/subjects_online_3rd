@@ -216,7 +216,8 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
-                                    { id: 102, title: "Lect 1 Dr.Hana", type: "video", url: "materials/Videos/Accounting/First Term/Cost/Chapter 1/week1/Lect1_Cost_Dr.Hana.mp4" }
+                                    { id: 102, title: "Lect 1 Dr.Hana", type: "video", url: "materials/Videos/Accounting/First Term/Cost/Chapter 1/week1/Lect1_Cost_Dr.Hana.mp4" },
+                                    { id: 103, title: "Lect 2 Dr.Hana", type: "video", url: "materials/Videos/Accounting/First Term/Cost/Chapter 1/week1/Lect2_Cost_Dr.Hana.mp4" },
                                 ]
                             },
                             {
@@ -1419,8 +1420,6 @@ const MATERIALS = {
                                 lectures: [
                                     { id: 101, title: "Lect 1 Dr.Samar", type: "pdf", url: "materials/Pdfs/Accounting/First Term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
                                     { id: 102, title: "Lect 1 Dr.Samar", type: "video", url: "materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_1_(dr.samar).mp4" },
-                                    { id: 103, title: "Lect 2 Dr.Samar", type: "video", url: "materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_2_(Dr.samar).mp4" },
-
                                 ]
                             },
                             {
