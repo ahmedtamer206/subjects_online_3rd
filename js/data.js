@@ -218,8 +218,8 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
-                                    { id: 102, title: "Lect 1 Dr.Hana", type: "video", url: "materials/Videos/Accounting/First Term/Cost/Chapter 1/week1/Lect1_Cost_Dr.Hana.mp4" },
-                                    { id: 103, title: "Lect 2 Dr.Hana", type: "video", url: "materials/Videos/Accounting/First Term/Cost/Chapter 1/week1/Lect2_Cost_Dr.Hana.mp4" },
+                                    { id: 102, title: "Lect 1 Dr.Hana", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_Cost_Dr.Hana.mp4" },
+                                    { id: 103, title: "Lect 2 Dr.Hana", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_Cost_Dr.Hana.mp4" },
                                 ]
                             },
                             {
