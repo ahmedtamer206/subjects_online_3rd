@@ -218,8 +218,8 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
-                                    { id: 102, title: "Lect 1 Dr.Hana", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_Cost_Dr.Hana.mp4" },
-                                    { id: 103, title: "Lect 2 Dr.Hana", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_Cost_Dr.Hana.mp4" },
+                                    { id: 102, title: "Lect 1 Dr.Ebtsam", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_Cost_Dr.Hana.mp4" },
+                                    { id: 103, title: "Lect 2 Dr.Ebtsam", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_Cost_Dr.Hana.mp4" },
                                 ]
                             },
                             {
@@ -1833,7 +1833,7 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
-                                    { id: 102, title: "Lect 1", type: "video", url: "materials/Videos/Business/First_Term/Chapter_1/week1/Lect1_(PA)_(Dr.Aya).mp4" }
+                                    { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.PA._.Dr.Aya.mp4" }
                                 ]
                             },
                             {
@@ -2035,7 +2035,7 @@ const MATERIALS = {
                                 lectures: [
                                     { id: 101, title: "Lect 1 Dr.Saeed", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/Lect1_CA_(Dr.Saeed).pdf" },
                                     { id: 102, title: "Lect1 Dr.Saeed 'Handwriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/CA_lect_1_(Dr.Saeed)_'handwriting'.pdf" },
-                                    { id: 103, title: "Lect 1 Dr.Saeed", type: "video", url: "materials/Videos/Business/First_Term/Chapter_1/week1/Lect1_(CA)_(Dr.Saeed).mp4" }
+                                    { id: 103, title: "Lect 1 Dr.Saeed", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.CA._.Dr.Saeed.mp4" },
                                 ]
                             },
                             {
