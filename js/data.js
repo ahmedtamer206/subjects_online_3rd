@@ -622,7 +622,7 @@ const MATERIALS = {
                                 lectures: [
                                     { id: 101, title: "Lect1 Dr.Samar", type: "pdf", url: "materials/Pdfs/Accounting/first_term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
                                     { id: 102, title: "Lect 1 Dr.samar", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_1_.dr.samar.mp4" },
-                                    // { id: 102, title: "Lect 2 Dr.samar ", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_2_.dr.samar.mp4" },
+                                    { id: 102, title: "Lect 2 Dr.samar ", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_2_.dr.samar.mp4" },
 
                                 ]
                             },
