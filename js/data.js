@@ -9,14 +9,17 @@ const MATERIALS = {
             content: {
                 chapters: [
                     {
-                        num: 1, title: "NA", time: "NA",
+                        num: 1, title: "Ch1", time: "...",
                         weeks: [
                             {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect 1 Dr.Ebtsam", type: "video", duration: 701, url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.CA._Dr.Ebtsam.mp4" },
-                                    { id: 102, title: "Lect 2 Dr.Ebtsam", type: "video", duration: 362, url: "https://github.com/ahmedtamer2006/subjects_online_3rd/releases/download/v1.0/Lect2_.CA._Dr.Ebtsam.mp4" }
+
+                                    { id: 101, title: "Lect 1", type: "pdf", url: "materials/Pdfs/Accounting/first_term/CA_Dr.Hana/Chapter1/week1/Lect1_Company_Dr.Hana.pdf" },
+                                    { id: 102, title: "Lect 1", type: "video", duration: 701, url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.CA._Dr.Hana.mp4" },
+                                    { id: 103, title: "Lect 2", type: "video", duration: 362, url: "https://github.com/ahmedtamer2006/subjects_online_3rd/releases/download/v1.0/Lect2_.CA._Dr.Hana.mp4" },
+                                    { id: 104, title: "Lect 3", type: "video", duration: 400, url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect3_.CA._Dr.Hana.mp4" },
                                 ]
                             },
                             {
@@ -211,15 +214,16 @@ const MATERIALS = {
             content: {
                 chapters: [
                     {
-                        num: 1, title: "Chapter 1", time: "",
+                        num: 1, title: "Ch1", time: "...",
                         weeks: [
                             {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 101, title: "", type: "pdf", url: "" },
-                                    { id: 102, title: "Lect 1 Dr.Ebtsam", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_Cost_Dr.Hana.mp4" },
-                                    { id: 103, title: "Lect 2 Dr.Ebtsam", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_Cost_Dr.Hana.mp4" },
+                                    { id: 101, title: "Lect 1 ", type: "pdf", url: "materials/Pdfs/Accounting/first_term/Cost_Dr.Ebtsam/Ch 1/week1/Lect1_Cost_Dr.Ebtsam.pdf" },
+                                    { id: 102, title: "Lect 1 ", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_Cost_Dr.Ebtsam.mp4" },
+                                    { id: 103, title: "Lect 2 ", type: "pdf", url: "materials/Pdfs/Accounting/first_term/Cost_Dr.Ebtsam/Ch 1/week1/Lect2_Cost_Dr.Ebtsam.pdf" },
+                                    { id: 104, title: "Lect 2 ", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_Cost_Dr.Ebtsam.mp4" },
                                 ]
                             },
                             {
@@ -413,14 +417,14 @@ const MATERIALS = {
             content: {
                 chapters: [
                     {
-                        num: 1, title: "", time: "",
+                        num: 1, title: "Ch1", time: "...",
                         weeks: [
                             {
                                 num: 1,
                                 title: "",
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
-                                    // { id: 102, title: "", type: "video", url: "" }
+                                    { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_SAS_Dr.Norhan.mp4" }
                                 ]
                             },
                             {
@@ -620,9 +624,10 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1 Dr.Samar", type: "pdf", url: "materials/Pdfs/Accounting/first_term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
-                                    { id: 102, title: "Lect 1 Dr.samar", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_1_.dr.samar.mp4" },
-                                    { id: 103, title: "Lect 2 Dr.samar ", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_2_.dr.samar.mp4" },
+                                    { id: 101, title: "Lect 1", type: "pdf", url: "materials/Pdfs/Accounting/first_term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
+                                    { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_1_.dr.samar.mp4" },
+                                    { id: 103, title: "Lect 2", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_2_.dr.samar.mp4" },
+                                    { id: 104, title: "Lect 3", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_3_.dr.samar.mp4" },
 
                                 ]
                             },
@@ -1219,14 +1224,14 @@ const MATERIALS = {
             content: {
                 chapters: [
                     {
-                        num: 1, title: "", time: "",
+                        num: 1, title: "Ch1", time: "...",
                         weeks: [
                             {
                                 num: 1,
                                 title: "",
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
-                                    // { id: 102, title: "", type: "video", url: "" }
+                                    { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_Taxation_Dr.Ahmed.Helmy.mp4" }
                                 ]
                             },
                             {
@@ -1422,15 +1427,16 @@ const MATERIALS = {
             content: {
                 chapters: [
                     {
-                        num: 1, title: "Ch1:Intro", time: "",
+                        num: 1, title: "Ch1:Intro", time: "...",
                         weeks: [
                             {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect 1 Dr.Samar", type: "pdf", url: "materials/Pdfs/Accounting/First Term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
-                                    { id: 102, title: "Lect 1 Dr.Samar", type: "video", url: "materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_1_(dr.samar).mp4" },
-                                    { id: 103, title: "Lect 2 Dr.Samar", type: "video", url: "materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_2_(dr.samar).mp4" },
+                                    { id: 101, title: "Lect 1 ", type: "pdf", url: "materials/Pdfs/Accounting/First Term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
+                                    { id: 102, title: "Lect 1 ", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_1_.dr.samar.mp4" },
+                                    { id: 103, title: "Lect 2 ", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_2_.dr.samar.mp4" },
+                                    { id: 104, title: "Lect 3", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_3_.dr.samar.mp4" },
 
                                 ]
                             },
@@ -1826,7 +1832,7 @@ const MATERIALS = {
             content: {
                 chapters: [
                     {
-                        num: 1, title: "", time: "",
+                        num: 1, title: "Chي1", time: "",
                         weeks: [
                             {
                                 num: 1,
