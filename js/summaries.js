@@ -300,6 +300,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     (item.id === (subjectId + '_' + lec.id))
                 );
 
+                let initialDur = 'Loading...';
+                if (isPdf) {
+                    initialDur = 'PDF';
+                } else {
+                    const cachedDur = localStorage.getItem('so_dur_' + encodeURIComponent(lec.url));
+                    if (lec.duration) {
+                        initialDur = typeof lec.duration === 'number' ? formatDuration(lec.duration) : lec.duration;
+                    } else if (lec.time) {
+                        initialDur = lec.time;
+                    } else if (cachedDur && !isNaN(cachedDur) && parseFloat(cachedDur) > 0) {
+                        initialDur = formatDuration(parseFloat(cachedDur));
+                        lec.duration = parseFloat(cachedDur);
+                    }
+                }
+
                 return '<div class="lecture-item ' + (isPdf ? 'is-pdf' : 'is-video') + ' ' + (isDone ? 'done' : '') + '">' +
                     '<div class="lec-icon">' +
                         (isPdf
@@ -309,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     '</div>' +
                     '<div class="lec-body">' +
                         '<span class="lec-title">' + lec.title + '</span>' +
-                        '<span class="lec-dur-text" id="dur-' + lec.id + '">Loading...</span>' +
+                        '<span class="lec-dur-text" id="dur-' + lec.id + '">' + initialDur + '</span>' +
                         '<div class="lec-btns">' +
                             (isPdf
                                 ? '<a href="' + lec.url + '" download class="lec-pill-btn lec-download-pill" onclick="event.stopPropagation(); markLectureDone(event, this, ' + lec.id + ');">Download <svg xmlns=\'http://www.w3.org/2000/svg\' style=\'display:inline;vertical-align:middle;margin-left:2px\' width=\'13\' height=\'13\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\' stroke-width=\'2.5\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' d=\'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4\'/></svg></a>' +
@@ -448,17 +463,12 @@ document.addEventListener('DOMContentLoaded', () => {
     chapters.forEach(ch => {
         (ch.lectures || []).forEach(lec => {
             if (lec.type === 'video') {
-                const videoEl = document.createElement('video');
-                videoEl.src = lec.url;
-                videoEl.onloadedmetadata = () => {
-                    lec.duration = videoEl.duration;
-                    const durationSpan = document.getElementById('dur-' + lec.id);
-                    if (durationSpan) {
-                        durationSpan.textContent = formatDuration(videoEl.duration);
-                    }
+                const isExternalUrl = lec.url && (lec.url.startsWith('http://') || lec.url.startsWith('https://'));
+                const durationSpan = document.getElementById('dur-' + lec.id);
 
+                function applyProgress(dur) {
                     const isDone = !!completedLectures[subjectId + '_' + lec.id];
-                    if (!isDone) {
+                    if (!isDone && dur) {
                         const storageKey = 'so_vid_progress_' + encodeURIComponent(lec.url);
                         const savedTime = localStorage.getItem(storageKey);
                         if (savedTime && !isNaN(savedTime) && parseFloat(savedTime) > 0) {
@@ -466,11 +476,42 @@ document.addEventListener('DOMContentLoaded', () => {
                             if (actionSpan) {
                                 const mCurrent = Math.floor(parseFloat(savedTime) / 60);
                                 const sCurrent = Math.floor(parseFloat(savedTime) % 60);
-                                const mTotal = Math.floor(lec.duration / 60);
-                                const sTotal = Math.floor(lec.duration % 60);
+                                const mTotal = Math.floor(dur / 60);
+                                const sTotal = Math.floor(dur % 60);
                                 actionSpan.textContent = mCurrent + ':' + sCurrent.toString().padStart(2, '0') + ' / ' + mTotal + ':' + sTotal.toString().padStart(2, '0');
                             }
                         }
+                    }
+                }
+
+                // If duration is already known from data.js or localStorage, apply it immediately
+                const cachedDur = localStorage.getItem('so_dur_' + encodeURIComponent(lec.url));
+                if (lec.duration) {
+                    if (durationSpan) durationSpan.textContent = typeof lec.duration === 'number' ? formatDuration(lec.duration) : lec.duration;
+                    if (typeof lec.duration === 'number') applyProgress(lec.duration);
+                    return;
+                }
+                if (cachedDur && !isNaN(cachedDur) && parseFloat(cachedDur) > 0) {
+                    lec.duration = parseFloat(cachedDur);
+                    if (durationSpan) durationSpan.textContent = formatDuration(lec.duration);
+                    applyProgress(lec.duration);
+                    return;
+                }
+
+                const videoEl = document.createElement('video');
+                videoEl.preload = 'metadata';
+                videoEl.src = lec.url;
+                videoEl.onloadedmetadata = () => {
+                    lec.duration = videoEl.duration;
+                    localStorage.setItem('so_dur_' + encodeURIComponent(lec.url), Math.round(videoEl.duration));
+                    if (durationSpan) {
+                        durationSpan.textContent = formatDuration(videoEl.duration);
+                    }
+                    applyProgress(videoEl.duration);
+                };
+                videoEl.onerror = () => {
+                    if (durationSpan && (durationSpan.textContent === 'Loading...' || !durationSpan.textContent)) {
+                        durationSpan.textContent = isExternalUrl ? 'Video' : 'Error';
                     }
                 };
             } else if (lec.type === 'pdf') {

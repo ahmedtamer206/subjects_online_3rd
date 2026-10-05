@@ -15,8 +15,8 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect 1 Dr.Ebtsam", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.CA._Dr.Ebtsam.mp4" },
-                                    { id: 102, title: "Lect 2 Dr.Ebtsam", type: "video", url: "https://github.com/ahmedtamer2006/subjects_online_3rd/releases/download/v1.0/Lect2_.CA._Dr.Ebtsam.mp4" }
+                                    { id: 101, title: "Lect 1 Dr.Ebtsam", type: "video", duration: 701, url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.CA._Dr.Ebtsam.mp4" },
+                                    { id: 102, title: "Lect 2 Dr.Ebtsam", type: "video", duration: 362, url: "https://github.com/ahmedtamer2006/subjects_online_3rd/releases/download/v1.0/Lect2_.CA._Dr.Ebtsam.mp4" }
                                 ]
                             },
                             {
