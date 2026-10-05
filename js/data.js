@@ -15,8 +15,8 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect 1 Dr.Ebtsam", type: "video", url:"materials/Videos/Accounting/First Term/CA/Chapter 1/week1/Lect1_(CA)_Dr.Ebtsam.mp4" },
-                                    { id: 102, title: "Lect 2 Dr.Ebtsam", type: "video", url:"materials/Videos/Accounting/First Term/CA/Chapter 1/week1/Lect2_(CA)_Dr.Ebtsam.mp4" }
+                                    { id: 101, title: "Lect 1 Dr.Ebtsam", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.CA._Dr.Ebtsam.mp4" },
+                                    { id: 102, title: "Lect 2 Dr.Ebtsam", type: "video", url: "https://github.com/ahmedtamer2006/subjects_online_3rd/releases/download/v1.0/Lect2_.CA._Dr.Ebtsam.mp4" }
                                 ]
                             },
                             {
@@ -26,7 +26,7 @@ const MATERIALS = {
                                     // { id: 103, title: "Ch6", type: "video", url: "" }
                                 ]
                             },
-                             {
+                            {
                                 num: 3,
                                 title: "",
                                 lectures: [
@@ -45,7 +45,7 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     // { id: 1001, title: "", type: "pdf", url: "" },
-                                    
+
                                 ]
                             },
                             {
@@ -206,8 +206,9 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'a2', title: 'Principles of Cost Accounting', icon: '🧮', color: '#ede9fe', accent: '#7c3aed',
-              content: {
+        {
+            id: 'a2', title: 'Principles of Cost Accounting', icon: '🧮', color: '#ede9fe', accent: '#7c3aed',
+            content: {
                 chapters: [
                     {
                         num: 1, title: "Chapter 1", time: "",
@@ -406,9 +407,10 @@ const MATERIALS = {
                     }
                 ]
             }
-         },
-        { id: 'a3', title: 'Specialized Accounting Systems', icon: '🔍', color: '#dcfce7', accent: '#16a34a',
-  content: {
+        },
+        {
+            id: 'a3', title: 'Specialized Accounting Systems', icon: '🔍', color: '#dcfce7', accent: '#16a34a',
+            content: {
                 chapters: [
                     {
                         num: 1, title: "", time: "",
@@ -607,8 +609,9 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'a4', title: 'Quantitative Analysis for Business', icon: '📈', color: '#fef9c3', accent: '#ca8a04',
-  content: {
+        {
+            id: 'a4', title: 'Quantitative Analysis for Business', icon: '📈', color: '#fef9c3', accent: '#ca8a04',
+            content: {
                 chapters: [
                     {
                         num: 1, title: "Ch1:Intro", time: "",
@@ -617,8 +620,8 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1(Dr.Samar)", type: "pdf", url: "/materials/Pdfs/Accounting/First Term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
-                                    { id: 102, title: "Lect 1(Dr.samar)", type: "video", url: "/materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_1_(dr.samar).mp4" }
+                                    { id: 101, title: "Lect1(Dr.Samar)", type: "pdf", url: "materials/Pdfs/Accounting/First Term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
+                                    { id: 102, title: "Lect 1(Dr.samar)", type: "video", url: "materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_1_(dr.samar).mp4" }
                                 ]
                             },
                             {
@@ -806,9 +809,10 @@ const MATERIALS = {
                     }
                 ]
             }
-         },
-        { id: 'a5', title: 'Financial Management', icon: '💰', color: '#fee2e2', accent: '#dc2626',
-              content: {
+        },
+        {
+            id: 'a5', title: 'Financial Management', icon: '💰', color: '#fee2e2', accent: '#dc2626',
+            content: {
                 chapters: [
                     {
                         num: 1, title: "Ch1", time: "",
@@ -1006,9 +1010,10 @@ const MATERIALS = {
                     }
                 ]
             }
-         },
-        { id: 'a6', title: 'Money and Banking Economics', icon: '🏦', color: '#cffafe', accent: '#0891b2',
-  content: {
+        },
+        {
+            id: 'a6', title: 'Money and Banking Economics', icon: '🏦', color: '#cffafe', accent: '#0891b2',
+            content: {
                 chapters: [
                     {
                         num: 1, title: "", time: "",
@@ -1206,9 +1211,10 @@ const MATERIALS = {
                     }
                 ]
             }
-         },
-        { id: 'a7', title: 'Tax Systems', icon: '📋', color: '#fce7f3', accent: '#db2777',
-  content: {
+        },
+        {
+            id: 'a7', title: 'Tax Systems', icon: '📋', color: '#fce7f3', accent: '#db2777',
+            content: {
                 chapters: [
                     {
                         num: 1, title: "", time: "",
@@ -1406,10 +1412,11 @@ const MATERIALS = {
                     }
                 ]
             }
-         },
+        },
     ],
     business: [
-        { id: 'b1', title: 'Quantitative Analysis for Business', icon: '📈', color: '#dbeafe', accent: '#2563eb',
+        {
+            id: 'b1', title: 'Quantitative Analysis for Business', icon: '📈', color: '#dbeafe', accent: '#2563eb',
             content: {
                 chapters: [
                     {
@@ -1421,7 +1428,7 @@ const MATERIALS = {
                                 lectures: [
                                     { id: 101, title: "Lect 1 Dr.Samar", type: "pdf", url: "materials/Pdfs/Accounting/First Term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf" },
                                     { id: 102, title: "Lect 1 Dr.Samar", type: "video", url: "materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_1_(dr.samar).mp4" },
-                                    { id: 103, title: "Lect 2 Dr.Samar", type: "video", url: "/materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_2_(dr.samar).mp4" },
+                                    { id: 103, title: "Lect 2 Dr.Samar", type: "video", url: "materials/Videos/Accounting/First Term/QBA/Chapter 1/week1/lect_2_(dr.samar).mp4" },
 
                                 ]
                             },
@@ -1611,7 +1618,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'b2', title: 'Financial Management', icon: '💰', color: '#fce7f3', accent: '#db2777',
+        {
+            id: 'b2', title: 'Financial Management', icon: '💰', color: '#fce7f3', accent: '#db2777',
             content: {
                 chapters: [
                     {
@@ -1621,7 +1629,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1(Dr.Wessam)'Handwriting'", type: "pdf", url: "/materials/Pdfs/Accounting/First Term/Chapter 1/week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
+                                    { id: 101, title: "Lect1(Dr.Wessam)'Handwriting'", type: "pdf", url: "materials/Pdfs/Accounting/First Term/Chapter 1/week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
                                     // { id: 102, title: "", type: "video", url: "" }
                                 ]
                             },
@@ -1811,7 +1819,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'b3', title: 'Public Adminstartion', icon: '🏛️', color: '#ede9fe', accent: '#7c3aed',
+        {
+            id: 'b3', title: 'Public Adminstartion', icon: '🏛️', color: '#ede9fe', accent: '#7c3aed',
             content: {
                 chapters: [
                     {
@@ -2011,7 +2020,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'b4', title: 'companies Accounting', icon: '📊', color: '#dcfce7', accent: '#16a34a',
+        {
+            id: 'b4', title: 'companies Accounting', icon: '📊', color: '#dcfce7', accent: '#16a34a',
             content: {
                 chapters: [
                     {
@@ -2210,8 +2220,9 @@ const MATERIALS = {
                     }
                 ]
             }
-         },
-        { id: 'b5', title: ' Cost Accounting', icon: '🧮', color: '#fef9c3', accent: '#ca8a04',
+        },
+        {
+            id: 'b5', title: ' Cost Accounting', icon: '🧮', color: '#fef9c3', accent: '#ca8a04',
             content: {
                 chapters: [
                     {
@@ -2411,7 +2422,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'b6', title: 'Money and Banking Economics', icon: '🏦', color: '#fee2e2', accent: '#dc2626',
+        {
+            id: 'b6', title: 'Money and Banking Economics', icon: '🏦', color: '#fee2e2', accent: '#dc2626',
             content: {
                 chapters: [
                     {
@@ -2610,8 +2622,9 @@ const MATERIALS = {
                     }
                 ]
             }
-         },
-        { id: 'b7', title: 'Principles of Insurance', icon: '🛡️', color: '#cffafe', accent: '#0891b2',
+        },
+        {
+            id: 'b7', title: 'Principles of Insurance', icon: '🛡️', color: '#cffafe', accent: '#0891b2',
             content: {
                 chapters: [
                     {
@@ -2813,7 +2826,8 @@ const MATERIALS = {
         },
     ],
     economics: [
-        { id: 'e1', title: 'Money and Banking Economics', icon: '🏦', color: '#dbeafe', accent: '#2563eb',
+        {
+            id: 'e1', title: 'Money and Banking Economics', icon: '🏦', color: '#dbeafe', accent: '#2563eb',
             content: {
                 chapters: [
                     {
@@ -3013,7 +3027,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'e2', title: 'History of Economic Thought', icon: '📜', color: '#dcfce7', accent: '#16a34a',
+        {
+            id: 'e2', title: 'History of Economic Thought', icon: '📜', color: '#dcfce7', accent: '#16a34a',
             content: {
                 chapters: [
                     {
@@ -3213,7 +3228,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'e3', title: 'Comparative Economic Systems', icon: '🌍', color: '#fef9c3', accent: '#ca8a04',
+        {
+            id: 'e3', title: 'Comparative Economic Systems', icon: '🌍', color: '#fef9c3', accent: '#ca8a04',
             content: {
                 chapters: [
                     {
@@ -3413,7 +3429,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'e4', title: 'Industrial Economics', icon: '🏭', color: '#ede9fe', accent: '#7c3aed',
+        {
+            id: 'e4', title: 'Industrial Economics', icon: '🏭', color: '#ede9fe', accent: '#7c3aed',
             content: {
                 chapters: [
                     {
@@ -3613,7 +3630,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'e5', title: 'Statistics for Economists', icon: '📉', color: '#fee2e2', accent: '#dc2626',
+        {
+            id: 'e5', title: 'Statistics for Economists', icon: '📉', color: '#fee2e2', accent: '#dc2626',
             content: {
                 chapters: [
                     {
@@ -3813,7 +3831,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'e6', title: 'Principles of Cost Accounting', icon: '🧮', color: '#cffafe', accent: '#0891b2',
+        {
+            id: 'e6', title: 'Principles of Cost Accounting', icon: '🧮', color: '#cffafe', accent: '#0891b2',
             content: {
                 chapters: [
                     {
@@ -4014,7 +4033,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'e7', title: 'Financial Management', icon: '💰', color: '#fce7f3', accent: '#db2777',
+        {
+            id: 'e7', title: 'Financial Management', icon: '💰', color: '#fce7f3', accent: '#db2777',
             content: {
                 chapters: [
                     {
@@ -4216,7 +4236,8 @@ const MATERIALS = {
         },
     ],
     statistics: [
-        { id: 's1', title: 'Applied Statistics (1)', icon: '📉', color: '#dbeafe', accent: '#2563eb',
+        {
+            id: 's1', title: 'Applied Statistics (1)', icon: '📉', color: '#dbeafe', accent: '#2563eb',
             content: {
                 chapters: [
                     {
@@ -4416,7 +4437,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 's2', title: 'Statistics and Computer Lab', icon: '💻', color: '#ede9fe', accent: '#7c3aed',
+        {
+            id: 's2', title: 'Statistics and Computer Lab', icon: '💻', color: '#ede9fe', accent: '#7c3aed',
             content: {
                 chapters: [
                     {
@@ -4616,207 +4638,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 's3', title: 'Quantitative Analysis Techniques', icon: '📐', color: '#dcfce7', accent: '#16a34a',
-            content: {
-                chapters: [
-                    {
-                        num: 1, title: "", time: "",
-                        weeks: [
-                            {
-                                num: 1,
-                                title: "",
-                                lectures: [
-                                    // { id: 101, title: "", type: "pdf", url: "" },
-                                    // { id: 102, title: "", type: "video", url: "" }
-                                ]
-                            },
-                            {
-                                num: 2,
-                                title: "",
-                                lectures: [
-                                    // { id: 103, title: "", type: "video", url: "" }
-                                ]
-                            },
-                            {
-                                num: 3,
-                                title: "",
-                                lectures: [
-                                    // { id: 104, title: "", type: "video", url: "" }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                quizzes: [
-                    {
-                        num: 1, title: "Quizzes - Part 1", time: "",
-                        weeks: [
-                            {
-                                num: 1,
-                                title: "",
-                                lectures: [
-                                    // { id: 1001, title: "", type: "pdf", url: "" },
-                                ]
-                            },
-                            {
-                                num: 2,
-                                title: "",
-                                lectures: [
-                                    // { id: 1002, title: "", type: "pdf", url: "" }
-                                ]
-                            },
-                            {
-                                num: 3,
-                                title: "",
-                                lectures: [
-                                    // { id: 1003, title: "", type: "pdf", url: "" }
-                                ]
-                            }
-                        ]
-                    },
-                ],
-                sections: [
-                    {
-                        num: 1, title: "Section", time: "",
-                        weeks: [
-                            {
-                                num: 1,
-                                title: "",
-                                lectures: [
-                                    // { id: 2001, title: "", type: "pdf", url: "" },
-                                ]
-                            },
-                            {
-                                num: 2,
-                                title: "",
-                                lectures: [
-                                    // { id: 2002, title: "", type: "pdf", url: "" }
-                                ]
-                            },
-                            {
-                                num: 3,
-                                title: "",
-                                lectures: [
-                                    // { id: 2003, title: "", type: "pdf", url: "" }
-                                ]
-                            }
-                        ]
-                    },
-                ],
-                summaries: [
-                    {
-                        num: 1, title: "Summarie", time: "",
-                        weeks: [
-                            {
-                                num: 1,
-                                title: "",
-                                lectures: [
-                                    // { id: 3001, title: "", type: "pdf", url: "" }
-                                ]
-                            },
-                            {
-                                num: 2,
-                                title: "",
-                                lectures: [
-                                    // { id: 3002, title: "", type: "pdf", url: "" }
-                                ]
-                            },
-                            {
-                                num: 3,
-                                title: "",
-                                lectures: [
-                                    // { id: 3003, title: "", type: "pdf", url: "" }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                qa: [
-                    {
-                        num: 1, title: "", time: "",
-                        weeks: [
-                            {
-                                num: 1,
-                                title: "",
-                                lectures: [
-                                    // { id: 4001, title: "", type: "pdf", url: "" }
-                                ]
-                            },
-                            {
-                                num: 2,
-                                title: "",
-                                lectures: [
-                                    // { id: 4002, title: "", type: "pdf", url: "" }
-                                ]
-                            },
-                            {
-                                num: 3,
-                                title: "",
-                                lectures: [
-                                    // { id: 4003, title: "", type: "pdf", url: "" }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        num: 2, title: "", time: "",
-                        weeks: [
-                            {
-                                num: 1,
-                                title: "",
-                                lectures: [
-                                    // { id: 4004, title: "", type: "pdf", url: "" }
-                                ]
-                            },
-                            {
-                                num: 2,
-                                title: "",
-                                lectures: [
-                                    // { id: 4005, title: "", type: "pdf", url: "" }
-                                ]
-                            },
-                            {
-                                num: 3,
-                                title: "",
-                                lectures: [
-                                    // { id: 4006, title: "", type: "pdf", url: "" }
-                                ]
-                            }
-                        ]
-                    },
-                ],
-                finalReview: [
-                    {
-                        num: 1, title: "Final Review", time: "",
-                        weeks: [
-                            {
-                                num: 1,
-                                title: "",
-                                lectures: [
-                                    // { id: 5001, title: "", type: "pdf", url: "" },
-                                    // { id: 5002, title: "", type: "video", url: "" }
-                                ]
-                            },
-                            {
-                                num: 2,
-                                title: "",
-                                lectures: [
-                                    // { id: 5003, title: "", type: "video", url: "" }
-                                ]
-                            },
-                            {
-                                num: 3,
-                                title: "",
-                                lectures: [
-                                    // { id: 5004, title: "", type: "video", url: "" }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-         },
-        { id: 's4', title: 'Principles of Insurance', icon: '🛡️', color: '#fef9c3', accent: '#ca8a04',
+        {
+            id: 's3', title: 'Quantitative Analysis Techniques', icon: '📐', color: '#dcfce7', accent: '#16a34a',
             content: {
                 chapters: [
                     {
@@ -5016,7 +4839,209 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 's5', title: 'Principles of Cost Accounting', icon: '🧮', color: '#fee2e2', accent: '#dc2626',
+        {
+            id: 's4', title: 'Principles of Insurance', icon: '🛡️', color: '#fef9c3', accent: '#ca8a04',
+            content: {
+                chapters: [
+                    {
+                        num: 1, title: "", time: "",
+                        weeks: [
+                            {
+                                num: 1,
+                                title: "",
+                                lectures: [
+                                    // { id: 101, title: "", type: "pdf", url: "" },
+                                    // { id: 102, title: "", type: "video", url: "" }
+                                ]
+                            },
+                            {
+                                num: 2,
+                                title: "",
+                                lectures: [
+                                    // { id: 103, title: "", type: "video", url: "" }
+                                ]
+                            },
+                            {
+                                num: 3,
+                                title: "",
+                                lectures: [
+                                    // { id: 104, title: "", type: "video", url: "" }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                quizzes: [
+                    {
+                        num: 1, title: "Quizzes - Part 1", time: "",
+                        weeks: [
+                            {
+                                num: 1,
+                                title: "",
+                                lectures: [
+                                    // { id: 1001, title: "", type: "pdf", url: "" },
+                                ]
+                            },
+                            {
+                                num: 2,
+                                title: "",
+                                lectures: [
+                                    // { id: 1002, title: "", type: "pdf", url: "" }
+                                ]
+                            },
+                            {
+                                num: 3,
+                                title: "",
+                                lectures: [
+                                    // { id: 1003, title: "", type: "pdf", url: "" }
+                                ]
+                            }
+                        ]
+                    },
+                ],
+                sections: [
+                    {
+                        num: 1, title: "Section", time: "",
+                        weeks: [
+                            {
+                                num: 1,
+                                title: "",
+                                lectures: [
+                                    // { id: 2001, title: "", type: "pdf", url: "" },
+                                ]
+                            },
+                            {
+                                num: 2,
+                                title: "",
+                                lectures: [
+                                    // { id: 2002, title: "", type: "pdf", url: "" }
+                                ]
+                            },
+                            {
+                                num: 3,
+                                title: "",
+                                lectures: [
+                                    // { id: 2003, title: "", type: "pdf", url: "" }
+                                ]
+                            }
+                        ]
+                    },
+                ],
+                summaries: [
+                    {
+                        num: 1, title: "Summarie", time: "",
+                        weeks: [
+                            {
+                                num: 1,
+                                title: "",
+                                lectures: [
+                                    // { id: 3001, title: "", type: "pdf", url: "" }
+                                ]
+                            },
+                            {
+                                num: 2,
+                                title: "",
+                                lectures: [
+                                    // { id: 3002, title: "", type: "pdf", url: "" }
+                                ]
+                            },
+                            {
+                                num: 3,
+                                title: "",
+                                lectures: [
+                                    // { id: 3003, title: "", type: "pdf", url: "" }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                qa: [
+                    {
+                        num: 1, title: "", time: "",
+                        weeks: [
+                            {
+                                num: 1,
+                                title: "",
+                                lectures: [
+                                    // { id: 4001, title: "", type: "pdf", url: "" }
+                                ]
+                            },
+                            {
+                                num: 2,
+                                title: "",
+                                lectures: [
+                                    // { id: 4002, title: "", type: "pdf", url: "" }
+                                ]
+                            },
+                            {
+                                num: 3,
+                                title: "",
+                                lectures: [
+                                    // { id: 4003, title: "", type: "pdf", url: "" }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        num: 2, title: "", time: "",
+                        weeks: [
+                            {
+                                num: 1,
+                                title: "",
+                                lectures: [
+                                    // { id: 4004, title: "", type: "pdf", url: "" }
+                                ]
+                            },
+                            {
+                                num: 2,
+                                title: "",
+                                lectures: [
+                                    // { id: 4005, title: "", type: "pdf", url: "" }
+                                ]
+                            },
+                            {
+                                num: 3,
+                                title: "",
+                                lectures: [
+                                    // { id: 4006, title: "", type: "pdf", url: "" }
+                                ]
+                            }
+                        ]
+                    },
+                ],
+                finalReview: [
+                    {
+                        num: 1, title: "Final Review", time: "",
+                        weeks: [
+                            {
+                                num: 1,
+                                title: "",
+                                lectures: [
+                                    // { id: 5001, title: "", type: "pdf", url: "" },
+                                    // { id: 5002, title: "", type: "video", url: "" }
+                                ]
+                            },
+                            {
+                                num: 2,
+                                title: "",
+                                lectures: [
+                                    // { id: 5003, title: "", type: "video", url: "" }
+                                ]
+                            },
+                            {
+                                num: 3,
+                                title: "",
+                                lectures: [
+                                    // { id: 5004, title: "", type: "video", url: "" }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            id: 's5', title: 'Principles of Cost Accounting', icon: '🧮', color: '#fee2e2', accent: '#dc2626',
             content: {
                 chapters: [
                     {
@@ -5217,7 +5242,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 's6', title: 'Finance and Investment', icon: '💰', color: '#cffafe', accent: '#0891b2' ,
+        {
+            id: 's6', title: 'Finance and Investment', icon: '💰', color: '#cffafe', accent: '#0891b2',
             content: {
                 chapters: [
                     {
@@ -5417,7 +5443,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 's7', title: 'Money and Banking Economics', icon: '🏦', color: '#fce7f3', accent: '#db2777',
+        {
+            id: 's7', title: 'Money and Banking Economics', icon: '🏦', color: '#fce7f3', accent: '#db2777',
             content: {
                 chapters: [
                     {
@@ -5619,7 +5646,8 @@ const MATERIALS = {
         },
     ],
     customs: [
-        { id: 'c1', title: 'Tax Systems', icon: '📋', color: '#dbeafe', accent: '#2563eb',
+        {
+            id: 'c1', title: 'Tax Systems', icon: '📋', color: '#dbeafe', accent: '#2563eb',
             content: {
                 chapters: [
                     {
@@ -5819,7 +5847,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'c2', title: 'Ports and Customs Management', icon: '🚢', color: '#ede9fe', accent: '#7c3aed',
+        {
+            id: 'c2', title: 'Ports and Customs Management', icon: '🚢', color: '#ede9fe', accent: '#7c3aed',
             content: {
                 chapters: [
                     {
@@ -6019,7 +6048,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'c3', title: 'Money and Banking Economics', icon: '🏦', color: '#dcfce7', accent: '#16a34a',
+        {
+            id: 'c3', title: 'Money and Banking Economics', icon: '🏦', color: '#dcfce7', accent: '#16a34a',
             content: {
                 chapters: [
                     {
@@ -6219,7 +6249,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'c4', title: 'Finance and Investment', icon: '💰', color: '#fef9c3', accent: '#ca8a04',
+        {
+            id: 'c4', title: 'Finance and Investment', icon: '💰', color: '#fef9c3', accent: '#ca8a04',
             content: {
                 chapters: [
                     {
@@ -6419,7 +6450,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'c5', title: 'companies accounting', icon: '🛡️', color: '#fee2e2', accent: '#dc2626',
+        {
+            id: 'c5', title: 'companies accounting', icon: '🛡️', color: '#fee2e2', accent: '#dc2626',
             content: {
                 chapters: [
                     {
@@ -6429,7 +6461,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1(Dr.Saeed)'Handwriting'", type: "pdf", url: "/materials/Pdfs/Business/First_Term/Chapter_1/week1/CA_lect_1_(Dr.Saeed)_'handwriting'.pdf" },
+                                    { id: 101, title: "Lect1(Dr.Saeed)'Handwriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/CA_lect_1_(Dr.Saeed)_'handwriting'.pdf" },
                                     // { id: 102, title: "", type: "video", url: "" }
                                 ]
                             },
@@ -6619,7 +6651,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'c6', title: 'Principles of Cost Accounting', icon: '🧮', color: '#cffafe', accent: '#0891b2',
+        {
+            id: 'c6', title: 'Principles of Cost Accounting', icon: '🧮', color: '#cffafe', accent: '#0891b2',
             content: {
                 chapters: [
                     {
@@ -6820,7 +6853,8 @@ const MATERIALS = {
                 ]
             }
         },
-        { id: 'c7', title: 'Management of Governmental Organizations', icon: '🏢', color: '#fce7f3', accent: '#db2777',
+        {
+            id: 'c7', title: 'Management of Governmental Organizations', icon: '🏢', color: '#fce7f3', accent: '#db2777',
             content: {
                 chapters: [
                     {
