@@ -28,9 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Direct Display Name Assignment
   const nameTextEl = document.getElementById("display-name-text");
-  const cursorEl = document.querySelector(".hero-cursor");
-
-  if (cursorEl) cursorEl.style.display = "none";
 
   if (nameTextEl) {
     nameTextEl.textContent = userName;
@@ -198,7 +195,6 @@ function loadStats(deptText) {
   const deptKey = getDeptKey(deptText);
   const materials = MATERIALS[deptKey] || MATERIALS["accounting"];
 
-  let openedSubjects = 0;
 
   const favs = getFavorites();
   const favoritesCount = favs.length;
@@ -311,8 +307,7 @@ function loadStats(deptText) {
 
   const totalSubjects = materials.length;
 
-  const avgSubjectsPct =
-    totalSubjects > 0 ? Math.round(subjectPctsSum / totalSubjects) : 0;
+
 
   /* ===================================================
        UPDATE OTHER DASHBOARD VALUES
@@ -791,33 +786,7 @@ function initHologramAvatarSequence() {
   }
 }
 
-/* ===================================================
-   TYPING ANIMATION
-   =================================================== */
 
-function typeWriter(el, cursorEl, text, speed, onDone) {
-  el.textContent = "";
-
-  let i = 0;
-
-  const delay = 600;
-
-  setTimeout(() => {
-    const interval = setInterval(() => {
-      el.textContent += text[i];
-
-      i++;
-
-      if (i >= text.length) {
-        clearInterval(interval);
-
-        if (typeof onDone === "function") {
-          onDone();
-        }
-      }
-    }, speed);
-  }, delay);
-}
 
 /* ===================================================
    FLOATING PARTICLES

@@ -818,37 +818,6 @@
     `;
     document.head.appendChild(globalTheme);
 
-    const style = document.createElement('style');
-    style.textContent = `
-        /* Mega Footer Styles */
-        .mega-link {
-            font-size: 0.9rem;
-            color: #475569;
-            text-decoration: none;
-            transition: all 0.2s;
-            font-weight: 500;
-            display: inline-block;
-        }
-        .mega-link:hover {
-            color: #0EA5E9;
-            transform: translateX(4px);
-        }
-
-        /* Dark mode overrides for Mega Footer */
-        html.dark-mode .shared-footer-mega {
-            background: rgba(10, 15, 25, 0.7) !important;
-            border-top-color: rgba(255,255,255,0.08) !important;
-            box-shadow: 0 -10px 40px rgba(0,0,0,0.3) !important;
-        }
-        html.dark-mode .mega-logo-text { color: #f8fafc !important; }
-        html.dark-mode .mega-desc { color: #94a3b8 !important; }
-        html.dark-mode .mega-col-title { color: #e2e8f0 !important; }
-        html.dark-mode .mega-link { color: #cbd5e1 !important; }
-        html.dark-mode .mega-link:hover { color: #38BDF8 !important; }
-        html.dark-mode .mega-copy, html.dark-mode .mega-lang { color: #64748b !important; }
-        html.dark-mode .mega-socials a { background: rgba(255,255,255,0.05) !important; color: #94a3b8 !important; }
-        html.dark-mode .mega-socials a:hover { background: #0EA5E9 !important; color: #fff !important; }
-    `;
     // ── Global Dark Theme Injection (Applies to all pages) ──────────────────────
     const darkTheme = document.createElement('style');
     darkTheme.textContent = `

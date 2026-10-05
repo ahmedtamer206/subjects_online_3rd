@@ -107,21 +107,7 @@
     localStorage.setItem('pwa-installed', 'true');
   });
 
-  // ── Show bubble always when not in standalone (PWA) mode ──
-  const _isStandalone =
-    window.matchMedia('(display-mode: standalone)').matches ||
-    window.navigator.standalone === true;
 
-  // Floating bubble auto-show disabled — user requested dedicated Dashboard icon instead
-  // if (!_isStandalone) { setTimeout(showBubbleBtn, 1200); }
-
-  function isInstalled() {
-    return (
-      localStorage.getItem('pwa-installed') === 'true' ||
-      window.matchMedia('(display-mode: standalone)').matches ||
-      window.navigator.standalone === true
-    );
-  }
 
   // Expose global trigger function for navbar button
   window.triggerPWAInstall = function () {
