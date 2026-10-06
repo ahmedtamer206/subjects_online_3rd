@@ -2638,7 +2638,7 @@ const MATERIALS = {
             }
         },
         {
-            id: 'b7', title: 'Principles of Insurance', icon: '🛡️', color: '#cffafe', accent: '#0891b2',
+            id: 'b7', title: 'Marketing', icon: '🛡️', color: '#cffafe', accent: '#0891b2',
             content: {
                 chapters: [
                     {
@@ -4854,7 +4854,7 @@ const MATERIALS = {
             }
         },
         {
-            id: 's4', title: 'Principles of Insurance', icon: '🛡️', color: '#fef9c3', accent: '#ca8a04',
+            id: 's4', title: 'Marketing', icon: '🧮', color: '#fef9c3', accent: '#ca8a04',
             content: {
                 chapters: [
                     {
