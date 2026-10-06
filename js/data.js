@@ -4854,7 +4854,7 @@ const MATERIALS = {
             }
         },
         {
-            id: 's4', title: 'Marketing', icon: '🧮', color: '#fef9c3', accent: '#ca8a04',
+            id: 's4', title: 'Marketing Research', icon: '🧮', color: '#fef9c3', accent: '#ca8a04',
             content: {
                 chapters: [
                     {
