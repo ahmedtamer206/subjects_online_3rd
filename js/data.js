@@ -619,7 +619,7 @@ const MATERIALS = {
             content: {
                 chapters: [
                     {
-                        num: 1, title: "Ch1:Intro", time: "",
+                        num: 1, title: "Ch1", time: "",
                         weeks: [
                             {
                                 num: 1,
