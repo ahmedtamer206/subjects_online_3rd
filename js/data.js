@@ -18,8 +18,9 @@ const MATERIALS = {
 
                                     { id: 101, title: "Lect 1", type: "pdf", url: "materials/Pdfs/Accounting/first_term/CA_Dr.Hana/Chapter1/week1/Lect1_Company_Dr.Hana.pdf" },
                                     { id: 102, title: "Lect 1", type: "video", duration: 701, url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.CA._Dr.Hana.mp4" },
-                                    { id: 103, title: "Lect 2", type: "video", duration: 362, url: "https://github.com/ahmedtamer2006/subjects_online_3rd/releases/download/v1.0/Lect2_.CA._Dr.Hana.mp4" },
-                                    { id: 104, title: "Lect 3", type: "video", duration: 400, url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect3_.CA._Dr.Hana.mp4" },
+                                    { id: 103, title: "Lect 2", type: "pdf", url: "/materials/Pdfs/Accounting/first_term/CA_Dr.Hana/Chapter1/week1/Lect2_Company_Dr.Hana.pdf" },
+                                    { id: 104, title: "Lect 2", type: "video", duration: 362, url: "https://github.com/ahmedtamer2006/subjects_online_3rd/releases/download/v1.0/Lect2_.CA._Dr.Hana.mp4" },
+                                    { id: 105, title: "Lect 3", type: "video", duration: 400, url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect3_.CA._Dr.Hana.mp4" },
                                 ]
                             },
                             {
@@ -1839,7 +1840,8 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
-                                    { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.PA._.Dr.Aya.mp4" }
+                                    { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.PA._.Dr.Aya.mp4" },
+                                    
                                 ]
                             },
                             {
@@ -1867,6 +1869,8 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
+                                    { id: 1001, title: "Quiz 1", type: "pdf", url: "materials/Pdfs/Business/First_Term/PA/Quizzes/PA_Chapter_One_Quiz_Answer_Key_261006_000416.pdf" },
+                                    { id: 1002, title: "Combined quiz", type: "pdf", url: "materials/Pdfs/Business/First_Term/PA/Quizzes/Combined_Quizzes_Public_Administration_261006_000306.pdf" },
                                     // { id: 1001, title: "", type: "pdf", url: "" },
                                 ]
                             },
@@ -2241,6 +2245,7 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     { id: 101, title: "Lect 1 Dr.Zatout 'Handwriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/lect_1_dr.zatout_'handwriting'.pdf" },
+                                
                                     // { id: 102, title: "", type: "video", url: "" }
                                 ]
                             },
@@ -2263,13 +2268,14 @@ const MATERIALS = {
                 ],
                 quizzes: [
                     {
-                        num: 1, title: "Quizzes - Part 1", time: "",
+                        num: 1, title: "Quizzes", time: "...",
                         weeks: [
                             {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 1001, title: "", type: "pdf", url: "" },
+                                     { id: 1001, title: "Quiz 1", type: "pdf", url: "materials/Pdfs/Business/First_Term/Cost/Quizzes/Cost_Accounting_Questions_and_Answers_261006_000324.pdf" },
+                                    { id: 1002, title: "Quiz 2", type: "pdf", url: "materials/Pdfs/Business/First_Term/Cost/Quizzes/Cost_Accounting_Solved_Exercises_261006_000316.pdf" },
                                 ]
                             },
                             {
@@ -2464,7 +2470,7 @@ const MATERIALS = {
                 ],
                 quizzes: [
                     {
-                        num: 1, title: "Quizzes - Part 1", time: "",
+                        num: 1, title: "Quizzes", time: "",
                         weeks: [
                             {
                                 num: 1,
