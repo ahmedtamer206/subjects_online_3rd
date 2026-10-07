@@ -830,24 +830,25 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     { id: 101, title: "Lect1 Dr.Wessam 'Handwriting'", type: "pdf", url: "materials/Pdfs/Accounting/first_term/FM/Chapter 1/Week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
-                                    { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_FM_Dr.Wesaam.mp4" }
+                                    { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_FM_Dr.Wesaam.mp4" },
                                 ]
                             },
+                        ],
+
+                    },
+                    {
+                        num: 2, title: "Ch2", time: "",
+                        weeks: [
                             {
-                                num: 2,
+                                num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 103, title: "", type: "video", url: "" }
+                                    { id: 103, title: "Lect2", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Ch2_FM_Dr.Wessam.mp4" },
+
                                 ]
                             },
-                            {
-                                num: 3,
-                                title: "",
-                                lectures: [
-                                    // { id: 104, title: "", type: "video", url: "" }
-                                ]
-                            }
-                        ]
+                        ],
+
                     }
                 ],
                 quizzes: [
@@ -1639,26 +1640,26 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1'Handwriting'", type: "pdf", url: "/materials/Pdfs/Accounting/first_term/FM/Chapter 1/Week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
-                                    { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_FM_Dr.Wesaam.mp4" }
-                                    
+                                    { id: 101, title: "Lect1 Dr.Wessam 'Handwriting'", type: "pdf", url: "materials/Pdfs/Accounting/first_term/FM/Chapter 1/Week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
+                                    { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_FM_Dr.Wesaam.mp4" },
                                 ]
                             },
+                        ],
+
+                    },
+                    {
+                        num: 2, title: "Ch2", time: "",
+                        weeks: [
                             {
-                                num: 2,
+                                num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 103, title: "", type: "video", url: "" }
+                                    { id: 103, title: "Lect2", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Ch2_FM_Dr.Wessam.mp4" },
+
                                 ]
                             },
-                            {
-                                num: 3,
-                                title: "",
-                                lectures: [
-                                    // { id: 104, title: "", type: "video", url: "" }
-                                ]
-                            }
-                        ]
+                        ],
+
                     }
                 ],
                 quizzes: [
