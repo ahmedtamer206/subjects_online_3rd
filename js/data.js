@@ -424,7 +424,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 101, title: "", type: "pdf", url: "" },
+                                    { id: 101, title: "Lect1", type: "pdf", url: "materials/Pdfs/Accounting/first_term/SAS/Ch1/week1/Lect1_SAS_Dr.Norhan.pdf" },
                                     { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_SAS_Dr.Norhan.mp4" }
                                 ]
                             },
