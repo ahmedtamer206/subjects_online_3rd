@@ -2640,18 +2640,19 @@ const MATERIALS = {
             }
         },
         {
-            id: 'b7', title: 'Marketing', icon: '🛡️', color: '#cffafe', accent: '#0891b2',
+            id: 'b7', title: 'Marketing Research', icon: '🧮', color: '#cffafe', accent: '#0891b2',
             content: {
                 chapters: [
                     {
-                        num: 1, title: "", time: "",
+                        num: 1, title: "Ch1", time: "",
                         weeks: [
                             {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 101, title: "", type: "pdf", url: "" },
-                                    // { id: 102, title: "", type: "video", url: "" }
+                                    { id: 101, title: "", type: "pdf", url: "/materials/Pdfs/Business/First_Term/MR/Quizzes/Marketing_Research_Solved_Questions.pdf" },
+                                    { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_MR_Dr.Heba.mp4" }
+                                   
                                 ]
                             },
                             {
