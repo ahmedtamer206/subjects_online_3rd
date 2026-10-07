@@ -2650,7 +2650,6 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "", type: "pdf", url: "/materials/Pdfs/Business/First_Term/MR/Quizzes/Marketing_Research_Solved_Questions.pdf" },
                                     { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_MR_Dr.Heba.mp4" }
                                    
                                 ]
@@ -2674,13 +2673,13 @@ const MATERIALS = {
                 ],
                 quizzes: [
                     {
-                        num: 1, title: "Quizzes - Part 1", time: "",
+                        num: 1, title: "Quizzes", time: "",
                         weeks: [
                             {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 1001, title: "", type: "pdf", url: "" },
+                                    { id: 1001, title: "Quiz1", type: "pdf", url: "/materials/Pdfs/Business/First_Term/MR/Quizzes/Marketing_Research_Solved_Questions.pdf" },
                                 ]
                             },
                             {
