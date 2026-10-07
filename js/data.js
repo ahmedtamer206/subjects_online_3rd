@@ -2650,8 +2650,8 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_MR_Dr.Heba.mp4" }
-                                   
+                                    { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_MR_Dr.Heba.mp4" },
+                                    { id: 103, title: "Lect2", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_MR_Dr.Heba.mp4" },
                                 ]
                             },
                             {
