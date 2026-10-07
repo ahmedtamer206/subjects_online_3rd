@@ -830,7 +830,7 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     { id: 101, title: "Lect1 Dr.Wessam 'Handwriting'", type: "pdf", url: "materials/Pdfs/Accounting/First Term/FM/Chapter 1/Week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
-                                    // { id: 102, title: "", type: "video", url: "" }
+                                    { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_FM_Dr.Wesaam.mp4" }
                                 ]
                             },
                             {
@@ -1225,14 +1225,15 @@ const MATERIALS = {
             content: {
                 chapters: [
                     {
-                        num: 1, title: "Ch1", time: "...",
+                        num: 1, title: "Ch1", time: "",
                         weeks: [
                             {
                                 num: 1,
                                 title: "",
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
-                                    { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_Taxation_Dr.Ahmed.Helmy.mp4" }
+                                    { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_Taxation_Dr.Ahmed.Helmy.mp4" },
+                                    { id: 103, title: "Lect 2&3&4", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2.3.4_Dr.Ahmed_Tax.mp4" }
                                 ]
                             },
                             {
@@ -1638,8 +1639,9 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 101, title: "Lect1(Dr.Wessam)'Handwriting'", type: "pdf", url: "materials/Pdfs/Accounting/First Term/Chapter 1/week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
-                                    // { id: 102, title: "", type: "video", url: "" }
+                                    { id: 101, title: "Lect1'Handwriting'", type: "pdf", url: "/materials/Pdfs/Accounting/first_term/FM/Chapter 1/Week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf" },
+                                    { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_FM_Dr.Wesaam.mp4" }
+                                    
                                 ]
                             },
                             {
@@ -1833,7 +1835,7 @@ const MATERIALS = {
             content: {
                 chapters: [
                     {
-                        num: 1, title: "Chي1", time: "",
+                        num: 1, title: "Ch1", time: "",
                         weeks: [
                             {
                                 num: 1,
@@ -1863,7 +1865,7 @@ const MATERIALS = {
                 ],
                 quizzes: [
                     {
-                        num: 1, title: "Quizzes - Part 1", time: "",
+                        num: 1, title: "Quizzes", time: "",
                         weeks: [
                             {
                                 num: 1,
@@ -4858,14 +4860,14 @@ const MATERIALS = {
             content: {
                 chapters: [
                     {
-                        num: 1, title: "", time: "",
+                        num: 1, title: "Ch1", time: "",
                         weeks: [
                             {
                                 num: 1,
                                 title: "",
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
-                                    // { id: 102, title: "", type: "video", url: "" }
+                                    { id: 102, title: "Lect1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_MR_Dr.Heba.mp4" }
                                 ]
                             },
                             {
