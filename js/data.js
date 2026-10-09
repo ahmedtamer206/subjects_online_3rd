@@ -48,7 +48,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 1001, title: "", type: "pdf", url: "" },
+                                    { id: 1001, title: "", type: "pdf", url: "materials/Pdfs/Accounting/first_term/CA_Dr.Hana/Quizzes/Quiz1.pdf" },
 
                                 ]
                             },
@@ -713,7 +713,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 3001, title: "", type: "pdf", url: "" }
+                                    { id: 3001, title: "Lect1", type: "pdf", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_QBA.pdf" }
                                 ]
                             },
                             {
@@ -859,7 +859,8 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 1001, title: "", type: "pdf", url: "" },
+                                    { id: 1001, title: "", type: "pdf", url: "materials/Pdfs/Accounting/first_term/FM/Quizzes/Quiz1&2.pdf" },
+                                    
                                 ]
                             },
                             {
@@ -1670,7 +1671,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    // { id: 1001, title: "", type: "pdf", url: "" },
+                                    { id: 1001, title: "", type: "pdf", url: "materials/Pdfs/Accounting/first_term/FM/Quizzes/Quiz1&2.pdf" },
                                 ]
                             },
                             {
@@ -1844,7 +1845,7 @@ const MATERIALS = {
                                 lectures: [
                                     // { id: 101, title: "", type: "pdf", url: "" },
                                     { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.PA._.Dr.Aya.mp4" },
-                                    
+                                    { id: 103, title: "Lect 2", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_PA.mp4" },
                                 ]
                             },
                             {
