@@ -48,7 +48,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 1001, title: "", type: "pdf", url: "materials/Pdfs/Accounting/first_term/CA_Dr.Hana/Quizzes/Quiz1.pdf" },
+                                    { id: 1001, title: "Quiz1", type: "pdf", url: "materials/Pdfs/Accounting/first_term/CA_Dr.Hana/Quizzes/Quiz1.pdf" },
 
                                 ]
                             },
@@ -859,8 +859,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 1001, title: "", type: "pdf", url: "materials/Pdfs/Accounting/first_term/FM/Quizzes/Quiz1&2.pdf" },
-                                    
+                                    { id: 1001, title: "Quiz1&2", type: "pdf", url: "materials/Pdfs/Accounting/first_term/FM/Quizzes/Quiz1&2.pdf" },
                                 ]
                             },
                             {
@@ -1671,7 +1670,7 @@ const MATERIALS = {
                                 num: 1,
                                 title: "",
                                 lectures: [
-                                    { id: 1001, title: "", type: "pdf", url: "materials/Pdfs/Accounting/first_term/FM/Quizzes/Quiz1&2.pdf" },
+                                    { id: 1001, title: "Quiz1&2", type: "pdf", url: "materials/Pdfs/Accounting/first_term/FM/Quizzes/Quiz1&2.pdf" },
                                 ]
                             },
                             {
