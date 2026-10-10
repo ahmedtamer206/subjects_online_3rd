@@ -1,295 +1,487 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Video Player — Subjects Online</title>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="c19193c1-aaf3-477d-acd2-56be26abe5ec"></script>
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="c19193c1-aaf3-477d-acd2-56be26abe5ec"
+    ></script>
 
-    <link rel="stylesheet" href="css/tailwind-utilities.css">
+    <link rel="stylesheet" href="css/tailwind-utilities.css" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Plyr CSS -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/player.min.css">
-    <link rel="stylesheet" href="css/mobile-perf.css">
+    <link rel="stylesheet" href="css/player.min.css" />
+    <link rel="stylesheet" href="css/mobile-perf.css" />
 
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#f8fafc">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Subjects Online">
-    <link rel="apple-touch-icon" href="images/icon-512.png">
-</head>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#f8fafc" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Subjects Online" />
+    <link rel="apple-touch-icon" href="images/icon-512.png" />
+  </head>
 
-<body>
-
+  <body>
     <!-- Top Header Bar -->
     <header id="main-header">
-        <div class="header-left">
-            <!-- Sidebar Toggle (Hamburger) -->
-            <button id="toggle-sidebar-btn" class="header-icon-btn" title="Toggle Sidebar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+      <div class="header-left">
+        <!-- Sidebar Toggle (Hamburger) -->
+        <button
+          id="toggle-sidebar-btn"
+          class="header-icon-btn"
+          title="Toggle Sidebar"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
 
-            <!-- Back Button -->
-            <button id="back-nav-btn"
-                onclick="if(history.length > 1) { history.back(); } else { window.location.href = 'chapters.html'; }"
-                class="header-back-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                <span class="hide-mobile">Back</span>
-            </button>
+        <!-- Back Button -->
+        <button
+          id="back-nav-btn"
+          onclick="
+            if (history.length > 1) {
+              history.back();
+            } else {
+              window.location.href = 'chapters.html';
+            }
+          "
+          class="header-back-btn"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+          <span class="hide-mobile">Back</span>
+        </button>
 
-            <!-- Breadcrumbs -->
-            <nav class="breadcrumbs">
-                <h1>Subjects Online Player</h1>
-            </nav>
-        </div>
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+          <h1>Subjects Online Player</h1>
+        </nav>
+      </div>
 
-        <div class="header-right">
-            <!-- Shortcuts -->
-            <button id="shortcuts-btn" class="header-text-btn" title="Keyboard Shortcuts (?)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                </svg>
-                <span class="hide-tablet">Shortcuts</span>
-                <kbd class="kbd-badge hide-tablet">?</kbd>
-            </button>
+      <div class="header-right">
+        <!-- Shortcuts -->
+        <button
+          id="shortcuts-btn"
+          class="header-text-btn"
+          title="Keyboard Shortcuts (?)"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="15"
+            height="15"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+            />
+          </svg>
+          <span class="hide-tablet">Shortcuts</span>
+          <kbd class="kbd-badge hide-tablet">?</kbd>
+        </button>
 
-            <!-- Focus Mode -->
-            <button id="focus-btn" class="header-text-btn" title="Focus Mode">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-                <span class="hide-mobile" id="focus-btn-text">Focus</span>
-            </button>
-        </div>
+        <!-- Focus Mode -->
+        <button id="focus-btn" class="header-text-btn" title="Focus Mode">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="15"
+            height="15"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+            />
+          </svg>
+          <span class="hide-mobile" id="focus-btn-text">Focus</span>
+        </button>
+      </div>
     </header>
 
     <!-- Main Content: Video Left + Playlist Right -->
     <main id="main-content">
+      <!-- LEFT: Video Player Column -->
+      <div id="video-column">
+        <!-- Video Player Container -->
+        <div class="player-card" id="player-wrapper">
+          <video
+            id="video-player"
+            playsinline
+            controls
+            crossorigin="anonymous"
+          ></video>
 
-        <!-- LEFT: Video Player Column -->
-        <div id="video-column">
-
-            <!-- Video Player Container -->
-            <div class="player-card" id="player-wrapper">
-                <video id="video-player" playsinline controls crossorigin="anonymous"></video>
-
-                <!-- Double-Click Seek Ripples -->
-                <div id="seek-ripple-left" class="seek-ripple seek-ripple-left pointer-events-none">
-                    <div class="ripple-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.333 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z" />
-                        </svg>
-                        <span>-10s</span>
-                    </div>
-                </div>
-                <div id="seek-ripple-right" class="seek-ripple seek-ripple-right pointer-events-none">
-                    <div class="ripple-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" />
-                        </svg>
-                        <span>+10s</span>
-                    </div>
-                </div>
-
-                <!-- Loading -->
-                <div id="loading-state" class="player-overlay">
-                    <div class="loading-spinner">
-                        <div class="spinner-ring"></div>
-                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <p class="loading-text">Loading Video...</p>
-                    <h2 class="loading-text">Subjects Online Player</h2>
-                </div>
-
-                <!-- Error -->
-                <div id="error-state" class="player-overlay hidden">
-                    <div class="error-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                        </svg>
-                    </div>
-                    <p class="error-title">Failed to load video</p>
-                    <p class="error-sub">Check your connection or try again.</p>
-                    <button onclick="window.location.reload()" class="error-reload-btn">Reload</button>
-                </div>
-
-                <!-- Auto Next Overlay -->
-                <div id="auto-next-overlay" class="player-overlay hidden">
-                    <div class="auto-next-card">
-                        <span class="auto-next-badge">Up Next</span>
-                        <h2 id="next-lec-title" class="auto-next-title">Next Lecture</h2>
-
-                        <div class="auto-next-timer">
-                            <svg class="timer-svg" viewBox="0 0 80 80">
-                                <circle cx="40" cy="40" r="34" stroke="#e2e8f0" stroke-width="4" fill="transparent" />
-                                <circle id="next-timer-circle" cx="40" cy="40" r="34" stroke="#0284c7" stroke-width="4"
-                                    fill="transparent" stroke-dasharray="213" stroke-dashoffset="0"
-                                    class="timer-progress" />
-                            </svg>
-                            <span id="next-timer-text" class="timer-number">5</span>
-                        </div>
-
-                        <div class="auto-next-actions">
-                            <button id="cancel-next-btn" class="btn-outline">Cancel</button>
-                            <button id="play-next-btn" class="btn-primary">Play Now</button>
-                        </div>
-                    </div>
-                </div>
+          <!-- Double-Click Seek Ripples -->
+          <div
+            id="seek-ripple-left"
+            class="seek-ripple seek-ripple-left pointer-events-none"
+          >
+            <div class="ripple-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.333 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z"
+                />
+              </svg>
+              <span>-10s</span>
             </div>
-
-            <!-- Bottom Bar: Title + Prev/Next -->
-            <div class="video-info-bar">
-                <div class="video-info-text">
-                    <h2 id="video-heading-title" class="video-title">Lecture</h2>
-                    <p id="video-heading-sub" class="video-subtitle">Subjects Online</p>
-                </div>
-                <div class="video-nav-btns">
-                    <button id="prev-lec-btn" class="nav-btn" title="Previous Lecture">
-                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                        </svg>
-                        <span class="hide-mobile">Previous</span>
-                    </button>
-                    <button id="next-lec-btn" class="nav-btn nav-btn-primary" title="Next Lecture">
-                        <span class="hide-mobile">Next</span>
-                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
-                </div>
+          </div>
+          <div
+            id="seek-ripple-right"
+            class="seek-ripple seek-ripple-right pointer-events-none"
+          >
+            <div class="ripple-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z"
+                />
+              </svg>
+              <span>+10s</span>
             </div>
+          </div>
 
+          <!-- Loading -->
+          <div id="loading-state" class="player-overlay">
+            <div class="loading-spinner">
+              <div class="spinner-ring"></div>
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <p class="loading-text">Loading Video...</p>
+            <h2 class="loading-text">Subjects Online Player</h2>
+          </div>
+
+          <!-- Error -->
+          <div id="error-state" class="player-overlay hidden">
+            <div class="error-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+            </div>
+            <p class="error-title">Failed to load video</p>
+            <p class="error-sub">Check your connection or try again.</p>
+            <button onclick="window.location.reload()" class="error-reload-btn">
+              Reload
+            </button>
+          </div>
+
+          <!-- Auto Next Overlay -->
+          <div id="auto-next-overlay" class="player-overlay hidden">
+            <div class="auto-next-card">
+              <span class="auto-next-badge">Up Next</span>
+              <h2 id="next-lec-title" class="auto-next-title">Next Lecture</h2>
+
+              <div class="auto-next-timer">
+                <svg class="timer-svg" viewBox="0 0 80 80">
+                  <circle
+                    cx="40"
+                    cy="40"
+                    r="34"
+                    stroke="#e2e8f0"
+                    stroke-width="4"
+                    fill="transparent"
+                  />
+                  <circle
+                    id="next-timer-circle"
+                    cx="40"
+                    cy="40"
+                    r="34"
+                    stroke="#0284c7"
+                    stroke-width="4"
+                    fill="transparent"
+                    stroke-dasharray="213"
+                    stroke-dashoffset="0"
+                    class="timer-progress"
+                  />
+                </svg>
+                <span id="next-timer-text" class="timer-number">5</span>
+              </div>
+
+              <div class="auto-next-actions">
+                <button id="cancel-next-btn" class="btn-outline">Cancel</button>
+                <button id="play-next-btn" class="btn-primary">Play Now</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- RIGHT: Course Content Sidebar -->
-        <aside id="playlist-sidebar">
-            <!-- Sidebar Header -->
-            <div class="sidebar-header">
-                <div class="sidebar-header-top">
-                    <span class="sidebar-badge" id="playlist-badge">Course Content</span>
-                    <div class="sidebar-header-actions">
-                        <span class="sidebar-stats" id="playlist-stats">0 / 0</span>
-                        <button id="close-sidebar-btn" class="sidebar-close-btn" title="Hide Sidebar">✕</button>
-                    </div>
-                </div>
-                <h2 class="sidebar-title" id="playlist-course-title">Course Syllabus</h2>
-                <div class="sidebar-progress-track">
-                    <div id="playlist-progress-fill" class="sidebar-progress-fill" style="width: 0%;"></div>
-                </div>
-            </div>
+        <!-- Bottom Bar: Title + Prev/Next -->
+        <div class="video-info-bar">
+          <div class="video-info-text">
+            <h2 id="video-heading-title" class="video-title">Lecture</h2>
+            <p id="video-heading-sub" class="video-subtitle">Subjects Online</p>
+          </div>
+          <div class="video-nav-btns">
+            <button id="prev-lec-btn" class="nav-btn" title="Previous Lecture">
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              <span class="hide-mobile">Previous</span>
+            </button>
+            <button
+              id="next-lec-btn"
+              class="nav-btn nav-btn-primary"
+              title="Next Lecture"
+            >
+              <span class="hide-mobile">Next</span>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
 
-            <!-- Accordion Weeks -->
-            <div class="sidebar-scroll" id="accordion-weeks-container">
-                <!-- Injected by JS -->
+      <!-- RIGHT: Course Content Sidebar -->
+      <aside id="playlist-sidebar">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+          <div class="sidebar-header-top">
+            <span class="sidebar-badge" id="playlist-badge"
+              >Course Content</span
+            >
+            <div class="sidebar-header-actions">
+              <span class="sidebar-stats" id="playlist-stats">0 / 0</span>
+              <button
+                id="close-sidebar-btn"
+                class="sidebar-close-btn"
+                title="Hide Sidebar"
+              >
+                ✕
+              </button>
             </div>
-        </aside>
+          </div>
+          <h2 class="sidebar-title" id="playlist-course-title">
+            Course Syllabus
+          </h2>
+          <div class="sidebar-progress-track">
+            <div
+              id="playlist-progress-fill"
+              class="sidebar-progress-fill"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
 
+        <!-- Accordion Weeks -->
+        <div class="sidebar-scroll" id="accordion-weeks-container">
+          <!-- Injected by JS -->
+        </div>
+      </aside>
     </main>
 
     <!-- Keyboard Shortcuts Modal -->
     <div id="shortcuts-modal" class="modal-backdrop hidden">
-        <div class="modal-card">
-            <div class="modal-header">
-                <h3 class="modal-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                    </svg>
-                    Keyboard Shortcuts
-                </h3>
-                <button id="close-shortcuts-btn" class="modal-close">✕</button>
-            </div>
-
-            <div class="shortcut-list">
-                <!-- Download (highlighted) -->
-                <div class="shortcut-row shortcut-highlight">
-                    <span class="shortcut-label">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                        Download Video
-                    </span>
-                    <kbd class="kbd-accent">D</kbd>
-                </div>
-
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Play / Pause</span>
-                    <div class="kbd-group"><kbd>Space</kbd><kbd>K</kbd></div>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Seek ±5s</span>
-                    <div class="kbd-group"><kbd>←</kbd><kbd>→</kbd></div>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Seek ±10s</span>
-                    <div class="kbd-group"><kbd>J</kbd><kbd>L</kbd></div>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Volume</span>
-                    <div class="kbd-group"><kbd>↑</kbd><kbd>↓</kbd></div>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Mute</span>
-                    <kbd>M</kbd>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Fullscreen</span>
-                    <kbd>F</kbd>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Picture-in-Picture</span>
-                    <kbd>P</kbd>
-                </div>
-                <div class="shortcut-row">
-                    <span class="shortcut-label">Shortcuts Help</span>
-                    <kbd>?</kbd>
-                </div>
-            </div>
-
-            <button id="got-it-shortcuts-btn" class="modal-got-it-btn">Got it</button>
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 class="modal-title">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+              />
+            </svg>
+            Keyboard Shortcuts
+          </h3>
+          <button id="close-shortcuts-btn" class="modal-close">✕</button>
         </div>
+
+        <div class="shortcut-list">
+          <!-- Download (highlighted) -->
+          <div class="shortcut-row shortcut-highlight">
+            <span class="shortcut-label">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
+              </svg>
+              Download Video
+            </span>
+            <kbd class="kbd-accent">D</kbd>
+          </div>
+
+          <div class="shortcut-row">
+            <span class="shortcut-label">Play / Pause</span>
+            <div class="kbd-group"><kbd>Space</kbd><kbd>K</kbd></div>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Seek ±5s</span>
+            <div class="kbd-group"><kbd>←</kbd><kbd>→</kbd></div>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Seek ±10s</span>
+            <div class="kbd-group"><kbd>J</kbd><kbd>L</kbd></div>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Volume</span>
+            <div class="kbd-group"><kbd>↑</kbd><kbd>↓</kbd></div>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Mute</span>
+            <kbd>M</kbd>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Fullscreen</span>
+            <kbd>F</kbd>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Picture-in-Picture</span>
+            <kbd>P</kbd>
+          </div>
+          <div class="shortcut-row">
+            <span class="shortcut-label">Shortcuts Help</span>
+            <kbd>?</kbd>
+          </div>
+        </div>
+
+        <button id="got-it-shortcuts-btn" class="modal-got-it-btn">
+          Got it
+        </button>
+      </div>
     </div>
 
     <!-- Plyr JS -->
@@ -307,6 +499,5 @@
     <script src="js/auth.js"></script>
     <script src="js/sync.js"></script>
     <script src="js/pwa.js"></script>
-</body>
-
+  </body>
 </html>

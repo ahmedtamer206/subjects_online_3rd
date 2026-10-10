@@ -2,119 +2,131 @@
    SUBJECTS ONLINE — Premium Enterprise Splash Screen
    =================================================== */
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    overflow: hidden;
-    min-height: 100vh;
-    background-color: #f8fafc;
-    font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 /* ---- Centerpiece Logo ---- */
 .splash-logo-mark {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #0ea5e9, #6366f1);
-    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.25);
-    opacity: 0;
-    transform: scale(0.9) translateY(20px);
-    animation: logoReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.25);
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  animation: logoReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .splash-logo-letter {
-    font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: white;
+  font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
 }
 
 @keyframes logoReveal {
-    0% {
-        opacity: 0;
-        transform: scale(0.9) translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* ---- Brand Text ---- */
 .splash-brand-text {
-    opacity: 0;
-    transform: translateY(15px);
-    animation: textReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: textReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
 @keyframes textReveal {
-    0% {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ---- Minimal Loading Bar ---- */
 .splash-loading-wrap {
-    width: 140px;
-    height: 2px;
-    background: rgba(0, 0, 0, 0.06);
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    opacity: 0;
-    animation: fadeReveal 1s ease forwards 0.6s;
+  width: 140px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  animation: fadeReveal 1s ease forwards 0.6s;
 }
 
 .splash-loading-bar {
-    position: absolute;
-    top: 0; left: 0; bottom: 0;
-    width: 0%;
-    background: linear-gradient(90deg, #3b82f6, #6366f1);
-    border-radius: 4px;
-    animation: loadingProgress 2s cubic-bezier(0.85, 0, 0.15, 1) forwards 0.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  border-radius: 4px;
+  animation: loadingProgress 2s cubic-bezier(0.85, 0, 0.15, 1) forwards 0.8s;
 }
 
 @keyframes loadingProgress {
-    0%   { width: 0%; }
-    40%  { width: 60%; }
-    100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+  40% {
+    width: 60%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes fadeReveal {
-    to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ---- Bottom Text ---- */
 .splash-bottom-text {
-    opacity: 0;
-    animation: fadeReveal 1s ease forwards 0.8s;
+  opacity: 0;
+  animation: fadeReveal 1s ease forwards 0.8s;
 }
 
 /* ---- Splash Exit Animation ---- */
 .splash-exit {
-    animation: splashFadeOut 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: splashFadeOut 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes splashFadeOut {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-        filter: blur(0px);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1.05);
-        filter: blur(8px);
-        pointer-events: none;
-    }
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+    filter: blur(8px);
+    pointer-events: none;
+  }
 }

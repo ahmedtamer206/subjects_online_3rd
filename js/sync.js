@@ -15,7 +15,6 @@
   upload data, or attach Firebase auth listeners.
 */
 
-
 // ─────────────────────────────────────────────────────
 // Compatibility functions
 // ─────────────────────────────────────────────────────
@@ -25,22 +24,20 @@
 // They will NOT connect to Firebase or delete local data.
 
 async function syncFromFirebase() {
-    console.log(
-        '💾 [LocalStorage] Cloud sync is disabled. Using localStorage only.'
-    );
+  console.log(
+    "💾 [LocalStorage] Cloud sync is disabled. Using localStorage only.",
+  );
 
-    return false;
+  return false;
 }
-
 
 async function syncToFirebase() {
-    console.log(
-        '💾 [LocalStorage] Cloud sync is disabled. Using localStorage only.'
-    );
+  console.log(
+    "💾 [LocalStorage] Cloud sync is disabled. Using localStorage only.",
+  );
 
-    return false;
+  return false;
 }
-
 
 // ─────────────────────────────────────────────────────
 // Compatibility function
@@ -50,27 +47,23 @@ async function syncToFirebase() {
 // It does NOT initialize Firebase and does NOT start cloud sync.
 
 function startCloudSync() {
-    console.log(
-        '💾 [LocalStorage] Local-only mode enabled. Firebase sync disabled.'
-    );
+  console.log(
+    "💾 [LocalStorage] Local-only mode enabled. Firebase sync disabled.",
+  );
 }
-
 
 // ─────────────────────────────────────────────────────
 // Public API
 // ─────────────────────────────────────────────────────
 
 window.SubjectsOnlineCloudSync = {
-    syncFromFirebase: syncFromFirebase,
-    syncToFirebase: syncToFirebase,
-    startCloudSync: startCloudSync
+  syncFromFirebase: syncFromFirebase,
+  syncToFirebase: syncToFirebase,
+  startCloudSync: startCloudSync,
 };
-
 
 // ─────────────────────────────────────────────────────
 // Initialization
 // ─────────────────────────────────────────────────────
 
-console.log(
-    '💾 [LocalStorage] Subjects Online is running in local-only mode.'
-);
+console.log("💾 [LocalStorage] Subjects Online is running in local-only mode.");

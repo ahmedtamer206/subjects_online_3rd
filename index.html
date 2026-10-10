@@ -1,72 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Subjects Online — Your Gateway to Knowledge</title>
-    <meta name="description" content="Subjects Online">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="c19193c1-aaf3-477d-acd2-56be26abe5ec"></script>
-    <link rel="stylesheet" href="css/tailwind-utilities.css">
-
+    <meta name="description" content="Subjects Online" />
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="c19193c1-aaf3-477d-acd2-56be26abe5ec"
+    ></script>
+    <link rel="stylesheet" href="css/tailwind-utilities.css" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="css/splash.css">
-    <link rel="stylesheet" href="css/mobile-perf.css">
+    <link rel="stylesheet" href="css/splash.css" />
+    <link rel="stylesheet" href="css/mobile-perf.css" />
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#f8fafc">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Subjects Online">
-    <link rel="apple-touch-icon" href="images/icon-512.png"></head>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#f8fafc" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Subjects Online" />
+    <link rel="apple-touch-icon" href="images/icon-512.png" />
+  </head>
 
-<body class="bg-slate-50 font-body antialiased text-slate-900 overflow-hidden">
-
+  <body
+    class="bg-slate-50 font-body antialiased text-slate-900 overflow-hidden"
+  >
     <!-- ===== SPLASH SCREEN ===== -->
-    <div id="splash-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden select-none" style="background-color: #f8fafc;">
+    <div
+      id="splash-screen"
+      class="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden select-none"
+      style="background-color: #f8fafc"
+    >
+      <!-- Subtle Background Glow -->
+      <div
+        class="absolute inset-0 flex items-center justify-center pointer-events-none"
+      >
+        <div
+          class="w-[600px] h-[600px] bg-sky-400/8 rounded-full blur-[120px] opacity-60"
+        ></div>
+      </div>
 
-        <!-- Subtle Background Glow -->
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div class="w-[600px] h-[600px] bg-sky-400/8 rounded-full blur-[120px] opacity-60"></div>
+      <!-- Centerpiece: Logo and Brand -->
+      <div class="relative z-10 flex flex-col items-center">
+        <!-- Logo Mark -->
+        <div class="splash-logo-mark mb-8 flex items-center justify-center">
+          <span class="splash-logo-letter">S</span>
         </div>
 
-        <!-- Centerpiece: Logo and Brand -->
-        <div class="relative z-10 flex flex-col items-center">
-
-            <!-- Logo Mark -->
-            <div class="splash-logo-mark mb-8 flex items-center justify-center">
-                <span class="splash-logo-letter">S</span>
-            </div>
-
-            <!-- Brand Text -->
-            <div class="splash-brand-text flex items-baseline gap-2 md:gap-3">
-                <span class="font-heading text-3xl md:text-5xl font-bold text-slate-800 tracking-tight">Subjects</span>
-                <span class="font-heading text-3xl md:text-5xl font-light text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500">Online</span>
-            </div>
-
-            <!-- Loading Bar -->
-            <div class="splash-loading-wrap mt-12">
-                <div class="splash-loading-bar"></div>
-            </div>
-
+        <!-- Brand Text -->
+        <div class="splash-brand-text flex items-baseline gap-2 md:gap-3">
+          <span
+            class="font-heading text-3xl md:text-5xl font-bold text-slate-800 tracking-tight"
+            >Subjects</span
+          >
+          <span
+            class="font-heading text-3xl md:text-5xl font-light text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500"
+            >Online</span
+          >
         </div>
 
-        <!-- Bottom branding -->
-        <div class="absolute bottom-8 text-center z-10 w-full splash-bottom-text">
-            <p class="text-[10px] tracking-[0.2em] uppercase text-slate-400 font-body font-medium">
-                Enterprise Educational Platform
-            </p>
+        <!-- Loading Bar -->
+        <div class="splash-loading-wrap mt-12">
+          <div class="splash-loading-bar"></div>
         </div>
+      </div>
+
+      <!-- Bottom branding -->
+      <div class="absolute bottom-8 text-center z-10 w-full splash-bottom-text">
+        <p
+          class="text-[10px] tracking-[0.2em] uppercase text-slate-400 font-body font-medium"
+        >
+          Enterprise Educational Platform
+        </p>
+      </div>
     </div>
 
     <script src="js/splash.js"></script>
-<!-- Firebase SDK & Sync -->
+    <!-- Firebase SDK & Sync -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
@@ -74,6 +97,5 @@
     <script src="js/auth.js"></script>
     <script src="js/sync.js"></script>
     <script src="js/pwa.js"></script>
-</body>
+  </body>
 </html>
-

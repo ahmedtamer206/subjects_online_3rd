@@ -1,43 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title id="page-title">Subject — Subjects Online</title>
     <script src="js/page-transition.js"></script>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="c19193c1-aaf3-477d-acd2-56be26abe5ec"></script>
-    <link rel="stylesheet" href="css/tailwind-utilities.css">
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="c19193c1-aaf3-477d-acd2-56be26abe5ec"
+    ></script>
+    <link rel="stylesheet" href="css/tailwind-utilities.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/welcome.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/subject.css">
-    <link rel="stylesheet" href="css/mobile-perf.css">
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/welcome.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/subject.css" />
+    <link rel="stylesheet" href="css/mobile-perf.css" />
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0d1b3e">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Subjects Online">
-    <link rel="apple-touch-icon" href="images/icon-512.png">
-</head>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#0d1b3e" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Subjects Online" />
+    <link rel="apple-touch-icon" href="images/icon-512.png" />
+  </head>
 
-<body class="bg-brand-bg font-body antialiased text-brand-textPrimary min-h-screen relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-white">
-
+  <body
+    class="bg-brand-bg font-body antialiased text-brand-textPrimary min-h-screen relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-white"
+  >
     <!-- THEME BACKGROUND -->
-    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden transition-colors duration-700 app-bg-container">
-        <!-- Main top gradient -->
-        <div class="absolute inset-0 app-bg-top"></div>
-        <!-- Soft glow bottom right -->
-        <div class="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full mix-blend-multiply opacity-50 app-glow-br dark:mix-blend-screen"></div>
-        <!-- Soft glow top left -->
-        <div class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full mix-blend-multiply opacity-30 app-glow-tl dark:mix-blend-screen"></div>
+    <div
+      class="fixed inset-0 z-0 pointer-events-none overflow-hidden transition-colors duration-700 app-bg-container"
+    >
+      <!-- Main top gradient -->
+      <div class="absolute inset-0 app-bg-top"></div>
+      <!-- Soft glow bottom right -->
+      <div
+        class="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full mix-blend-multiply opacity-50 app-glow-br dark:mix-blend-screen"
+      ></div>
+      <!-- Soft glow top left -->
+      <div
+        class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full mix-blend-multiply opacity-30 app-glow-tl dark:mix-blend-screen"
+      ></div>
     </div>
 
     <!-- Navbar injected by JS -->
@@ -46,80 +60,99 @@
          SPOTIFY ALBUM HERO
     ════════════════════════════════════════════════ -->
     <div class="subj-hero" id="subj-hero">
-        <!-- Full-page background (set by JS) -->
-        <div class="subj-hero-bg" id="subj-hero-bg"></div>
+      <!-- Full-page background (set by JS) -->
+      <div class="subj-hero-bg" id="subj-hero-bg"></div>
 
-        <div class="subj-hero-inner">
+      <div class="subj-hero-inner">
+        <!-- Back Button (top-left) -->
+        <a
+          href="javascript:history.back()"
+          class="subj-back-btn"
+          id="subj-back"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+          Back
+        </a>
 
-            <!-- Back Button (top-left) -->
-            <a href="javascript:history.back()" class="subj-back-btn" id="subj-back">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                Back
-            </a>
+        <!-- Album Layout Row -->
+        <div class="subj-album-row">
+          <!-- LEFT: Album Cover Card -->
+          <div
+            class="relative group cursor-pointer flex flex-col items-center justify-center z-10 hero-avatar mb-4 md:mb-0"
+          >
+            <!-- Breathing Aura -->
+            <div
+              class="absolute w-60 h-60 bg-brand-accent rounded-full blur-[60px] opacity-15 animate-[pulse_4s_ease-in-out_infinite] pointer-events-none subj-aura"
+            ></div>
+            <!-- Expanding Sonar Ring -->
+            <div
+              class="absolute w-48 h-48 border border-brand-accent/30 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-20 pointer-events-none subj-sonar"
+            ></div>
 
-            <!-- Album Layout Row -->
-            <div class="subj-album-row">
-
-                <!-- LEFT: Album Cover Card -->
-                <div class="relative group cursor-pointer flex flex-col items-center justify-center z-10 hero-avatar mb-4 md:mb-0">
-                    <!-- Breathing Aura -->
-                    <div class="absolute w-60 h-60 bg-brand-accent rounded-full blur-[60px] opacity-15 animate-[pulse_4s_ease-in-out_infinite] pointer-events-none subj-aura"></div>
-                    <!-- Expanding Sonar Ring -->
-                    <div class="absolute w-48 h-48 border border-brand-accent/30 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] opacity-20 pointer-events-none subj-sonar"></div>
-
-                    <div class="subj-album-cover relative z-10 group-hover:scale-105 transition-transform duration-500" id="subj-album-cover">
-                        <div class="subj-album-glow" id="subj-album-glow"></div>
-                        <div class="subj-album-icon-wrap" id="subj-icon-bg">
-                            <span id="subj-icon" class="subj-album-emoji">📚</span>
-                        </div>
-                        <!-- Subtle shine streak -->
-                        <div class="subj-album-shine"></div>
-                    </div>
-                </div>
-
-                <!-- RIGHT: Info -->
-                <div class="subj-album-info">
-                    <div class="subj-dept-badge" id="subj-dept">Loading…</div>
-                    <h1 class="subj-title" id="subj-title">Loading…</h1>
-                    <p class="subj-desc" id="subj-desc">Please wait.</p>
-
-                    <!-- Stats Row -->
-                    <div class="subj-stats-row">
-                        <div class="subj-stat">
-                            <span class="subj-stat-num">6</span>
-                            <span class="subj-stat-label">Study Sections</span>
-                        </div>
-                        <div class="subj-stat-divider"></div>
-                        <div class="subj-stat">
-                            <span class="subj-stat-num">2</span>
-                            <span class="subj-stat-label">Doctor Updates</span>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="subj-album-cover relative z-10 group-hover:scale-105 transition-transform duration-500"
+              id="subj-album-cover"
+            >
+              <div class="subj-album-glow" id="subj-album-glow"></div>
+              <div class="subj-album-icon-wrap" id="subj-icon-bg">
+                <span id="subj-icon" class="subj-album-emoji">📚</span>
+              </div>
+              <!-- Subtle shine streak -->
+              <div class="subj-album-shine"></div>
             </div>
+          </div>
+
+          <!-- RIGHT: Info -->
+          <div class="subj-album-info">
+            <div class="subj-dept-badge" id="subj-dept">Loading…</div>
+            <h1 class="subj-title" id="subj-title">Loading…</h1>
+            <p class="subj-desc" id="subj-desc">Please wait.</p>
+
+            <!-- Stats Row -->
+            <div class="subj-stats-row">
+              <div class="subj-stat">
+                <span class="subj-stat-num">6</span>
+                <span class="subj-stat-label">Study Sections</span>
+              </div>
+              <div class="subj-stat-divider"></div>
+              <div class="subj-stat">
+                <span class="subj-stat-num">2</span>
+                <span class="subj-stat-label">Doctor Updates</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- ════════════════════════════════════════════════
          MAIN CONTENT
     ════════════════════════════════════════════════ -->
     <main class="relative z-10 w-full max-w-6xl mx-auto px-6 pb-24">
-
-        <!-- ── TAB NAV ────────────────────────────── -->
-        <div class="tab-nav-wrap">
-            <div class="tab-nav" id="tab-nav" role="tablist">
-                <!-- Injected by JS -->
-            </div>
+      <!-- ── TAB NAV ────────────────────────────── -->
+      <div class="tab-nav-wrap">
+        <div class="tab-nav" id="tab-nav" role="tablist">
+          <!-- Injected by JS -->
         </div>
+      </div>
 
-        <!-- ── SPOTLIGHT PANEL ───────────────────── -->
-        <div class="spotlight-wrap" id="spotlight-wrap">
-            <!-- Injected by JS -->
-        </div>
-
+      <!-- ── SPOTLIGHT PANEL ───────────────────── -->
+      <div class="spotlight-wrap" id="spotlight-wrap">
+        <!-- Injected by JS -->
+      </div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -135,6 +168,5 @@
     <script src="js/data.js"></script>
     <script src="js/subject.js"></script>
     <script src="js/pwa.js"></script>
-</body>
-
+  </body>
 </html>

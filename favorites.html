@@ -1,195 +1,311 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorites — Subjects Online</title>
     <!-- Page Script -->
     <script src="js/page-transition.js"></script>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="c19193c1-aaf3-477d-acd2-56be26abe5ec"></script>
-    <link rel="stylesheet" href="css/tailwind-utilities.css">
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="c19193c1-aaf3-477d-acd2-56be26abe5ec"
+    ></script>
+    <link rel="stylesheet" href="css/tailwind-utilities.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/welcome.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/mobile-perf.css">
-    <link rel="stylesheet" href="css/favorites.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/welcome.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/mobile-perf.css" />
+    <link rel="stylesheet" href="css/favorites.css" />
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0d1b3e">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Subjects Online">
-    <link rel="apple-touch-icon" href="images/icon-512.png">
-</head>
-<body class="bg-brand-bg font-body antialiased text-brand-textPrimary min-h-screen relative overflow-x-hidden">
-
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#0d1b3e" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Subjects Online" />
+    <link rel="apple-touch-icon" href="images/icon-512.png" />
+  </head>
+  <body
+    class="bg-brand-bg font-body antialiased text-brand-textPrimary min-h-screen relative overflow-x-hidden"
+  >
     <!-- Ambient Glowing Background Aura -->
     <div class="fav-bg-glow">
-        <div class="fav-glow-orb-1"></div>
-        <div class="fav-glow-orb-2"></div>
-        <div class="fav-glow-orb-3"></div>
+      <div class="fav-glow-orb-1"></div>
+      <div class="fav-glow-orb-2"></div>
+      <div class="fav-glow-orb-3"></div>
     </div>
 
     <!-- Shared Navbar injected by JS -->
 
     <!-- Main Container -->
-    <main class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 page-content">
+    <main
+      class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 page-content"
+    >
+      <!-- Hero Section -->
+      <section
+        class="fav-hero relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6"
+      >
+        <div class="fav-header-card">
+          <!-- Background Orbs inside Card -->
+          <div class="card-ambient-orb orb-amber" aria-hidden="true"></div>
+          <div class="card-ambient-orb orb-rose" aria-hidden="true"></div>
 
-        <!-- Hero Section -->
-        <section class="fav-hero relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="fav-header-card">
-                <!-- Background Orbs inside Card -->
-                <div class="card-ambient-orb orb-amber" aria-hidden="true"></div>
-                <div class="card-ambient-orb orb-rose" aria-hidden="true"></div>
-
-                <div class="fav-card-inner">
-                    <!-- 3D Master Custom Icon (Heart / Love like Navbar) -->
-                    <div class="fav-icon-master-box">
-                        <div class="fav-icon-halo-glow" aria-hidden="true"></div>
-                        <div class="fav-icon-glass-circle">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#heart_grad)" filter="drop-shadow(0 4px 10px rgba(244,63,94,0.35))"/>
-                                <defs>
-                                    <linearGradient id="heart_grad" x1="2" y1="3" x2="22" y2="21" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#F43F5E"/>
-                                        <stop offset="0.5" stop-color="#E11D48"/>
-                                        <stop offset="1" stop-color="#BE123C"/>
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- Text & Titles -->
-                    <div class="fav-card-text-col">
-                        <div class="fav-pill-badge">
-                            <span class="fav-star-sparkle">❤️</span>
-                            <span>Curated Deck</span>
-                        </div>
-
-                        <h1 class="fav-header-title">
-                            <span class="word-fav-my">My</span><span class="word-fav-favorites">Favorites</span>
-                        </h1>
-
-                        <p class="fav-header-subtitle">
-                            All your bookmarked course subjects and professors' academic essays organized in one synchronized hub.
-                        </p>
-                    </div>
-                </div>
+          <div class="fav-card-inner">
+            <!-- 3D Master Custom Icon (Heart / Love like Navbar) -->
+            <div class="fav-icon-master-box">
+              <div class="fav-icon-halo-glow" aria-hidden="true"></div>
+              <div class="fav-icon-glass-circle">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    fill="url(#heart_grad)"
+                    filter="drop-shadow(0 4px 10px rgba(244,63,94,0.35))"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="heart_grad"
+                      x1="2"
+                      y1="3"
+                      x2="22"
+                      y2="21"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#F43F5E" />
+                      <stop offset="0.5" stop-color="#E11D48" />
+                      <stop offset="1" stop-color="#BE123C" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
             </div>
 
-            <!-- Stats Deck -->
-            <div class="fav-stats-deck" id="fav-stats-deck">
-                <div class="fav-stat-card">
-                    <div class="fav-stat-icon-wrap" style="background: rgba(244, 63, 94, 0.12); color: #f43f5e;">
-                        ❤️
-                    </div>
-                    <div class="fav-stat-value" id="stat-total">0</div>
-                    <div class="fav-stat-label">Total Saved</div>
-                </div>
+            <!-- Text & Titles -->
+            <div class="fav-card-text-col">
+              <div class="fav-pill-badge">
+                <span class="fav-star-sparkle">❤️</span>
+                <span>Curated Deck</span>
+              </div>
 
-                <div class="fav-stat-card">
-                    <div class="fav-stat-icon-wrap" style="background: rgba(14, 165, 233, 0.12); color: #0ea5e9;">
-                        📚
-                    </div>
-                    <div class="fav-stat-value" id="stat-subjects">0</div>
-                    <div class="fav-stat-label">Course Subjects</div>
-                </div>
+              <h1 class="fav-header-title">
+                <span class="word-fav-my">My</span
+                ><span class="word-fav-favorites">Favorites</span>
+              </h1>
 
-                <div class="fav-stat-card">
-                    <div class="fav-stat-icon-wrap" style="background: rgba(139, 92, 246, 0.12); color: #8b5cf6;">
-                        ✍️
-                    </div>
-                    <div class="fav-stat-value" id="stat-essays">0</div>
-                    <div class="fav-stat-label">Doctor Essays</div>
-                </div>
+              <p class="fav-header-subtitle">
+                All your bookmarked course subjects and professors' academic
+                essays organized in one synchronized hub.
+              </p>
             </div>
-        </section>
-
-
-
-        <!-- Cards Grid -->
-        <div id="favorites-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-        <!-- Search / Filter No Results Box -->
-        <div id="fav-no-results" class="hidden flex-col items-center justify-center py-20 text-center">
-            <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4 text-3xl">
-                🔍
-            </div>
-            <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--color-text-primary);">No matching items</h3>
-            <p class="text-sm max-w-sm mb-6" style="color: var(--color-text-secondary);">We couldn't find anything matching your current search or filter criteria.</p>
-            <button id="fav-reset-filters-btn" class="fav-btn-secondary text-sm">
-                Reset Filters
-            </button>
+          </div>
         </div>
 
-        <!-- Empty State (When no favorites exist) -->
-        <div id="favorites-empty" class="hidden">
-            <div class="fav-empty-box">
-                <div class="fav-empty-star-wrap">
-                    <div class="fav-empty-star-glow"></div>
-                    <div class="fav-empty-star-circle">
-                        ❤️
-                    </div>
-                </div>
-
-                <h2 class="font-heading text-2xl sm:text-3xl font-extrabold mb-3" style="color: var(--color-text-primary);">
-                    Your Favorites is Empty
-                </h2>
-                <p class="text-sm sm:text-base max-w-md mx-auto mb-8 leading-relaxed opacity-80" style="color: var(--color-text-secondary);">
-                    Bookmark important subjects and academic essays by tapping the heart icon (<span class="text-rose-500 font-bold">❤</span>) to build your personalized study board.
-                </p>
-
-                <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
-                    <a href="browse.html" class="fav-btn-primary">
-                        <span>Browse Courses</span>
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </a>
-                    <a href="essays.html" class="fav-btn-secondary">
-                        <span>Explore Essays</span>
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </a>
-                </div>
-
-                <!-- Suggestions preview -->
-                <div class="pt-8 border-t border-black/5 dark:border-white/10 text-left">
-                    <div class="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                        <span>✨ Recommended to Bookmark</span>
-                    </div>
-                    <div id="fav-suggestions-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        <!-- Populated by JS -->
-                    </div>
-                </div>
+        <!-- Stats Deck -->
+        <div class="fav-stats-deck" id="fav-stats-deck">
+          <div class="fav-stat-card">
+            <div
+              class="fav-stat-icon-wrap"
+              style="background: rgba(244, 63, 94, 0.12); color: #f43f5e"
+            >
+              ❤️
             </div>
-        </div>
+            <div class="fav-stat-value" id="stat-total">0</div>
+            <div class="fav-stat-label">Total Saved</div>
+          </div>
 
+          <div class="fav-stat-card">
+            <div
+              class="fav-stat-icon-wrap"
+              style="background: rgba(14, 165, 233, 0.12); color: #0ea5e9"
+            >
+              📚
+            </div>
+            <div class="fav-stat-value" id="stat-subjects">0</div>
+            <div class="fav-stat-label">Course Subjects</div>
+          </div>
+
+          <div class="fav-stat-card">
+            <div
+              class="fav-stat-icon-wrap"
+              style="background: rgba(139, 92, 246, 0.12); color: #8b5cf6"
+            >
+              ✍️
+            </div>
+            <div class="fav-stat-value" id="stat-essays">0</div>
+            <div class="fav-stat-label">Doctor Essays</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cards Grid -->
+      <div
+        id="favorites-grid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      ></div>
+
+      <!-- Search / Filter No Results Box -->
+      <div
+        id="fav-no-results"
+        class="hidden flex-col items-center justify-center py-20 text-center"
+      >
+        <div
+          class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4 text-3xl"
+        >
+          🔍
+        </div>
+        <h3
+          class="font-heading text-xl font-bold mb-2"
+          style="color: var(--color-text-primary)"
+        >
+          No matching items
+        </h3>
+        <p
+          class="text-sm max-w-sm mb-6"
+          style="color: var(--color-text-secondary)"
+        >
+          We couldn't find anything matching your current search or filter
+          criteria.
+        </p>
+        <button id="fav-reset-filters-btn" class="fav-btn-secondary text-sm">
+          Reset Filters
+        </button>
+      </div>
+
+      <!-- Empty State (When no favorites exist) -->
+      <div id="favorites-empty" class="hidden">
+        <div class="fav-empty-box">
+          <div class="fav-empty-star-wrap">
+            <div class="fav-empty-star-glow"></div>
+            <div class="fav-empty-star-circle">❤️</div>
+          </div>
+
+          <h2
+            class="font-heading text-2xl sm:text-3xl font-extrabold mb-3"
+            style="color: var(--color-text-primary)"
+          >
+            Your Favorites is Empty
+          </h2>
+          <p
+            class="text-sm sm:text-base max-w-md mx-auto mb-8 leading-relaxed opacity-80"
+            style="color: var(--color-text-secondary)"
+          >
+            Bookmark important subjects and academic essays by tapping the heart
+            icon (<span class="text-rose-500 font-bold">❤</span>) to build your
+            personalized study board.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
+            <a href="browse.html" class="fav-btn-primary">
+              <span>Browse Courses</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+            <a href="essays.html" class="fav-btn-secondary">
+              <span>Explore Essays</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Suggestions preview -->
+          <div
+            class="pt-8 border-t border-black/5 dark:border-white/10 text-left"
+          >
+            <div
+              class="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400"
+            >
+              <span>✨ Recommended to Bookmark</span>
+            </div>
+            <div
+              id="fav-suggestions-grid"
+              class="grid grid-cols-1 sm:grid-cols-3 gap-3"
+            >
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Confirmation Modal -->
     <div id="fav-clear-modal" class="fav-modal-backdrop">
-        <div class="fav-modal-content">
-            <div class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-500 flex items-center justify-center text-2xl mx-auto mb-4">
-                ⚠️
-            </div>
-            <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--color-text-primary);">Clear All Favorites?</h3>
-            <p class="text-sm mb-6 leading-relaxed" style="color: var(--color-text-secondary);">
-                Are you sure you want to remove all bookmarked courses and essays? This action cannot be undone.
-            </p>
-            <div class="flex items-center justify-center gap-3">
-                <button id="modal-cancel-btn" class="fav-btn-secondary text-sm py-2.5 px-5">Cancel</button>
-                <button id="modal-confirm-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold text-sm py-2.5 px-6 rounded-full shadow-lg shadow-red-500/30 transition-all hover:-translate-y-0.5">Yes, Clear All</button>
-            </div>
+      <div class="fav-modal-content">
+        <div
+          class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-500 flex items-center justify-center text-2xl mx-auto mb-4"
+        >
+          ⚠️
         </div>
+        <h3
+          class="font-heading text-xl font-bold mb-2"
+          style="color: var(--color-text-primary)"
+        >
+          Clear All Favorites?
+        </h3>
+        <p
+          class="text-sm mb-6 leading-relaxed"
+          style="color: var(--color-text-secondary)"
+        >
+          Are you sure you want to remove all bookmarked courses and essays?
+          This action cannot be undone.
+        </p>
+        <div class="flex items-center justify-center gap-3">
+          <button
+            id="modal-cancel-btn"
+            class="fav-btn-secondary text-sm py-2.5 px-5"
+          >
+            Cancel
+          </button>
+          <button
+            id="modal-confirm-btn"
+            class="bg-red-600 hover:bg-red-700 text-white font-bold text-sm py-2.5 px-6 rounded-full shadow-lg shadow-red-500/30 transition-all hover:-translate-y-0.5"
+          >
+            Yes, Clear All
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Floating Toast Notification -->
     <div id="fav-toast" class="fav-toast">
-        <span id="fav-toast-msg">Item removed from favorites</span>
-        <button id="fav-toast-undo" class="fav-toast-undo">Undo</button>
+      <span id="fav-toast-msg">Item removed from favorites</span>
+      <button id="fav-toast-undo" class="fav-toast-undo">Undo</button>
     </div>
 
     <!-- Scripts -->
@@ -206,5 +322,5 @@
     <script src="js/data.js"></script>
     <script src="js/favorites.js"></script>
     <script src="js/pwa.js"></script>
-</body>
+  </body>
 </html>

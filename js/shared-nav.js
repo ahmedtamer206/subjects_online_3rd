@@ -1,122 +1,133 @@
 /* shared-nav.js — Injects the shared navbar and highlights the current page */
 (function () {
-    let rawPage = window.location.pathname.split('/').filter(Boolean).pop() || 'dashboard.html';
-    if (!rawPage.includes('.')) {
-        rawPage += '.html';
+  let rawPage =
+    window.location.pathname.split("/").filter(Boolean).pop() ||
+    "dashboard.html";
+  if (!rawPage.includes(".")) {
+    rawPage += ".html";
+  }
+  const currentPage = rawPage;
+
+  const userName = localStorage.getItem("subjectsOnlineName") || "Student";
+  const initial = userName[0].toUpperCase();
+
+  // Sanitize old Arabic values from local storage
+  let storedDept = localStorage.getItem("subjectsOnlineDept");
+  if (storedDept && storedDept.includes("(")) {
+    storedDept = storedDept.replace(/\s*\(.*?\)\s*/g, "").trim();
+    localStorage.setItem("subjectsOnlineDept", storedDept);
+  }
+
+  const avatarTheme =
+    localStorage.getItem("subjectsOnlineAvatarTheme") || "blue";
+  const avatarImage = localStorage.getItem("subjectsOnlineAvatarImage") || null;
+
+  // Apply global preferences
+  const viewDensity = localStorage.getItem("soViewDensity") || "comfortable";
+  if (viewDensity === "compact") {
+    document.documentElement.classList.add("density-compact");
+    document.body?.classList.add("density-compact");
+  } else {
+    document.documentElement.classList.remove("density-compact");
+    document.body?.classList.remove("density-compact");
+  }
+
+  const reduceMotion = localStorage.getItem("soReduceMotion") === "true";
+  if (reduceMotion) {
+    document.documentElement.classList.add("reduce-motion");
+    document.body?.classList.add("reduce-motion");
+    if (window.gsap) {
+      try {
+        gsap.globalTimeline.timeScale(100);
+      } catch (e) {}
     }
-    const currentPage = rawPage;
+  } else {
+    document.documentElement.classList.remove("reduce-motion");
+    document.body?.classList.remove("reduce-motion");
+  }
 
-    const userName = localStorage.getItem('subjectsOnlineName') || 'Student';
-    const initial = userName[0].toUpperCase();
+  const readingFont = localStorage.getItem("soReadingFontSize") || "normal";
+  document.documentElement.setAttribute("data-font-size", readingFont);
 
-    // Sanitize old Arabic values from local storage
-    let storedDept = localStorage.getItem('subjectsOnlineDept');
-    if (storedDept && storedDept.includes('(')) {
-        storedDept = storedDept.replace(/\s*\(.*?\)\s*/g, '').trim();
-        localStorage.setItem('subjectsOnlineDept', storedDept);
+  const progressStyle = localStorage.getItem("soProgressStyle") || "ring";
+  document.documentElement.setAttribute("data-progress-style", progressStyle);
+
+  // Global observer for progress-ring-wrapper on content pages
+  function syncPageProgressStyle() {
+    const style = localStorage.getItem("soProgressStyle") || "ring";
+    const wrapper = document.getElementById("progress-ring-wrapper");
+    if (!wrapper) return;
+
+    const textCircle = document.getElementById("progress-text-circle");
+    const pct = textCircle ? parseInt(textCircle.textContent) || 0 : 0;
+
+    let linearTrack = wrapper.querySelector(".linear-progress-track");
+    if (style === "bar") {
+      if (!linearTrack) {
+        linearTrack = document.createElement("div");
+        linearTrack.className =
+          "linear-progress-track w-full h-3 bg-slate-200 dark:bg-slate-700/80 rounded-full overflow-hidden mt-3";
+        linearTrack.innerHTML = `<div class="linear-progress-fill h-full bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 rounded-full transition-all duration-700" style="width: ${pct}%;"></div>`;
+        const centerContent = wrapper.querySelector(
+          "div:not(#progress-tooltip)",
+        );
+        if (centerContent) centerContent.appendChild(linearTrack);
+      } else {
+        const fill = linearTrack.querySelector(".linear-progress-fill");
+        if (fill) fill.style.width = `${pct}%`;
+      }
+    } else if (linearTrack) {
+      linearTrack.remove();
     }
+  }
 
-    const avatarTheme = localStorage.getItem('subjectsOnlineAvatarTheme') || 'blue';
-    const avatarImage = localStorage.getItem('subjectsOnlineAvatarImage') || null;
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      syncPageProgressStyle();
+      setTimeout(syncPageProgressStyle, 300);
+      setTimeout(syncPageProgressStyle, 1000);
+    });
+  } else {
+    syncPageProgressStyle();
+    setTimeout(syncPageProgressStyle, 300);
+    setTimeout(syncPageProgressStyle, 1000);
+  }
 
-    // Apply global preferences
-    const viewDensity = localStorage.getItem('soViewDensity') || 'comfortable';
-    if (viewDensity === 'compact') {
-        document.documentElement.classList.add('density-compact');
-        document.body?.classList.add('density-compact');
-    } else {
-        document.documentElement.classList.remove('density-compact');
-        document.body?.classList.remove('density-compact');
-    }
+  const themeGradients = {
+    blue: "linear-gradient(135deg,#bfdbfe,#dbeafe)",
+    emerald: "linear-gradient(135deg,#6ee7b7,#d1fae5)",
+    rose: "linear-gradient(135deg,#fda4af,#ffe4e6)",
+    violet: "linear-gradient(135deg,#c4b5fd,#ede9fe)",
+    amber: "linear-gradient(135deg,#fcd34d,#fed7aa)",
+    indigo: "linear-gradient(135deg,#a5b4fc,#c7d2fe)",
+  };
+  const themeTextColors = {
+    blue: "#1d4ed8",
+    emerald: "#047857",
+    rose: "#be123c",
+    violet: "#6d28d9",
+    amber: "#b45309",
+    indigo: "#3730a3",
+  };
 
-    const reduceMotion = localStorage.getItem('soReduceMotion') === 'true';
-    if (reduceMotion) {
-        document.documentElement.classList.add('reduce-motion');
-        document.body?.classList.add('reduce-motion');
-        if (window.gsap) {
-            try {
-                gsap.globalTimeline.timeScale(100);
-            } catch (e) { }
-        }
-    } else {
-        document.documentElement.classList.remove('reduce-motion');
-        document.body?.classList.remove('reduce-motion');
-    }
+  const bgGradient = avatarImage
+    ? "transparent"
+    : themeGradients[avatarTheme] || themeGradients["blue"];
+  const textColor = themeTextColors[avatarTheme] || themeTextColors["blue"];
 
-    const readingFont = localStorage.getItem('soReadingFontSize') || 'normal';
-    document.documentElement.setAttribute('data-font-size', readingFont);
+  // Construct avatar content
+  const avatarContent = avatarImage
+    ? `<img src="${avatarImage}" alt="User Avatar" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">`
+    : initial;
+  const isDashboardPage =
+    currentPage === "dashboard.html" ||
+    currentPage === "index.html" ||
+    currentPage === "" ||
+    currentPage === "/" ||
+    !!document.getElementById("wi-section") ||
+    !!document.querySelector(".hero-container");
 
-    const progressStyle = localStorage.getItem('soProgressStyle') || 'ring';
-    document.documentElement.setAttribute('data-progress-style', progressStyle);
-
-    // Global observer for progress-ring-wrapper on content pages
-    function syncPageProgressStyle() {
-        const style = localStorage.getItem('soProgressStyle') || 'ring';
-        const wrapper = document.getElementById('progress-ring-wrapper');
-        if (!wrapper) return;
-
-        const textCircle = document.getElementById('progress-text-circle');
-        const pct = textCircle ? parseInt(textCircle.textContent) || 0 : 0;
-
-        let linearTrack = wrapper.querySelector('.linear-progress-track');
-        if (style === 'bar') {
-            if (!linearTrack) {
-                linearTrack = document.createElement('div');
-                linearTrack.className = 'linear-progress-track w-full h-3 bg-slate-200 dark:bg-slate-700/80 rounded-full overflow-hidden mt-3';
-                linearTrack.innerHTML = `<div class="linear-progress-fill h-full bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 rounded-full transition-all duration-700" style="width: ${pct}%;"></div>`;
-                const centerContent = wrapper.querySelector('div:not(#progress-tooltip)');
-                if (centerContent) centerContent.appendChild(linearTrack);
-            } else {
-                const fill = linearTrack.querySelector('.linear-progress-fill');
-                if (fill) fill.style.width = `${pct}%`;
-            }
-        } else if (linearTrack) {
-            linearTrack.remove();
-        }
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            syncPageProgressStyle();
-            setTimeout(syncPageProgressStyle, 300);
-            setTimeout(syncPageProgressStyle, 1000);
-        });
-    } else {
-        syncPageProgressStyle();
-        setTimeout(syncPageProgressStyle, 300);
-        setTimeout(syncPageProgressStyle, 1000);
-    }
-
-    const themeGradients = {
-        'blue': 'linear-gradient(135deg,#bfdbfe,#dbeafe)',
-        'emerald': 'linear-gradient(135deg,#6ee7b7,#d1fae5)',
-        'rose': 'linear-gradient(135deg,#fda4af,#ffe4e6)',
-        'violet': 'linear-gradient(135deg,#c4b5fd,#ede9fe)',
-        'amber': 'linear-gradient(135deg,#fcd34d,#fed7aa)',
-        'indigo': 'linear-gradient(135deg,#a5b4fc,#c7d2fe)'
-    };
-    const themeTextColors = {
-        'blue': '#1d4ed8', 'emerald': '#047857', 'rose': '#be123c', 'violet': '#6d28d9',
-        'amber': '#b45309', 'indigo': '#3730a3'
-    };
-
-    const bgGradient = avatarImage ? 'transparent' : (themeGradients[avatarTheme] || themeGradients['blue']);
-    const textColor = themeTextColors[avatarTheme] || themeTextColors['blue'];
-
-    // Construct avatar content
-    const avatarContent = avatarImage
-        ? `<img src="${avatarImage}" alt="User Avatar" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">`
-        : initial;
-    const isDashboardPage = (
-        currentPage === 'dashboard.html' ||
-        currentPage === 'index.html' ||
-        currentPage === '' ||
-        currentPage === '/' ||
-        !!document.getElementById('wi-section') ||
-        !!document.querySelector('.hero-container')
-    );
-
-    const dashboardNavHTML = `
+  const dashboardNavHTML = `
             <a href="#wi-section" title="What's Inside" class="pill-nav-item pill-nav-wi" onclick="const el=document.getElementById('wi-section');if(el){el.scrollIntoView({behavior:'smooth'});return false;}">
                 <svg width="17" height="17" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 01-2-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 01-2-2m0 0V5a2 2 0 01-2-2h6a2 2 0 012 2v2M7 7h10"></path>
@@ -134,7 +145,7 @@
             </a>
     `;
 
-    const subpageNavHTML = `
+  const subpageNavHTML = `
             <a href="dashboard.html" title="Home" class="pill-nav-item pill-nav-home">
                 <svg width="17" height="17" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
@@ -144,7 +155,7 @@
 
             <div class="pill-sep" aria-hidden="true"></div>
 
-            <a href="browse.html" title="Browse" class="pill-nav-item pill-nav-browse ${currentPage === 'browse.html' ? 'active' : ''}">
+            <a href="browse.html" title="Browse" class="pill-nav-item pill-nav-browse ${currentPage === "browse.html" ? "active" : ""}">
                 <svg width="17" height="17" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
@@ -155,7 +166,7 @@
 
             <div class="pill-sep" aria-hidden="true"></div>
 
-            <a href="library.html" title="Library" class="pill-nav-item pill-nav-library ${currentPage === 'library.html' ? 'active' : ''}">
+            <a href="library.html" title="Library" class="pill-nav-item pill-nav-library ${currentPage === "library.html" ? "active" : ""}">
                 <svg width="17" height="17" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
@@ -164,7 +175,7 @@
 
             <div class="pill-sep" aria-hidden="true"></div>
 
-            <a href="essays.html" title="Essays" class="pill-nav-item pill-nav-essays ${currentPage === 'essays.html' ? 'active' : ''}">
+            <a href="essays.html" title="Essays" class="pill-nav-item pill-nav-essays ${currentPage === "essays.html" ? "active" : ""}">
                 <svg width="17" height="17" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
@@ -173,7 +184,7 @@
 
             <div class="pill-sep" aria-hidden="true"></div>
 
-            <a href="favorites.html" title="Favorites" class="pill-nav-item pill-nav-favorites ${currentPage === 'favorites.html' ? 'active' : ''}">
+            <a href="favorites.html" title="Favorites" class="pill-nav-item pill-nav-favorites ${currentPage === "favorites.html" ? "active" : ""}">
                 <div class="heart-icon-wrap" style="display:inline-flex;align-items:center;justify-content:center;position:relative;">
                     <svg width="17" height="17" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
@@ -183,7 +194,7 @@
             </a>
     `;
 
-    const navHTML = `
+  const navHTML = `
     <header id="shared-nav" class="shared-main-navbar" style="
         position: absolute; top: 0; left: 0; right: 0; z-index: 100;
         width: 100%;
@@ -235,7 +246,9 @@
             ${isDashboardPage ? dashboardNavHTML : subpageNavHTML}
         </nav>
 
-        ${isDashboardPage ? `
+        ${
+          isDashboardPage
+            ? `
         <!-- RIGHT SIDE: User Profile Section / Icon -->
         <a id="shared-nav-profile-right" href="profile.html" title="Profile Settings — ${userName}" style="
             display: flex;
@@ -259,7 +272,9 @@
                 ${avatarContent}
             </div>
         </a>
-        ` : ''}
+        `
+            : ""
+        }
     </header>
     <style>
         /* ═══════════════════════════════════════════════════
@@ -548,8 +563,7 @@
     </style>
     `;
 
-
-    const footerHTML = `
+  const footerHTML = `
     <footer style="
         margin-top: 5rem;
         width: 100%;
@@ -634,41 +648,45 @@
     </footer>
     `;
 
-    // Inject at top of body
-    document.body.insertAdjacentHTML('afterbegin', navHTML);
+  // Inject at top of body
+  document.body.insertAdjacentHTML("afterbegin", navHTML);
 
-    // Scroll spy for Dashboard page navigation pill items
-    if (isDashboardPage) {
-        window.addEventListener('scroll', () => {
-            const wiSec = document.getElementById('wi-section');
-            const tygSec = document.getElementById('tyg-section');
-            const wiItem = document.querySelector('#custom-landing-pill .pill-nav-wi');
-            const tygItem = document.querySelector('#custom-landing-pill .pill-nav-tyg');
+  // Scroll spy for Dashboard page navigation pill items
+  if (isDashboardPage) {
+    window.addEventListener("scroll", () => {
+      const wiSec = document.getElementById("wi-section");
+      const tygSec = document.getElementById("tyg-section");
+      const wiItem = document.querySelector(
+        "#custom-landing-pill .pill-nav-wi",
+      );
+      const tygItem = document.querySelector(
+        "#custom-landing-pill .pill-nav-tyg",
+      );
 
-            if (!wiItem || !tygItem) return;
+      if (!wiItem || !tygItem) return;
 
-            const scrollPos = window.scrollY + 250;
-            const wiTop = wiSec ? wiSec.offsetTop : 999999;
-            const tygTop = tygSec ? tygSec.offsetTop : 999999;
+      const scrollPos = window.scrollY + 250;
+      const wiTop = wiSec ? wiSec.offsetTop : 999999;
+      const tygTop = tygSec ? tygSec.offsetTop : 999999;
 
-            [wiItem, tygItem].forEach(el => el.classList.remove('active'));
+      [wiItem, tygItem].forEach((el) => el.classList.remove("active"));
 
-            if (scrollPos >= tygTop) {
-                tygItem.classList.add('active');
-            } else if (scrollPos >= wiTop) {
-                wiItem.classList.add('active');
-            }
-        });
-    }
+      if (scrollPos >= tygTop) {
+        tygItem.classList.add("active");
+      } else if (scrollPos >= wiTop) {
+        wiItem.classList.add("active");
+      }
+    });
+  }
 
-    // Inject footer only on dashboard
-    if (isDashboardPage) {
-        document.body.insertAdjacentHTML('beforeend', footerHTML);
-    }
+  // Inject footer only on dashboard
+  if (isDashboardPage) {
+    document.body.insertAdjacentHTML("beforeend", footerHTML);
+  }
 
-    // ── Global Sky Blue Theme Injection ──────────────────────────────────────────
-    const globalTheme = document.createElement('style');
-    globalTheme.textContent = `
+  // ── Global Sky Blue Theme Injection ──────────────────────────────────────────
+  const globalTheme = document.createElement("style");
+  globalTheme.textContent = `
         /* =====================================================
            GLOBAL WHITE & SKY BLUE THEME — Subjects Online
            Applied site-wide via shared-nav.js
@@ -816,11 +834,11 @@
         }
         html:not(.dark-mode) .topbar-title { color: #94A3B8 !important; }
     `;
-    document.head.appendChild(globalTheme);
+  document.head.appendChild(globalTheme);
 
-    // ── Global Dark Theme Injection (Applies to all pages) ──────────────────────
-    const darkTheme = document.createElement('style');
-    darkTheme.textContent = `
+  // ── Global Dark Theme Injection (Applies to all pages) ──────────────────────
+  const darkTheme = document.createElement("style");
+  darkTheme.textContent = `
         /* =====================================================
            GLOBAL DARK MODE THEME (Applies to all pages)
            ===================================================== */
@@ -912,84 +930,92 @@
         html.dark-mode ::-webkit-scrollbar-thumb { background: #1e293b !important; }
         html.dark-mode ::-webkit-scrollbar-thumb:hover { background: #334155 !important; }
     `;
-    document.head.appendChild(darkTheme);
+  document.head.appendChild(darkTheme);
 
-    // ── Sign Out Button ────────────────────────────────────────────────────────
-    const signoutBtn = document.getElementById('snav-signout-btn');
-    if (signoutBtn) {
-        signoutBtn.addEventListener('click', () => {
-            // Use Firebase signOut if available, otherwise just clear storage
-            if (typeof signOutUser === 'function') {
-                signOutUser('index.html');
-            } else {
-                localStorage.removeItem('subjectsOnlineName');
-                localStorage.removeItem('subjectsOnlineDept');
-                localStorage.removeItem('subjectsOnlineAvatarImage');
-                localStorage.removeItem('subjectsOnlineAvatarTheme');
-                localStorage.removeItem('subjectsOnlineUID');
-                localStorage.removeItem('subjectsOnlineAuthProvider');
-                localStorage.removeItem('subjectsOnlineEmail');
-                localStorage.removeItem('subjectsOnlinePhotoURL');
-                localStorage.removeItem('soPlannerTasks');
-                window.location.href = 'index.html';
-            }
-        });
-    }
+  // ── Sign Out Button ────────────────────────────────────────────────────────
+  const signoutBtn = document.getElementById("snav-signout-btn");
+  if (signoutBtn) {
+    signoutBtn.addEventListener("click", () => {
+      // Use Firebase signOut if available, otherwise just clear storage
+      if (typeof signOutUser === "function") {
+        signOutUser("index.html");
+      } else {
+        localStorage.removeItem("subjectsOnlineName");
+        localStorage.removeItem("subjectsOnlineDept");
+        localStorage.removeItem("subjectsOnlineAvatarImage");
+        localStorage.removeItem("subjectsOnlineAvatarTheme");
+        localStorage.removeItem("subjectsOnlineUID");
+        localStorage.removeItem("subjectsOnlineAuthProvider");
+        localStorage.removeItem("subjectsOnlineEmail");
+        localStorage.removeItem("subjectsOnlinePhotoURL");
+        localStorage.removeItem("soPlannerTasks");
+        window.location.href = "index.html";
+      }
+    });
+  }
 
-    // ── 10. INNER PAGE NAVBAR (always visible on non-dashboard pages) ──────────
-    function initInnerPageNav() {
-        // On dashboard page: return early
-        if (isDashboardPage) return;
+  // ── 10. INNER PAGE NAVBAR (always visible on non-dashboard pages) ──────────
+  function initInnerPageNav() {
+    // On dashboard page: return early
+    if (isDashboardPage) return;
 
-        const logoEl = document.getElementById('shared-nav-logo');
-        const libBtn = document.getElementById('library-nav-btn');
-        const pillNav = document.getElementById('custom-landing-pill');
+    const logoEl = document.getElementById("shared-nav-logo");
+    const libBtn = document.getElementById("library-nav-btn");
+    const pillNav = document.getElementById("custom-landing-pill");
 
-        if (!pillNav) return;
+    if (!pillNav) return;
 
-        // Hide logo & old library shortcut — pill nav replaces them on inner pages
-        if (logoEl) logoEl.style.display = 'none';
-        if (libBtn) libBtn.style.display = 'none';
+    // Hide logo & old library shortcut — pill nav replaces them on inner pages
+    if (logoEl) logoEl.style.display = "none";
+    if (libBtn) libBtn.style.display = "none";
 
-        // Place pill nav at top-center immediately (no delay, no dependency on landing pref)
-        pillNav.style.left = '50%';
-        pillNav.style.right = 'auto';
-        pillNav.style.top = '24px';
-        pillNav.style.transform = 'translateX(-50%)';
+    // Place pill nav at top-center immediately (no delay, no dependency on landing pref)
+    pillNav.style.left = "50%";
+    pillNav.style.right = "auto";
+    pillNav.style.top = "24px";
+    pillNav.style.transform = "translateX(-50%)";
 
-        // Play entrance animation only on the very first load of this page in the session
-        const animKey = 'soNavAnimated_' + currentPage;
-        const alreadyAnimated = sessionStorage.getItem(animKey);
+    // Play entrance animation only on the very first load of this page in the session
+    const animKey = "soNavAnimated_" + currentPage;
+    const alreadyAnimated = sessionStorage.getItem(animKey);
 
-        if (!alreadyAnimated) {
-            sessionStorage.setItem(animKey, 'true');
-            const runAnimation = () => {
-                if (typeof gsap === 'undefined') {
-                    // Fallback: just show it instantly
-                    pillNav.style.opacity = '1';
-                    pillNav.style.transform = 'translateX(-50%)';
-                    return;
-                }
-                gsap.fromTo(pillNav,
-                    { opacity: 0, scale: 0.7, y: -10 },
-                    { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: 'back.out(1.5)', delay: 0.2 }
-                );
-            };
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', runAnimation);
-            } else {
-                runAnimation();
-            }
-        } else {
-            // Already animated this session — show instantly
-            pillNav.style.opacity = '1';
+    if (!alreadyAnimated) {
+      sessionStorage.setItem(animKey, "true");
+      const runAnimation = () => {
+        if (typeof gsap === "undefined") {
+          // Fallback: just show it instantly
+          pillNav.style.opacity = "1";
+          pillNav.style.transform = "translateX(-50%)";
+          return;
         }
+        gsap.fromTo(
+          pillNav,
+          { opacity: 0, scale: 0.7, y: -10 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.55,
+            ease: "back.out(1.5)",
+            delay: 0.2,
+          },
+        );
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", runAnimation);
+      } else {
+        runAnimation();
+      }
+    } else {
+      // Already animated this session — show instantly
+      pillNav.style.opacity = "1";
     }
+  }
 
-    initInnerPageNav();
+  initInnerPageNav();
 
-    // Ensure clean light mode across entire site
-    document.documentElement.classList.remove('dark-mode');
-    localStorage.removeItem('subjectsOnlineTheme');
+  // Ensure clean light mode across entire site
+  document.documentElement.classList.remove("dark-mode");
+  localStorage.removeItem("subjectsOnlineTheme");
 })();

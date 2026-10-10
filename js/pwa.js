@@ -3,48 +3,56 @@
 // =============================================
 
 (function () {
-  'use strict';
+  "use strict";
 
   // ========================
   // 0. PWA Smart Startup Redirect
   // ========================
   (function pwaStartupRedirect() {
     const isStandalone =
-      window.matchMedia('(display-mode: standalone)').matches ||
+      window.matchMedia("(display-mode: standalone)").matches ||
       window.navigator.standalone === true ||
-      document.referrer.includes('android-app://');
+      document.referrer.includes("android-app://");
 
     if (!isStandalone) return;
 
-    const uid = localStorage.getItem('subjectsOnlineUID');
+    const uid = localStorage.getItem("subjectsOnlineUID");
     const path = window.location.pathname;
-    let page = path.split('/').filter(Boolean).pop() || '';
-    if (page && !page.includes('.')) page += '.html';
+    let page = path.split("/").filter(Boolean).pop() || "";
+    if (page && !page.includes(".")) page += ".html";
 
     // Base path = everything before the filename
     // e.g. /Subjects-Online-2/  (handles GitHub Pages subdirectories)
-    const base = path.substring(0, path.lastIndexOf('/') + 1);
+    const base = path.substring(0, path.lastIndexOf("/") + 1);
 
-    const authPages = ['login.html', 'index.html', 'welcome.html', ''];
+    const authPages = ["login.html", "index.html", "welcome.html", ""];
     const protectedPages = [
-      'dashboard.html', 'browse.html', 'profile.html', 'favorites.html',
-      'player.html', 'quizzes.html', 'chapters.html', 'sections.html',
-      'subject.html', 'essays.html'
+      "dashboard.html",
+      "browse.html",
+      "profile.html",
+      "favorites.html",
+      "player.html",
+      "quizzes.html",
+      "chapters.html",
+      "sections.html",
+      "subject.html",
+      "essays.html",
     ];
 
     if (uid) {
       // Already logged in → skip welcome/login, go straight to dashboard
       if (authPages.includes(page)) {
-        const landingTarget = localStorage.getItem('soLandingPage') || 'dashboard.html';
-        if (landingTarget !== 'dashboard.html') {
-          sessionStorage.setItem('soCustomLandingTriggered', 'true');
+        const landingTarget =
+          localStorage.getItem("soLandingPage") || "dashboard.html";
+        if (landingTarget !== "dashboard.html") {
+          sessionStorage.setItem("soCustomLandingTriggered", "true");
         }
         window.location.replace(base + landingTarget);
       }
     } else {
       // Not logged in → don't allow protected pages
       if (protectedPages.includes(page)) {
-        window.location.replace(base + 'login.html');
+        window.location.replace(base + "login.html");
       }
     }
   })();
@@ -53,41 +61,44 @@
   // 1. Detect base path (fixes GitHub Pages subdirectory)
   // ========================
   function getBasePath() {
-    const scripts = document.querySelectorAll('script[src]');
+    const scripts = document.querySelectorAll("script[src]");
     for (const s of scripts) {
-      if (s.src.includes('pwa.js')) {
+      if (s.src.includes("pwa.js")) {
         // e.g. https://user.github.io/repo-name/js/pwa.js → /repo-name/
         const url = new URL(s.src);
-        const parts = url.pathname.split('/');
+        const parts = url.pathname.split("/");
         parts.pop(); // remove pwa.js
         parts.pop(); // remove js/
-        return parts.join('/') + '/';
+        return parts.join("/") + "/";
       }
     }
-    return '/';
+    return "/";
   }
 
   // ========================
   // 2. Register Service Worker
   // ========================
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
       const base = getBasePath();
-      const swUrl = base + 'sw.js';
+      const swUrl = base + "sw.js";
       navigator.serviceWorker
         .register(swUrl, { scope: base })
         .then((reg) => {
-          console.log('[PWA] SW registered. Scope:', reg.scope);
-          reg.addEventListener('updatefound', () => {
+          console.log("[PWA] SW registered. Scope:", reg.scope);
+          reg.addEventListener("updatefound", () => {
             const nw = reg.installing;
-            nw.addEventListener('statechange', () => {
-              if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+            nw.addEventListener("statechange", () => {
+              if (
+                nw.state === "installed" &&
+                navigator.serviceWorker.controller
+              ) {
                 showUpdateToast();
               }
             });
           });
         })
-        .catch((err) => console.warn('[PWA] SW registration failed:', err));
+        .catch((err) => console.warn("[PWA] SW registration failed:", err));
     });
   }
 
@@ -96,27 +107,25 @@
   // ========================
   let deferredPrompt = null;
 
-  window.addEventListener('beforeinstallprompt', (e) => {
+  window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
     deferredPrompt = e; // save it — will be used when user clicks the bubble
   });
 
-  window.addEventListener('appinstalled', () => {
+  window.addEventListener("appinstalled", () => {
     deferredPrompt = null;
     removeBubbleBtn();
-    localStorage.setItem('pwa-installed', 'true');
+    localStorage.setItem("pwa-installed", "true");
   });
-
-
 
   // Expose global trigger function for navbar button
   window.triggerPWAInstall = function () {
     if (deferredPrompt) {
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then(({ outcome }) => {
-        console.log('[PWA] User choice:', outcome);
+        console.log("[PWA] User choice:", outcome);
         deferredPrompt = null;
-        if (outcome === 'accepted') removeBubbleBtn();
+        if (outcome === "accepted") removeBubbleBtn();
       });
     } else {
       showInstallGuide();
@@ -127,11 +136,11 @@
   // 4. Floating Bubble Button
   // ========================
   function showBubbleBtn() {
-    if (localStorage.getItem('so_pwa_dismissed') === 'true') return;
-    if (document.getElementById('pwa-bubble')) return;
+    if (localStorage.getItem("so_pwa_dismissed") === "true") return;
+    if (document.getElementById("pwa-bubble")) return;
 
     // ── Styles ──────────────────────────────
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       @keyframes pwa-float {
         0%,100% { transform: translateY(0px) scale(1); }
@@ -290,8 +299,8 @@
     document.head.appendChild(style);
 
     // ── Markup ──────────────────────────────
-    const bubble = document.createElement('div');
-    bubble.id = 'pwa-bubble';
+    const bubble = document.createElement("div");
+    bubble.id = "pwa-bubble";
     bubble.innerHTML = `
       <button id="pwa-bubble-btn" title="Download App">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -307,20 +316,24 @@
     document.body.appendChild(bubble);
 
     // ── Events ──────────────────────────────
-    document.getElementById('pwa-bubble-btn').addEventListener('click', async () => {
-      window.triggerPWAInstall();
-    });
+    document
+      .getElementById("pwa-bubble-btn")
+      .addEventListener("click", async () => {
+        window.triggerPWAInstall();
+      });
 
-    document.getElementById('pwa-bubble-dismiss').addEventListener('click', () => {
-      localStorage.setItem('so_pwa_dismissed', 'true');
-      removeBubbleBtn();
-    });
+    document
+      .getElementById("pwa-bubble-dismiss")
+      .addEventListener("click", () => {
+        localStorage.setItem("so_pwa_dismissed", "true");
+        removeBubbleBtn();
+      });
   }
 
   function removeBubbleBtn() {
-    const bubble = document.getElementById('pwa-bubble');
+    const bubble = document.getElementById("pwa-bubble");
     if (!bubble) return;
-    bubble.classList.add('hiding');
+    bubble.classList.add("hiding");
     setTimeout(() => bubble.remove(), 400);
   }
 
@@ -328,11 +341,11 @@
   // 5. Update Toast
   // ========================
   function showUpdateToast() {
-    if (document.getElementById('pwa-update-toast')) return;
-    const toast = document.createElement('div');
-    toast.id = 'pwa-update-toast';
+    if (document.getElementById("pwa-update-toast")) return;
+    const toast = document.createElement("div");
+    toast.id = "pwa-update-toast";
 
-    const s = document.createElement('style');
+    const s = document.createElement("style");
     s.textContent = `
       @keyframes pwa-toast-in {
         from { opacity:0; transform:translateX(-50%) translateY(-20px); }
@@ -371,40 +384,58 @@
   // 6. Standalone class
   // ========================
   if (
-    window.matchMedia('(display-mode: standalone)').matches ||
+    window.matchMedia("(display-mode: standalone)").matches ||
     window.navigator.standalone === true
   ) {
-    document.documentElement.classList.add('pwa-standalone');
+    document.documentElement.classList.add("pwa-standalone");
   }
 
   // ========================
   // 7. Manual Install Guide Modal
   // ========================
   function showInstallGuide() {
-    if (document.getElementById('pwa-guide-modal')) return;
+    if (document.getElementById("pwa-guide-modal")) return;
 
     const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
     const isAndroid = /android/i.test(navigator.userAgent);
 
     const steps = isIOS
       ? [
-        { icon: '⬆️', text: 'اضغط على زرار الـ <strong>Share</strong> في Safari' },
-        { icon: '📲', text: 'اختار <strong>"Add to Home Screen"</strong>' },
-        { icon: '✅', text: 'اضغط <strong>Add</strong> وهيتحمل على الشاشة الرئيسية' },
-      ]
+          {
+            icon: "⬆️",
+            text: "اضغط على زرار الـ <strong>Share</strong> في Safari",
+          },
+          { icon: "📲", text: 'اختار <strong>"Add to Home Screen"</strong>' },
+          {
+            icon: "✅",
+            text: "اضغط <strong>Add</strong> وهيتحمل على الشاشة الرئيسية",
+          },
+        ]
       : isAndroid
         ? [
-          { icon: '⋮', text: 'افتح القائمة في <strong>Chrome</strong> (النقاط الثلاثة)' },
-          { icon: '📲', text: 'اختار <strong>"Add to Home screen"</strong>' },
-          { icon: '✅', text: 'اضغط <strong>Add</strong> وجاهز!' },
-        ]
+            {
+              icon: "⋮",
+              text: "افتح القائمة في <strong>Chrome</strong> (النقاط الثلاثة)",
+            },
+            { icon: "📲", text: 'اختار <strong>"Add to Home screen"</strong>' },
+            { icon: "✅", text: "اضغط <strong>Add</strong> وجاهز!" },
+          ]
         : [
-          { icon: '🖥️', text: 'افتح السايت في <strong>Chrome</strong> أو <strong>Edge</strong>' },
-          { icon: '⬇️', text: 'اضغط على أيقونة التثبيت في <strong>شريط العنوان</strong>' },
-          { icon: '✅', text: 'اضغط <strong>Install</strong> وهيتثبت كتطبيق' },
-        ];
+            {
+              icon: "🖥️",
+              text: "افتح السايت في <strong>Chrome</strong> أو <strong>Edge</strong>",
+            },
+            {
+              icon: "⬇️",
+              text: "اضغط على أيقونة التثبيت في <strong>شريط العنوان</strong>",
+            },
+            {
+              icon: "✅",
+              text: "اضغط <strong>Install</strong> وهيتثبت كتطبيق",
+            },
+          ];
 
-    const s = document.createElement('style');
+    const s = document.createElement("style");
     s.textContent = `
       @keyframes pwa-guide-in {
         from { opacity:0; transform:scale(0.85); }
@@ -490,15 +521,19 @@
     `;
     document.head.appendChild(s);
 
-    const stepsHTML = steps.map((step, i) => `
+    const stepsHTML = steps
+      .map(
+        (step, i) => `
       <div class="pwa-guide-step">
         <div class="pwa-guide-step-num">${i + 1}</div>
         <span>${step.text}</span>
       </div>
-    `).join('');
+    `,
+      )
+      .join("");
 
-    const overlay = document.createElement('div');
-    overlay.id = 'pwa-guide-overlay';
+    const overlay = document.createElement("div");
+    overlay.id = "pwa-guide-overlay";
     overlay.innerHTML = `
       <div id="pwa-guide-modal">
         <button id="pwa-guide-x">✕</button>
@@ -514,10 +549,10 @@
     document.body.appendChild(overlay);
 
     const close = () => overlay.remove();
-    document.getElementById('pwa-guide-close').addEventListener('click', close);
-    document.getElementById('pwa-guide-x').addEventListener('click', close);
-    overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+    document.getElementById("pwa-guide-close").addEventListener("click", close);
+    document.getElementById("pwa-guide-x").addEventListener("click", close);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) close();
+    });
   }
-
 })();
-

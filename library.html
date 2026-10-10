@@ -1,234 +1,323 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Library — Subjects Online</title>
     <!-- Page Script -->
     <script src="js/page-transition.js"></script>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="c19193c1-aaf3-477d-acd2-56be26abe5ec"></script>
-    <link rel="stylesheet" href="css/tailwind-utilities.css">
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="c19193c1-aaf3-477d-acd2-56be26abe5ec"
+    ></script>
+    <link rel="stylesheet" href="css/tailwind-utilities.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/welcome.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/library.css?v=bulk-bar-3">
-    <link rel="stylesheet" href="css/mobile-perf.css">
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/welcome.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/library.css?v=bulk-bar-3" />
+    <link rel="stylesheet" href="css/mobile-perf.css" />
     <style>
-        /* Select bar — mobile-first so it never overflows the phone */
+      /* Select bar — mobile-first so it never overflows the phone */
+      #bulk-action-bar.lib-bulk-dock {
+        left: 10px;
+        right: 10px;
+        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        width: auto;
+        max-width: none;
+        transform: translateY(180px);
+        border-radius: 20px;
+        padding: 10px;
+        gap: 8px;
+        flex-direction: column;
+        align-items: stretch;
+        box-sizing: border-box;
+      }
+      #bulk-action-bar.lib-bulk-dock.show {
+        transform: translateY(0);
+      }
+      #bulk-action-bar .lib-bulk-dock-sep {
+        display: none;
+      }
+      #bulk-action-bar .lib-bulk-dock-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        min-width: 0;
+      }
+      #bulk-action-bar .lib-bulk-count,
+      #bulk-action-bar .lib-bulk-select-all {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      #bulk-action-bar .lib-bulk-select-all {
+        margin-right: auto;
+      }
+      #bulk-action-bar .lib-bulk-dock-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6px;
+        width: 100%;
+        min-width: 0;
+      }
+      #bulk-action-bar .lib-dock-btn {
+        width: 100%;
+        min-width: 0;
+        min-height: 42px;
+        padding: 8px 6px;
+        font-size: 0.75rem;
+        gap: 4px;
+      }
+      #bulk-action-bar .lib-zip-long {
+        display: none;
+      }
+      @media (min-width: 900px) {
         #bulk-action-bar.lib-bulk-dock {
-            left: 10px;
-            right: 10px;
-            bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-            width: auto;
-            max-width: none;
-            transform: translateY(180px);
-            border-radius: 20px;
-            padding: 10px;
-            gap: 8px;
-            flex-direction: column;
-            align-items: stretch;
-            box-sizing: border-box;
+          left: 50%;
+          right: auto;
+          bottom: 28px;
+          width: max-content;
+          max-width: calc(100vw - 32px);
+          transform: translateX(-50%) translateY(140px);
+          border-radius: 9999px;
+          padding: 8px 12px 8px 16px;
+          gap: 12px;
+          flex-direction: row;
+          align-items: center;
         }
         #bulk-action-bar.lib-bulk-dock.show {
-            transform: translateY(0);
+          transform: translateX(-50%) translateY(0);
         }
-        #bulk-action-bar .lib-bulk-dock-sep { display: none; }
+        #bulk-action-bar .lib-bulk-dock-sep {
+          display: block;
+        }
         #bulk-action-bar .lib-bulk-dock-meta {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            width: 100%;
-            min-width: 0;
+          width: auto;
         }
-        #bulk-action-bar .lib-bulk-count,
         #bulk-action-bar .lib-bulk-select-all {
-            white-space: nowrap;
-            flex-shrink: 0;
+          margin-right: 0;
         }
-        #bulk-action-bar .lib-bulk-select-all { margin-right: auto; }
         #bulk-action-bar .lib-bulk-dock-actions {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 6px;
-            width: 100%;
-            min-width: 0;
+          display: flex;
+          width: auto;
+          gap: 8px;
         }
         #bulk-action-bar .lib-dock-btn {
-            width: 100%;
-            min-width: 0;
-            min-height: 42px;
-            padding: 8px 6px;
-            font-size: 0.75rem;
-            gap: 4px;
+          width: auto;
+          min-height: 0;
+          padding: 7px 14px;
+          font-size: 0.8rem;
         }
-        #bulk-action-bar .lib-zip-long { display: none; }
-        @media (min-width: 900px) {
-            #bulk-action-bar.lib-bulk-dock {
-                left: 50%;
-                right: auto;
-                bottom: 28px;
-                width: max-content;
-                max-width: calc(100vw - 32px);
-                transform: translateX(-50%) translateY(140px);
-                border-radius: 9999px;
-                padding: 8px 12px 8px 16px;
-                gap: 12px;
-                flex-direction: row;
-                align-items: center;
-            }
-            #bulk-action-bar.lib-bulk-dock.show {
-                transform: translateX(-50%) translateY(0);
-            }
-            #bulk-action-bar .lib-bulk-dock-sep { display: block; }
-            #bulk-action-bar .lib-bulk-dock-meta { width: auto; }
-            #bulk-action-bar .lib-bulk-select-all { margin-right: 0; }
-            #bulk-action-bar .lib-bulk-dock-actions {
-                display: flex;
-                width: auto;
-                gap: 8px;
-            }
-            #bulk-action-bar .lib-dock-btn {
-                width: auto;
-                min-height: 0;
-                padding: 7px 14px;
-                font-size: 0.8rem;
-            }
-            #bulk-action-bar .lib-zip-long { display: inline; }
+        #bulk-action-bar .lib-zip-long {
+          display: inline;
         }
+      }
     </style>
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0c1a2e">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Subjects Online">
-    <link rel="apple-touch-icon" href="images/icon-512.png">
-</head>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#0c1a2e" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Subjects Online" />
+    <link rel="apple-touch-icon" href="images/icon-512.png" />
+  </head>
 
-<body class="lib-page font-body antialiased min-h-screen relative overflow-x-hidden">
-
+  <body
+    class="lib-page font-body antialiased min-h-screen relative overflow-x-hidden"
+  >
     <!-- Ambient Floating Orbs -->
     <div class="lib-bg-glow" aria-hidden="true">
-        <div class="lib-orb lib-orb-1"></div>
-        <div class="lib-orb lib-orb-2"></div>
-        <div class="lib-orb lib-orb-3"></div>
+      <div class="lib-orb lib-orb-1"></div>
+      <div class="lib-orb lib-orb-2"></div>
+      <div class="lib-orb lib-orb-3"></div>
     </div>
 
     <!-- Shared Navbar injected by JS -->
 
     <!-- Main Content Area -->
-    <main class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 page-content">
+    <main
+      class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 page-content"
+    >
+      <!-- Hero Section -->
+      <section class="lib-hero text-left relative z-10">
+        <div class="lib-header-card">
+          <!-- Background Orbs inside Card -->
+          <div class="card-ambient-orb orb-sky" aria-hidden="true"></div>
+          <div class="card-ambient-orb orb-indigo" aria-hidden="true"></div>
 
-        <!-- Hero Section -->
-        <section class="lib-hero text-left relative z-10">
-            <div class="lib-header-card">
-                <!-- Background Orbs inside Card -->
-                <div class="card-ambient-orb orb-sky" aria-hidden="true"></div>
-                <div class="card-ambient-orb orb-indigo" aria-hidden="true"></div>
-
-                <div class="lib-card-inner flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10 w-full">
-                    <!-- Left: 3D Master Icon + Badge + Title + Subtitle -->
-                    <div class="flex flex-col sm:flex-row items-center text-center sm:text-left gap-6 flex-1">
-                        <!-- 3D Master Custom Icon -->
-                        <div class="lib-icon-master-box">
-                            <div class="lib-icon-halo-glow" aria-hidden="true"></div>
-                            <div class="lib-icon-glass-circle">
-                                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="52" height="52" rx="18" fill="url(#lib_icon_grad_bg)"/>
-                                    <g transform="translate(10, 10) scale(1.333)">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke="white" stroke-width="2.2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                                    </g>
-                                    <defs>
-                                        <linearGradient id="lib_icon_grad_bg" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
-                                            <stop stop-color="#0EA5E9"/>
-                                            <stop offset="0.5" stop-color="#3B82F6"/>
-                                            <stop offset="1" stop-color="#6366F1"/>
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Text & Titles -->
-                        <div class="lib-card-text-col">
-                            <!-- Luxury Pill Badge -->
-                            <div class="lib-luxury-badge mb-2.5">
-                                <span class="lib-sparkle-dot"></span>
-                                <span>Personal Vault & Study Repository</span>
-                            </div>
-
-                            <h1 class="lib-header-title">
-                                <span class="word-my mr-3">My</span><span class="word-library">Library</span>
-                            </h1>
-
-                            <p class="lib-header-subtitle">
-                                Explore and manage your saved study materials, lecture summaries, and offline PDFs.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Right: Live Metrics Deck & Filter Pills -->
-                    <div class="flex flex-col gap-3 shrink-0 items-center lg:items-end w-full lg:w-auto" id="lib-stats-deck-wrap">
-                        <!-- Live Metrics Deck -->
-                        <div class="lib-stats-deck" id="lib-stats-deck">
-                            <!-- Stat 1: Folders -->
-                            <div class="lib-stat-card" id="stat-card-folders" data-tab="folders" title="Filter Folders">
-                                <div class="lib-stat-icon-wrap" style="background: rgba(14, 165, 233, 0.12); color: #0284c7;">
-                                    📁
-                                </div>
-                                <div class="lib-stat-value" id="stat-folders-count">0</div>
-                                <div class="lib-stat-label">Folders</div>
-                            </div>
-
-                            <!-- Stat 2: Total Documents -->
-                            <div class="lib-stat-card" id="stat-card-docs" data-tab="pdfs" title="Filter PDFs">
-                                <div class="lib-stat-icon-wrap" style="background: rgba(99, 102, 241, 0.12); color: #6366f1;">
-                                    📄
-                                </div>
-                                <div class="lib-stat-value" id="stat-docs-count">0</div>
-                                <div class="lib-stat-label">Saved PDFs</div>
-                            </div>
-                        </div>
-
-                        <!-- Filter Pills: All & Pinned -->
-                        <div class="lib-hero-tabs-strip">
-                            <button class="lib-tab-pill lib-hero-tab active" data-tab="all">
-                                <span>All</span>
-                                <span class="lib-tab-count" id="tab-count-all">0</span>
-                            </button>
-                            <button class="lib-tab-pill lib-hero-tab" data-tab="pinned">
-                                <span>⭐ Pinned</span>
-                                <span class="lib-tab-count" id="tab-count-pinned">0</span>
-                            </button>
-                        </div>
-                    </div>
+          <div
+            class="lib-card-inner flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10 w-full"
+          >
+            <!-- Left: 3D Master Icon + Badge + Title + Subtitle -->
+            <div
+              class="flex flex-col sm:flex-row items-center text-center sm:text-left gap-6 flex-1"
+            >
+              <!-- 3D Master Custom Icon -->
+              <div class="lib-icon-master-box">
+                <div class="lib-icon-halo-glow" aria-hidden="true"></div>
+                <div class="lib-icon-glass-circle">
+                  <svg
+                    width="52"
+                    height="52"
+                    viewBox="0 0 52 52"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      width="52"
+                      height="52"
+                      rx="18"
+                      fill="url(#lib_icon_grad_bg)"
+                    />
+                    <g transform="translate(10, 10) scale(1.333)">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke="white"
+                        stroke-width="2.2"
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                      ></path>
+                    </g>
+                    <defs>
+                      <linearGradient
+                        id="lib_icon_grad_bg"
+                        x1="0"
+                        y1="0"
+                        x2="52"
+                        y2="52"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#0EA5E9" />
+                        <stop offset="0.5" stop-color="#3B82F6" />
+                        <stop offset="1" stop-color="#6366F1" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
                 </div>
+              </div>
+
+              <!-- Text & Titles -->
+              <div class="lib-card-text-col">
+                <!-- Luxury Pill Badge -->
+                <div class="lib-luxury-badge mb-2.5">
+                  <span class="lib-sparkle-dot"></span>
+                  <span>Personal Vault & Study Repository</span>
+                </div>
+
+                <h1 class="lib-header-title">
+                  <span class="word-my mr-3">My</span
+                  ><span class="word-library">Library</span>
+                </h1>
+
+                <p class="lib-header-subtitle">
+                  Explore and manage your saved study materials, lecture
+                  summaries, and offline PDFs.
+                </p>
+              </div>
             </div>
-        </section>
 
-        <!-- Folder Header / Breadcrumbs & Top Actions -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 relative">
-            <!-- Left: Breadcrumb / Title -->
-            <div id="lib-breadcrumb-wrap" class="flex items-center gap-2 sm:absolute sm:left-0">
-                <button id="btn-back-folder" class="lib-breadcrumb-btn hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                    </svg>
-                    <span>Back to Root</span>
-                </button>
-                <div id="current-folder-title-badge"
-                    class="hidden items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
-                    📁 <span id="current-folder-name">Folder</span>
+            <!-- Right: Live Metrics Deck & Filter Pills -->
+            <div
+              class="flex flex-col gap-3 shrink-0 items-center lg:items-end w-full lg:w-auto"
+              id="lib-stats-deck-wrap"
+            >
+              <!-- Live Metrics Deck -->
+              <div class="lib-stats-deck" id="lib-stats-deck">
+                <!-- Stat 1: Folders -->
+                <div
+                  class="lib-stat-card"
+                  id="stat-card-folders"
+                  data-tab="folders"
+                  title="Filter Folders"
+                >
+                  <div
+                    class="lib-stat-icon-wrap"
+                    style="background: rgba(14, 165, 233, 0.12); color: #0284c7"
+                  >
+                    📁
+                  </div>
+                  <div class="lib-stat-value" id="stat-folders-count">0</div>
+                  <div class="lib-stat-label">Folders</div>
                 </div>
-                <!-- <button id="btn-download-current-folder" class="lib-action-btn-secondary hidden"
+
+                <!-- Stat 2: Total Documents -->
+                <div
+                  class="lib-stat-card"
+                  id="stat-card-docs"
+                  data-tab="pdfs"
+                  title="Filter PDFs"
+                >
+                  <div
+                    class="lib-stat-icon-wrap"
+                    style="background: rgba(99, 102, 241, 0.12); color: #6366f1"
+                  >
+                    📄
+                  </div>
+                  <div class="lib-stat-value" id="stat-docs-count">0</div>
+                  <div class="lib-stat-label">Saved PDFs</div>
+                </div>
+              </div>
+
+              <!-- Filter Pills: All & Pinned -->
+              <div class="lib-hero-tabs-strip">
+                <button class="lib-tab-pill lib-hero-tab active" data-tab="all">
+                  <span>All</span>
+                  <span class="lib-tab-count" id="tab-count-all">0</span>
+                </button>
+                <button class="lib-tab-pill lib-hero-tab" data-tab="pinned">
+                  <span>⭐ Pinned</span>
+                  <span class="lib-tab-count" id="tab-count-pinned">0</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Folder Header / Breadcrumbs & Top Actions -->
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 relative"
+      >
+        <!-- Left: Breadcrumb / Title -->
+        <div
+          id="lib-breadcrumb-wrap"
+          class="flex items-center gap-2 sm:absolute sm:left-0"
+        >
+          <button id="btn-back-folder" class="lib-breadcrumb-btn hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            <span>Back to Root</span>
+          </button>
+          <div
+            id="current-folder-title-badge"
+            class="hidden items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider"
+          >
+            📁 <span id="current-folder-name">Folder</span>
+          </div>
+          <!-- <button id="btn-download-current-folder" class="lib-action-btn-secondary hidden"
                     title="Download this folder as a ZIP">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-sky-500" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2.5">
@@ -237,379 +326,664 @@
                     </svg>
                     <span>Download Folder</span>
                 </button> -->
-            </div>
-
-            <!-- Center: Action Buttons -->
-            <div class="flex items-center justify-center gap-2.5 flex-wrap mx-auto">
-                <button id="btn-new-folder" class="lib-action-btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                    <span>New Folder</span>
-                </button>
-
-                <button id="btn-import-pdf" class="lib-action-btn-secondary" title="Upload custom PDF notes">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-sky-500" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                    </svg>
-                    <span>Import PDF</span>
-                </button>
-
-                <button id="btn-select-mode" class="lib-action-btn-secondary" title="Batch select items">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-500" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                    </svg>
-                    <span>Select</span>
-                </button>
-            </div>
         </div>
 
-        <!-- Search-Only Toolbar -->
-        <div class="lib-main-toolbar" id="lib-main-toolbar">
-            <div class="lib-search-box">
-                <svg class="lib-search-icon-svg w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <input type="text" id="search-input" placeholder="Search saved items…" class="lib-search-inp"
-                    autocomplete="off">
-                <button id="search-clear-btn" class="lib-search-clear-btn">✕</button>
-            </div>
+        <!-- Center: Action Buttons -->
+        <div class="flex items-center justify-center gap-2.5 flex-wrap mx-auto">
+          <button id="btn-new-folder" class="lib-action-btn-primary">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+            <span>New Folder</span>
+          </button>
+
+          <button
+            id="btn-import-pdf"
+            class="lib-action-btn-secondary"
+            title="Upload custom PDF notes"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 text-sky-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+              />
+            </svg>
+            <span>Import PDF</span>
+          </button>
+
+          <button
+            id="btn-select-mode"
+            class="lib-action-btn-secondary"
+            title="Batch select items"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 text-amber-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+              />
+            </svg>
+            <span>Select</span>
+          </button>
         </div>
+      </div>
 
-        <!-- Library Container: Grid View & List View Target -->
-        <div id="library-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      <!-- Search-Only Toolbar -->
+      <div class="lib-main-toolbar" id="lib-main-toolbar">
+        <div class="lib-search-box">
+          <svg
+            class="lib-search-icon-svg w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search saved items…"
+            class="lib-search-inp"
+            autocomplete="off"
+          />
+          <button id="search-clear-btn" class="lib-search-clear-btn">✕</button>
+        </div>
+      </div>
 
-        <!-- Search / Filter No Results Box -->
-        <div id="lib-no-results" class="hidden flex-col items-center justify-center py-20 text-center">
-            <div
-                class="w-16 h-16 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4 text-3xl">
-                🔍
-            </div>
-            <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--lib-navy);">No matching files found</h3>
-            <p class="text-sm max-w-sm mb-6" style="color: var(--lib-navy-soft);">Try adjusting your search terms or
-                active tab filter.</p>
-            <button id="lib-reset-filter-btn" class="lib-action-btn-secondary text-sm">
-                Reset Filters
+      <!-- Library Container: Grid View & List View Target -->
+      <div
+        id="library-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      ></div>
+
+      <!-- Search / Filter No Results Box -->
+      <div
+        id="lib-no-results"
+        class="hidden flex-col items-center justify-center py-20 text-center"
+      >
+        <div
+          class="w-16 h-16 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4 text-3xl"
+        >
+          🔍
+        </div>
+        <h3
+          class="font-heading text-xl font-bold mb-2"
+          style="color: var(--lib-navy)"
+        >
+          No matching files found
+        </h3>
+        <p class="text-sm max-w-sm mb-6" style="color: var(--lib-navy-soft)">
+          Try adjusting your search terms or active tab filter.
+        </p>
+        <button
+          id="lib-reset-filter-btn"
+          class="lib-action-btn-secondary text-sm"
+        >
+          Reset Filters
+        </button>
+      </div>
+
+      <!-- Empty State -->
+      <div id="library-empty" class="hidden lib-empty-container">
+        <div class="lib-empty-card">
+          <div class="lib-empty-icon-wrap">
+            <div class="lib-empty-icon-aura"></div>
+            <div class="lib-empty-icon-circle">📚</div>
+          </div>
+
+          <h2 class="lib-empty-title">Your Study Vault is Empty</h2>
+          <p class="lib-empty-desc">
+            Open any study material and tap
+            <span class="text-sky-500 font-bold">"Save Offline"</span>, or
+            import your own local PDF files to access them anywhere without
+            internet.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center gap-3.5 mb-8">
+            <a href="browse.html" class="lib-action-btn-primary lib-cta">
+              <span>Browse Courses</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+            <button id="btn-empty-import" class="lib-action-btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-sky-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+                />
+              </svg>
+              <span>Upload Custom PDF</span>
             </button>
+          </div>
+
+          <!-- Quick Discover Starter Row -->
+          <div
+            class="pt-6 border-t border-black/5 dark:border-white/10 text-left"
+          >
+            <div
+              class="flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400"
+            >
+              <span>✨ Quick Starter Recommendation</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a
+                href="browse.html"
+                class="p-3 rounded-2xl bg-white/60 dark:bg-slate-900/60 border border-black/5 dark:border-white/10 hover:border-sky-500/40 transition-all hover:-translate-y-0.5 block no-underline text-left"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">📊</span>
+                  <div class="min-w-0 flex-1">
+                    <h4
+                      class="font-heading text-xs font-bold truncate text-slate-800 dark:text-slate-100"
+                    >
+                      Corporate Accounting
+                    </h4>
+                    <p class="text-[11px] text-slate-400 truncate">
+                      Course Lectures & Summaries
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="essays.html"
+                class="p-3 rounded-2xl bg-white/60 dark:bg-slate-900/60 border border-black/5 dark:border-white/10 hover:border-sky-500/40 transition-all hover:-translate-y-0.5 block no-underline text-left"
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">✍️</span>
+                  <div class="min-w-0 flex-1">
+                    <h4
+                      class="font-heading text-xs font-bold truncate text-slate-800 dark:text-slate-100"
+                    >
+                      Doctor Essays Deck
+                    </h4>
+                    <p class="text-[11px] text-slate-400 truncate">
+                      Academic Essays
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Select Capsule -->
+      <div id="bulk-action-bar" class="lib-bulk-dock">
+        <div class="lib-bulk-dock-meta">
+          <span id="selected-count" class="lib-bulk-count">0 Selected</span>
+          <button id="btn-select-all" class="lib-bulk-select-all">
+            Select All
+          </button>
+          <button
+            id="btn-cancel-select"
+            class="lib-bulk-close"
+            title="Close Select Mode"
+          >
+            ✕
+          </button>
         </div>
 
-        <!-- Empty State -->
-        <div id="library-empty" class="hidden lib-empty-container">
-            <div class="lib-empty-card">
-                <div class="lib-empty-icon-wrap">
-                    <div class="lib-empty-icon-aura"></div>
-                    <div class="lib-empty-icon-circle">
-                        📚
-                    </div>
-                </div>
+        <div class="lib-bulk-dock-sep" aria-hidden="true"></div>
 
-                <h2 class="lib-empty-title">Your Study Vault is Empty</h2>
-                <p class="lib-empty-desc">
-                    Open any study material and tap <span class="text-sky-500 font-bold">"Save Offline"</span>, or
-                    import your own local PDF files to access them anywhere without internet.
-                </p>
-
-                <div class="flex flex-wrap items-center justify-center gap-3.5 mb-8">
-                    <a href="browse.html" class="lib-action-btn-primary lib-cta">
-                        <span>Browse Courses</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </a>
-                    <button id="btn-empty-import" class="lib-action-btn-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-sky-500" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                        </svg>
-                        <span>Upload Custom PDF</span>
-                    </button>
-                </div>
-
-                <!-- Quick Discover Starter Row -->
-                <div class="pt-6 border-t border-black/5 dark:border-white/10 text-left">
-                    <div
-                        class="flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
-                        <span>✨ Quick Starter Recommendation</span>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <a href="browse.html"
-                            class="p-3 rounded-2xl bg-white/60 dark:bg-slate-900/60 border border-black/5 dark:border-white/10 hover:border-sky-500/40 transition-all hover:-translate-y-0.5 block no-underline text-left">
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">📊</span>
-                                <div class="min-w-0 flex-1">
-                                    <h4
-                                        class="font-heading text-xs font-bold truncate text-slate-800 dark:text-slate-100">
-                                        Corporate Accounting</h4>
-                                    <p class="text-[11px] text-slate-400 truncate">Course Lectures & Summaries</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="essays.html"
-                            class="p-3 rounded-2xl bg-white/60 dark:bg-slate-900/60 border border-black/5 dark:border-white/10 hover:border-sky-500/40 transition-all hover:-translate-y-0.5 block no-underline text-left">
-                            <div class="flex items-center gap-3">
-                                <span class="text-2xl">✍️</span>
-                                <div class="min-w-0 flex-1">
-                                    <h4
-                                        class="font-heading text-xs font-bold truncate text-slate-800 dark:text-slate-100">
-                                        Doctor Essays Deck</h4>
-                                    <p class="text-[11px] text-slate-400 truncate">Academic Essays</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="lib-bulk-dock-actions">
+          <button
+            id="btn-bulk-download"
+            class="lib-dock-btn lib-dock-btn-sky"
+            title="Download selected as ZIP"
+          >
+            <svg
+              class="w-3.5 h-3.5 shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              />
+            </svg>
+            <span><span class="lib-zip-long">Download </span>ZIP</span>
+          </button>
+          <button
+            id="btn-bulk-move"
+            class="lib-dock-btn lib-dock-btn-glass"
+            title="Move selected to folder"
+          >
+            <svg
+              class="w-3.5 h-3.5 shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+              />
+            </svg>
+            <span>Move</span>
+          </button>
+          <button
+            id="btn-bulk-delete"
+            class="lib-dock-btn lib-dock-btn-danger"
+            title="Delete selected items"
+          >
+            <svg
+              class="w-3.5 h-3.5 shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+              />
+            </svg>
+            <span>Delete</span>
+          </button>
         </div>
-
-        <!-- Floating Select Capsule -->
-        <div id="bulk-action-bar" class="lib-bulk-dock">
-            <div class="lib-bulk-dock-meta">
-                <span id="selected-count" class="lib-bulk-count">0 Selected</span>
-                <button id="btn-select-all" class="lib-bulk-select-all">Select All</button>
-                <button id="btn-cancel-select" class="lib-bulk-close" title="Close Select Mode">✕</button>
-            </div>
-
-            <div class="lib-bulk-dock-sep" aria-hidden="true"></div>
-
-            <div class="lib-bulk-dock-actions">
-                <button id="btn-bulk-download" class="lib-dock-btn lib-dock-btn-sky" title="Download selected as ZIP">
-                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    <span><span class="lib-zip-long">Download </span>ZIP</span>
-                </button>
-                <button id="btn-bulk-move" class="lib-dock-btn lib-dock-btn-glass" title="Move selected to folder">
-                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                    </svg>
-                    <span>Move</span>
-                </button>
-                <button id="btn-bulk-delete" class="lib-dock-btn lib-dock-btn-danger" title="Delete selected items">
-                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
-                    <span>Delete</span>
-                </button>
-            </div>
-        </div>
-
+      </div>
     </main>
 
     <!-- ════════════════ MODALS ════════════════ -->
 
     <!-- 1. Folder Name Modal -->
     <div id="folder-name-modal" class="lib-modal-overlay">
-        <div class="lib-modal-box" id="folder-name-modal-content">
-            <div class="flex justify-between items-center mb-6">
-                <div class="flex items-center gap-3">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center text-xl">
-                        📁
-                    </div>
-                    <h3 id="folder-name-modal-title" class="font-heading text-xl font-bold"
-                        style="color: var(--lib-navy);">New Folder</h3>
-                </div>
-                <button id="close-folder-name-modal"
-                    class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100/50">✕</button>
+      <div class="lib-modal-box" id="folder-name-modal-content">
+        <div class="flex justify-between items-center mb-6">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center text-xl"
+            >
+              📁
             </div>
-            <div class="mb-6">
-                <label class="block text-xs font-bold uppercase tracking-wider mb-2"
-                    style="color: var(--lib-navy-soft);">Folder Name</label>
-                <input type="text" id="folder-name-input" placeholder="e.g. Midterm Summaries" maxlength="60"
-                    class="lib-search-inp w-full py-3.5 text-base font-semibold">
-            </div>
-            <div class="flex justify-end gap-3">
-                <button id="cancel-folder-name-btn" class="lib-action-btn-secondary">Cancel</button>
-                <button id="confirm-folder-name-btn" class="lib-action-btn-primary">Save Folder</button>
-            </div>
+            <h3
+              id="folder-name-modal-title"
+              class="font-heading text-xl font-bold"
+              style="color: var(--lib-navy)"
+            >
+              New Folder
+            </h3>
+          </div>
+          <button
+            id="close-folder-name-modal"
+            class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100/50"
+          >
+            ✕
+          </button>
         </div>
+        <div class="mb-6">
+          <label
+            class="block text-xs font-bold uppercase tracking-wider mb-2"
+            style="color: var(--lib-navy-soft)"
+            >Folder Name</label
+          >
+          <input
+            type="text"
+            id="folder-name-input"
+            placeholder="e.g. Midterm Summaries"
+            maxlength="60"
+            class="lib-search-inp w-full py-3.5 text-base font-semibold"
+          />
+        </div>
+        <div class="flex justify-end gap-3">
+          <button id="cancel-folder-name-btn" class="lib-action-btn-secondary">
+            Cancel
+          </button>
+          <button id="confirm-folder-name-btn" class="lib-action-btn-primary">
+            Save Folder
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- 2. Color Modal -->
     <div id="color-modal" class="lib-modal-overlay">
-        <div class="lib-modal-box max-w-sm" id="color-modal-content">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="font-heading text-xl font-bold" style="color: var(--lib-navy);">Choose Accent Color</h3>
-                <button id="close-color-modal"
-                    class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100/50">✕</button>
-            </div>
-            <div class="grid grid-cols-3 gap-4 mb-6">
-                <button
-                    class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-blue-500 bg-blue-50 dark:bg-blue-900/30 transition-all hover:scale-105"
-                    data-color="blue">
-                    <span class="w-8 h-8 rounded-full bg-blue-500 shadow-md"></span>
-                    <span class="text-xs font-bold text-blue-600 dark:text-blue-400">Sapphire</span>
-                </button>
-                <button
-                    class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-emerald-500 bg-emerald-50 dark:bg-emerald-900/30 transition-all hover:scale-105"
-                    data-color="emerald">
-                    <span class="w-8 h-8 rounded-full bg-emerald-500 shadow-md"></span>
-                    <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400">Emerald</span>
-                </button>
-                <button
-                    class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-purple-500 bg-purple-50 dark:bg-purple-900/30 transition-all hover:scale-105"
-                    data-color="purple">
-                    <span class="w-8 h-8 rounded-full bg-purple-500 shadow-md"></span>
-                    <span class="text-xs font-bold text-purple-600 dark:text-purple-400">Amethyst</span>
-                </button>
-                <button
-                    class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-amber-500 bg-amber-50 dark:bg-amber-900/30 transition-all hover:scale-105"
-                    data-color="amber">
-                    <span class="w-8 h-8 rounded-full bg-amber-500 shadow-md"></span>
-                    <span class="text-xs font-bold text-amber-600 dark:text-amber-400">Amber</span>
-                </button>
-                <button
-                    class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-rose-500 bg-rose-50 dark:bg-rose-900/30 transition-all hover:scale-105"
-                    data-color="rose">
-                    <span class="w-8 h-8 rounded-full bg-rose-500 shadow-md"></span>
-                    <span class="text-xs font-bold text-rose-600 dark:text-rose-400">Rose</span>
-                </button>
-                <button
-                    class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-cyan-500 bg-cyan-50 dark:bg-cyan-900/30 transition-all hover:scale-105"
-                    data-color="cyan">
-                    <span class="w-8 h-8 rounded-full bg-cyan-500 shadow-md"></span>
-                    <span class="text-xs font-bold text-cyan-600 dark:text-cyan-400">Cyan</span>
-                </button>
-            </div>
+      <div class="lib-modal-box max-w-sm" id="color-modal-content">
+        <div class="flex justify-between items-center mb-6">
+          <h3
+            class="font-heading text-xl font-bold"
+            style="color: var(--lib-navy)"
+          >
+            Choose Accent Color
+          </h3>
+          <button
+            id="close-color-modal"
+            class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100/50"
+          >
+            ✕
+          </button>
         </div>
+        <div class="grid grid-cols-3 gap-4 mb-6">
+          <button
+            class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-blue-500 bg-blue-50 dark:bg-blue-900/30 transition-all hover:scale-105"
+            data-color="blue"
+          >
+            <span class="w-8 h-8 rounded-full bg-blue-500 shadow-md"></span>
+            <span class="text-xs font-bold text-blue-600 dark:text-blue-400"
+              >Sapphire</span
+            >
+          </button>
+          <button
+            class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-emerald-500 bg-emerald-50 dark:bg-emerald-900/30 transition-all hover:scale-105"
+            data-color="emerald"
+          >
+            <span class="w-8 h-8 rounded-full bg-emerald-500 shadow-md"></span>
+            <span
+              class="text-xs font-bold text-emerald-600 dark:text-emerald-400"
+              >Emerald</span
+            >
+          </button>
+          <button
+            class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-purple-500 bg-purple-50 dark:bg-purple-900/30 transition-all hover:scale-105"
+            data-color="purple"
+          >
+            <span class="w-8 h-8 rounded-full bg-purple-500 shadow-md"></span>
+            <span class="text-xs font-bold text-purple-600 dark:text-purple-400"
+              >Amethyst</span
+            >
+          </button>
+          <button
+            class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-amber-500 bg-amber-50 dark:bg-amber-900/30 transition-all hover:scale-105"
+            data-color="amber"
+          >
+            <span class="w-8 h-8 rounded-full bg-amber-500 shadow-md"></span>
+            <span class="text-xs font-bold text-amber-600 dark:text-amber-400"
+              >Amber</span
+            >
+          </button>
+          <button
+            class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-rose-500 bg-rose-50 dark:bg-rose-900/30 transition-all hover:scale-105"
+            data-color="rose"
+          >
+            <span class="w-8 h-8 rounded-full bg-rose-500 shadow-md"></span>
+            <span class="text-xs font-bold text-rose-600 dark:text-rose-400"
+              >Rose</span
+            >
+          </button>
+          <button
+            class="color-btn p-3 rounded-2xl flex flex-col items-center gap-2 border-2 border-transparent hover:border-cyan-500 bg-cyan-50 dark:bg-cyan-900/30 transition-all hover:scale-105"
+            data-color="cyan"
+          >
+            <span class="w-8 h-8 rounded-full bg-cyan-500 shadow-md"></span>
+            <span class="text-xs font-bold text-cyan-600 dark:text-cyan-400"
+              >Cyan</span
+            >
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- 3. Move Modal -->
     <div id="move-modal" class="lib-modal-overlay">
-        <div class="lib-modal-box max-w-md" id="move-modal-content">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="font-heading text-xl font-bold" style="color: var(--lib-navy);">Move to Destination</h3>
-                <button id="close-move-modal"
-                    class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100/50">✕</button>
-            </div>
-            <div class="mb-6">
-                <label class="block text-xs font-bold uppercase tracking-wider mb-2"
-                    style="color: var(--lib-navy-soft);">Select Target Folder</label>
-                <select id="move-folder-select" class="lib-search-inp w-full py-3.5 text-sm font-semibold">
-                    <option value="root">📁 Root (Main Library)</option>
-                </select>
-            </div>
-            <div class="flex justify-end gap-3">
-                <button id="cancel-move-btn" class="lib-action-btn-secondary">Cancel</button>
-                <button id="confirm-move-btn" class="lib-action-btn-primary">Move Here</button>
-            </div>
+      <div class="lib-modal-box max-w-md" id="move-modal-content">
+        <div class="flex justify-between items-center mb-6">
+          <h3
+            class="font-heading text-xl font-bold"
+            style="color: var(--lib-navy)"
+          >
+            Move to Destination
+          </h3>
+          <button
+            id="close-move-modal"
+            class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100/50"
+          >
+            ✕
+          </button>
         </div>
+        <div class="mb-6">
+          <label
+            class="block text-xs font-bold uppercase tracking-wider mb-2"
+            style="color: var(--lib-navy-soft)"
+            >Select Target Folder</label
+          >
+          <select
+            id="move-folder-select"
+            class="lib-search-inp w-full py-3.5 text-sm font-semibold"
+          >
+            <option value="root">📁 Root (Main Library)</option>
+          </select>
+        </div>
+        <div class="flex justify-end gap-3">
+          <button id="cancel-move-btn" class="lib-action-btn-secondary">
+            Cancel
+          </button>
+          <button id="confirm-move-btn" class="lib-action-btn-primary">
+            Move Here
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- 4. Import Custom PDF Modal -->
     <div id="import-modal" class="lib-modal-overlay">
-        <div class="lib-modal-box" id="import-modal-content">
-            <div class="flex justify-between items-center mb-6">
-                <div class="flex items-center gap-3">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center text-xl">
-                        📥
-                    </div>
-                    <div>
-                        <h3 class="font-heading text-xl font-bold" style="color: var(--lib-navy);">Import Custom PDF
-                        </h3>
-                        <p class="text-xs" style="color: var(--lib-navy-soft);">Upload local notes, summaries, or
-                            lecture slides</p>
-                    </div>
-                </div>
-                <button id="close-import-modal"
-                    class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100/50">✕</button>
+      <div class="lib-modal-box" id="import-modal-content">
+        <div class="flex justify-between items-center mb-6">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center text-xl"
+            >
+              📥
             </div>
-
-            <!-- Dropzone -->
-            <div class="lib-dropzone mb-5" id="pdf-dropzone">
-                <input type="file" id="pdf-file-input" accept="application/pdf" class="hidden">
-                <div
-                    class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-600 mx-auto mb-3 flex items-center justify-center text-2xl">
-                    📄
-                </div>
-                <p class="font-heading font-bold text-sm mb-1" style="color: var(--lib-navy);">Drag & drop your PDF file
-                    here</p>
-                <p class="text-xs text-gray-400 mb-4">or click to browse from your device</p>
-                <button type="button" id="btn-browse-file" class="lib-action-btn-primary text-xs py-2 px-5">
-                    Browse File
-                </button>
+            <div>
+              <h3
+                class="font-heading text-xl font-bold"
+                style="color: var(--lib-navy)"
+              >
+                Import Custom PDF
+              </h3>
+              <p class="text-xs" style="color: var(--lib-navy-soft)">
+                Upload local notes, summaries, or lecture slides
+              </p>
             </div>
-
-            <!-- Optional Title and Folder -->
-            <div class="mb-4">
-                <label class="block text-xs font-bold uppercase tracking-wider mb-2"
-                    style="color: var(--lib-navy-soft);">Document Title</label>
-                <input type="text" id="import-title-input" placeholder="e.g. My Accounting Summary"
-                    class="lib-search-inp w-full py-2.5 text-sm font-semibold">
-            </div>
-
-            <div class="flex justify-end gap-3 mt-6">
-                <button id="cancel-import-btn" class="lib-action-btn-secondary">Cancel</button>
-                <button id="confirm-import-btn" class="lib-action-btn-primary" disabled>
-                    Save to Offline Library
-                </button>
-            </div>
+          </div>
+          <button
+            id="close-import-modal"
+            class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100/50"
+          >
+            ✕
+          </button>
         </div>
+
+        <!-- Dropzone -->
+        <div class="lib-dropzone mb-5" id="pdf-dropzone">
+          <input
+            type="file"
+            id="pdf-file-input"
+            accept="application/pdf"
+            class="hidden"
+          />
+          <div
+            class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-600 mx-auto mb-3 flex items-center justify-center text-2xl"
+          >
+            📄
+          </div>
+          <p
+            class="font-heading font-bold text-sm mb-1"
+            style="color: var(--lib-navy)"
+          >
+            Drag & drop your PDF file here
+          </p>
+          <p class="text-xs text-gray-400 mb-4">
+            or click to browse from your device
+          </p>
+          <button
+            type="button"
+            id="btn-browse-file"
+            class="lib-action-btn-primary text-xs py-2 px-5"
+          >
+            Browse File
+          </button>
+        </div>
+
+        <!-- Optional Title and Folder -->
+        <div class="mb-4">
+          <label
+            class="block text-xs font-bold uppercase tracking-wider mb-2"
+            style="color: var(--lib-navy-soft)"
+            >Document Title</label
+          >
+          <input
+            type="text"
+            id="import-title-input"
+            placeholder="e.g. My Accounting Summary"
+            class="lib-search-inp w-full py-2.5 text-sm font-semibold"
+          />
+        </div>
+
+        <div class="flex justify-end gap-3 mt-6">
+          <button id="cancel-import-btn" class="lib-action-btn-secondary">
+            Cancel
+          </button>
+          <button
+            id="confirm-import-btn"
+            class="lib-action-btn-primary"
+            disabled
+          >
+            Save to Offline Library
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- 5. Storage Manager Pro Modal -->
     <div id="storage-modal" class="lib-modal-overlay">
-        <div class="lib-modal-box max-w-2xl max-h-[85vh] flex flex-col" id="storage-modal-content">
-            <div class="flex justify-between items-center mb-5 shrink-0">
-                <div class="flex items-center gap-3">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-xl">
-                        💾
-                    </div>
-                    <div>
-                        <h3 class="font-heading text-2xl font-bold" style="color: var(--lib-navy);">Storage Optimizer
-                        </h3>
-                        <p class="text-xs" style="color: var(--lib-navy-soft);">Manage your offline cached materials and
-                            storage space</p>
-                    </div>
-                </div>
-                <button id="close-storage-modal"
-                    class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100/50">✕</button>
-            </div>
-
-            <!-- Storage Progress Box -->
+      <div
+        class="lib-modal-box max-w-2xl max-h-[85vh] flex flex-col"
+        id="storage-modal-content"
+      >
+        <div class="flex justify-between items-center mb-5 shrink-0">
+          <div class="flex items-center gap-3">
             <div
-                class="p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 mb-4 shrink-0">
-                <div class="flex justify-between items-center text-sm font-bold mb-2">
-                    <span style="color: var(--lib-navy);">Storage Used</span>
-                    <span class="text-amber-500" id="storage-modal-used">0 MB / 1000 MB</span>
-                </div>
-                <div class="w-full bg-black/10 dark:bg-white/10 rounded-full h-3 overflow-hidden">
-                    <div id="storage-progress-bar"
-                        class="h-full bg-gradient-to-r from-sky-500 via-amber-500 to-emerald-500 rounded-full transition-all duration-500"
-                        style="width: 2%"></div>
-                </div>
+              class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-xl"
+            >
+              💾
             </div>
-
-            <div class="flex items-center justify-between mb-3 shrink-0">
-                <span class="text-xs font-bold uppercase tracking-wider" style="color: var(--lib-navy-soft);">Cached
-                    Documents</span>
-                <button id="btn-clear-read-cache" class="text-xs font-bold text-red-500 hover:underline">
-                    Clear All Read Items
-                </button>
+            <div>
+              <h3
+                class="font-heading text-2xl font-bold"
+                style="color: var(--lib-navy)"
+              >
+                Storage Optimizer
+              </h3>
+              <p class="text-xs" style="color: var(--lib-navy-soft)">
+                Manage your offline cached materials and storage space
+              </p>
             </div>
-
-            <!-- File List -->
-            <div class="overflow-y-auto flex-1 space-y-2 pr-2" id="storage-file-list">
-                <!-- Dynamically injected -->
-            </div>
+          </div>
+          <button
+            id="close-storage-modal"
+            class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100/50"
+          >
+            ✕
+          </button>
         </div>
+
+        <!-- Storage Progress Box -->
+        <div
+          class="p-4 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 mb-4 shrink-0"
+        >
+          <div class="flex justify-between items-center text-sm font-bold mb-2">
+            <span style="color: var(--lib-navy)">Storage Used</span>
+            <span class="text-amber-500" id="storage-modal-used"
+              >0 MB / 1000 MB</span
+            >
+          </div>
+          <div
+            class="w-full bg-black/10 dark:bg-white/10 rounded-full h-3 overflow-hidden"
+          >
+            <div
+              id="storage-progress-bar"
+              class="h-full bg-gradient-to-r from-sky-500 via-amber-500 to-emerald-500 rounded-full transition-all duration-500"
+              style="width: 2%"
+            ></div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between mb-3 shrink-0">
+          <span
+            class="text-xs font-bold uppercase tracking-wider"
+            style="color: var(--lib-navy-soft)"
+            >Cached Documents</span
+          >
+          <button
+            id="btn-clear-read-cache"
+            class="text-xs font-bold text-red-500 hover:underline"
+          >
+            Clear All Read Items
+          </button>
+        </div>
+
+        <!-- File List -->
+        <div
+          class="overflow-y-auto flex-1 space-y-2 pr-2"
+          id="storage-file-list"
+        >
+          <!-- Dynamically injected -->
+        </div>
+      </div>
     </div>
 
     <!-- Floating Toast Notification -->
     <div id="lib-toast" class="lib-toast">
-        <span id="lib-toast-msg">Item removed</span>
-        <button id="lib-toast-undo" class="lib-toast-undo">Undo</button>
+      <span id="lib-toast-msg">Item removed</span>
+      <button id="lib-toast-undo" class="lib-toast-undo">Undo</button>
     </div>
 
     <!-- JavaScript Dependencies -->
@@ -626,6 +1000,5 @@
     <script src="js/premium-effects.min.js"></script>
     <script src="js/library.js"></script>
     <script src="js/pwa.js"></script>
-</body>
-
+  </body>
 </html>
