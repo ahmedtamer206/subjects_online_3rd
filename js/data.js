@@ -760,7 +760,7 @@ const MATERIALS = {
                   {
                     id: 105,
                     title: "Lect3",
-                    type: "video",
+                    type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/QBA/Chapter 1/week2/Lect2_QBA.pdf",
                   },
 
@@ -1704,15 +1704,15 @@ const MATERIALS = {
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_2_.dr.samar.mp4",
                   },
-                   {
+                  {
                     id: 105,
                     title: "Lect3",
-                    type: "video",
+                    type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/QBA/Chapter 1/week2/Lect2_QBA.pdf",
                   },
                   {
                     id: 106,
-                    title: "Lect 3 ",
+                    title: "Lect 3",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_3_.dr.samar.mp4",
                   },
