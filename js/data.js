@@ -425,14 +425,16 @@ const MATERIALS = {
                                 title: "",
                                 lectures: [
                                     { id: 101, title: "Lect1", type: "pdf", url: "materials/Pdfs/Accounting/first_term/SAS/Ch1/week1/Lect1_SAS_Dr.Norhan.pdf" },
-                                    { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_SAS_Dr.Norhan.mp4" }
+                                    { id: 102, title: "Lect 1", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_SAS_Dr.Norhan.mp4" },
+                                   
                                 ]
                             },
                             {
                                 num: 2,
                                 title: "",
                                 lectures: [
-                                    // { id: 103, title: "", type: "video", url: "" }
+                                     { id: 103, title: "Lect 2", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_SAS.mp4" },
+                                    { id: 104, title: "Lect 3", type: "video", url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect3_SAS.mp4" },
                                 ]
                             },
                             {
