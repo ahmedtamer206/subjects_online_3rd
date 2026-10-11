@@ -56,20 +56,6 @@ const MATERIALS = {
                   },
                 ],
               },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 103, title: "Ch6", type: "video", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 103, title: "Ch6", type: "video", url: "" }
-                ],
-              },
             ],
           },
         ],
@@ -91,20 +77,6 @@ const MATERIALS = {
                   },
                 ],
               },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 1002, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 1003, title: "", type: "pdf", url: "" }
-                ],
-              },
             ],
           },
         ],
@@ -114,27 +86,13 @@ const MATERIALS = {
             title: "Section",
             time: "",
             weeks: [
-              {
-                num: 1,
-                title: "",
-                lectures: [
-                  // { id: 2001, title: "", type: "pdf", url: "" },
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 2002, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 2003, title: "", type: "pdf", url: "" }
-                ],
-              },
+              // {
+              //   num: 1,
+              //   title: "",
+              //   lectures: [
+              //     // { id: 2001, title: "", type: "pdf", url: "" },
+              //   ],
+              // },
             ],
           },
         ],
@@ -144,27 +102,13 @@ const MATERIALS = {
             title: "Summarie",
             time: "",
             weeks: [
-              {
-                num: 1,
-                title: "",
-                lectures: [
-                  // { id: 3001, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 3002, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 3003, title: "", type: "pdf", url: "" }
-                ],
-              },
+              // {
+              //   num: 1,
+              //   title: "",
+              //   lectures: [
+              //     // { id: 3001, title: "", type: "pdf", url: "" }
+              //   ],
+              // },
             ],
           },
         ],
@@ -174,27 +118,13 @@ const MATERIALS = {
             title: "",
             time: "",
             weeks: [
-              {
-                num: 1,
-                title: "",
-                lectures: [
-                  // { id: 4001, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 4002, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 4003, title: "", type: "pdf", url: "" }
-                ],
-              },
+              // {
+              //   num: 1,
+              //   title: "",
+              //   lectures: [
+              //     // { id: 4001, title: "", type: "pdf", url: "" }
+              //   ],
+              // },
             ],
           },
           {
@@ -227,35 +157,21 @@ const MATERIALS = {
           },
         ],
         finalReview: [
-          {
-            num: 1,
-            title: "Final Review",
-            time: "",
-            weeks: [
-              {
-                num: 1,
-                title: "",
-                lectures: [
-                  // { id: 5001, title: "", type: "pdf", url: "" },
-                  // { id: 5002, title: "", type: "video", url: "" }
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 5003, title: "", type: "video", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 5004, title: "", type: "video", url: "" }
-                ],
-              },
-            ],
-          },
+          // {
+          //   num: 1,
+          //   title: "Final Review",
+          //   time: "",
+          //   weeks: [
+          //     {
+          //       num: 1,
+          //       title: "",
+          //       lectures: [
+          //         // { id: 5001, title: "", type: "pdf", url: "" },
+          //         // { id: 5002, title: "", type: "video", url: "" }
+          //       ],
+          //     },
+          //   ],
+          // },
         ],
       },
     },
@@ -270,11 +186,9 @@ const MATERIALS = {
           {
             num: 1,
             title: "Ch1",
-            time: "...",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   {
                     id: 101,
@@ -302,48 +216,19 @@ const MATERIALS = {
                   },
                 ],
               },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 103, title: "", type: "video", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 104, title: "", type: "video", url: "" }
-                ],
-              },
             ],
           },
         ],
         quizzes: [
           {
             num: 1,
-            title: "Quizzes - Part 1",
-            time: "",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
-                title: "",
+
                 lectures: [
                   // { id: 1001, title: "", type: "pdf", url: "" },
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 1002, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 1003, title: "", type: "pdf", url: "" }
                 ],
               },
             ],
@@ -353,27 +238,13 @@ const MATERIALS = {
           {
             num: 1,
             title: "Section",
-            time: "",
+
             weeks: [
               {
                 num: 1,
-                title: "",
+
                 lectures: [
                   // { id: 2001, title: "", type: "pdf", url: "" },
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 2002, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 2003, title: "", type: "pdf", url: "" }
                 ],
               },
             ],
@@ -383,27 +254,13 @@ const MATERIALS = {
           {
             num: 1,
             title: "Summarie",
-            time: "",
+
             weeks: [
               {
                 num: 1,
-                title: "",
+
                 lectures: [
                   // { id: 3001, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 3002, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 3003, title: "", type: "pdf", url: "" }
                 ],
               },
             ],
@@ -413,90 +270,48 @@ const MATERIALS = {
           {
             num: 1,
             title: "",
-            time: "",
+
             weeks: [
               {
                 num: 1,
-                title: "",
+
                 lectures: [
                   // { id: 4001, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 4002, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 4003, title: "", type: "pdf", url: "" }
-                ],
-              },
-            ],
-          },
-          {
-            num: 2,
-            title: "",
-            time: "",
-            weeks: [
-              {
-                num: 1,
-                title: "",
-                lectures: [
-                  // { id: 4004, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 4005, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 4006, title: "", type: "pdf", url: "" }
                 ],
               },
             ],
           },
         ],
         finalReview: [
-          {
-            num: 1,
-            title: "Final Review",
-            time: "",
-            weeks: [
-              {
-                num: 1,
-                title: "",
-                lectures: [
-                  // { id: 5001, title: "", type: "pdf", url: "" },
-                  // { id: 5002, title: "", type: "video", url: "" }
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 5003, title: "", type: "video", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 5004, title: "", type: "video", url: "" }
-                ],
-              },
-            ],
-          },
+          // {
+          //   num: 1,
+          //   title: "Final Review",
+          //   time: "",
+          //   weeks: [
+          //     {
+          //       num: 1,
+          //       title: "",
+          //       lectures: [
+          //         // { id: 5001, title: "", type: "pdf", url: "" },
+          //         // { id: 5002, title: "", type: "video", url: "" }
+          //       ],
+          //     },
+          //     {
+          //       num: 2,
+          //       title: "",
+          //       lectures: [
+          //         // { id: 5003, title: "", type: "video", url: "" }
+          //       ],
+          //     },
+          //     {
+          //       num: 3,
+          //       title: "",
+          //       lectures: [
+          //         // { id: 5004, title: "", type: "video", url: "" }
+          //       ],
+          //     },
+          //   ],
+          // },
         ],
       },
     },
@@ -511,11 +326,9 @@ const MATERIALS = {
           {
             num: 1,
             title: "Ch1",
-            time: "...",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   {
                     id: 101,
@@ -533,7 +346,6 @@ const MATERIALS = {
               },
               {
                 num: 2,
-                title: "",
                 lectures: [
                   {
                     id: 103,
@@ -551,7 +363,6 @@ const MATERIALS = {
               },
               {
                 num: 3,
-                title: "",
                 lectures: [
                   // { id: 104, title: "", type: "video", url: "" }
                 ],
@@ -562,26 +373,22 @@ const MATERIALS = {
         quizzes: [
           {
             num: 1,
-            title: "Quizzes - Part 1",
-            time: "",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   // { id: 1001, title: "", type: "pdf", url: "" },
                 ],
               },
               {
                 num: 2,
-                title: "",
                 lectures: [
                   // { id: 1002, title: "", type: "pdf", url: "" }
                 ],
               },
               {
                 num: 3,
-                title: "",
                 lectures: [
                   // { id: 1003, title: "", type: "pdf", url: "" }
                 ],
@@ -593,11 +400,9 @@ const MATERIALS = {
           {
             num: 1,
             title: "Section",
-            time: "",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   // { id: 2001, title: "", type: "pdf", url: "" },
                 ],
@@ -612,7 +417,6 @@ const MATERIALS = {
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   {
                     id: 3001,
@@ -629,25 +433,21 @@ const MATERIALS = {
           {
             num: 1,
             title: "",
-            time: "",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   // { id: 4001, title: "", type: "pdf", url: "" }
                 ],
               },
               {
                 num: 2,
-                title: "",
                 lectures: [
                   // { id: 4002, title: "", type: "pdf", url: "" }
                 ],
               },
               {
                 num: 3,
-                title: "",
                 lectures: [
                   // { id: 4003, title: "", type: "pdf", url: "" }
                 ],
@@ -657,25 +457,21 @@ const MATERIALS = {
           {
             num: 2,
             title: "",
-            time: "",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   // { id: 4004, title: "", type: "pdf", url: "" }
                 ],
               },
               {
                 num: 2,
-                title: "",
                 lectures: [
                   // { id: 4005, title: "", type: "pdf", url: "" }
                 ],
               },
               {
                 num: 3,
-                title: "",
                 lectures: [
                   // { id: 4006, title: "", type: "pdf", url: "" }
                 ],
@@ -684,35 +480,35 @@ const MATERIALS = {
           },
         ],
         finalReview: [
-          {
-            num: 1,
-            title: "Final Review",
-            time: "",
-            weeks: [
-              {
-                num: 1,
-                title: "",
-                lectures: [
-                  // { id: 5001, title: "", type: "pdf", url: "" },
-                  // { id: 5002, title: "", type: "video", url: "" }
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 5003, title: "", type: "video", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 5004, title: "", type: "video", url: "" }
-                ],
-              },
-            ],
-          },
+          // {
+          //   num: 1,
+          //   title: "Final Review",
+          //   time: "",
+          //   weeks: [
+          //     {
+          //       num: 1,
+          //       title: "",
+          //       lectures: [
+          //         // { id: 5001, title: "", type: "pdf", url: "" },
+          //         // { id: 5002, title: "", type: "video", url: "" }
+          //       ],
+          //     },
+          //     {
+          //       num: 2,
+          //       title: "",
+          //       lectures: [
+          //         // { id: 5003, title: "", type: "video", url: "" }
+          //       ],
+          //     },
+          //     {
+          //       num: 3,
+          //       title: "",
+          //       lectures: [
+          //         // { id: 5004, title: "", type: "video", url: "" }
+          //       ],
+          //     },
+          //   ],
+          // },
         ],
       },
     },
@@ -727,11 +523,9 @@ const MATERIALS = {
           {
             num: 1,
             title: "Ch1",
-            time: "",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   {
                     id: 101,
@@ -774,12 +568,10 @@ const MATERIALS = {
               },
               {
                 num: 2,
-                title: "",
                 lectures: [],
               },
               {
                 num: 3,
-                title: "",
                 lectures: [
                   // { id: 104, title: "", type: "video", url: "" }
                 ],
