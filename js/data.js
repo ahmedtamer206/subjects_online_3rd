@@ -141,6 +141,12 @@ const MATERIALS = {
                 num: 1,
                 lectures: [
                   {
+                    id: 200,
+                    title: "Lect1&2",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/Cost_Dr.Ebtsam/Ch 1/week2/Lect1&2_cost_Hand.pdf",
+                  },
+                  {
                     id: 201,
                     title: "Lect1",
                     type: "pdf",
@@ -189,7 +195,12 @@ const MATERIALS = {
                 num: 1,
 
                 lectures: [
-                  { id: 1001, title: "Quiz 1", type: "pdf", url: "materials/Pdfs/Accounting/first_term/Cost_Dr.Ebtsam/Quizzes/Quiz 1.pdf" },
+                  {
+                    id: 1001,
+                    title: "Quiz 1",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/Cost_Dr.Ebtsam/Quizzes/Quiz 1.pdf",
+                  },
                 ],
               },
             ],
