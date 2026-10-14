@@ -177,7 +177,7 @@ const MATERIALS = {
     },
     {
       id: "a2",
-      title: "Principles of Cost Accounting",
+      title: "Cost Accounting",
       icon: "🧮",
       color: "#ede9fe",
       accent: "#7c3aed",
@@ -216,6 +216,23 @@ const MATERIALS = {
                   },
                 ],
               },
+              {
+                num:2,
+                lectures: [
+                  // {
+                  //   id: 104,
+                  //   title: "Lect3",
+                  //   type: "pdf",
+                  //   url: "",
+                  // },
+                  {
+                    id: 105,
+                    title: "Lect3",
+                    type: "video",
+                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect3_Cost.mp4",
+                  },
+                ]
+              }
             ],
           },
         ],
@@ -528,38 +545,38 @@ const MATERIALS = {
                 num: 1,
                 lectures: [
                   {
-                    id: 101,
+                    id: 401,
                     title: "Lect 1",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/QBA/Chapter 1/week1/QBA_lect1_(Dr.Samar).pdf",
                   },
                   {
-                    id: 102,
+                    id: 402,
                     title: "Lect 1",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_1_.dr.samar.mp4",
                   },
                   {
-                    id: 103,
+                    id: 403,
                     title: "Lect 2",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/QBA/Chapter 1/week1/QBA_lect2_(Dr.Samar).pdf",
                   },
                   {
-                    id: 104,
+                    id: 404,
                     title: "Lect 2",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_2_.dr.samar.mp4",
                   },
                   {
-                    id: 105,
+                    id: 405,
                     title: "Lect3",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/QBA/Chapter 1/week2/Lect2_QBA.pdf",
                   },
 
                   {
-                    id: 106,
+                    id: 406,
                     title: "Lect 3",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/lect_3_.dr.samar.mp4",
@@ -568,7 +585,20 @@ const MATERIALS = {
               },
               {
                 num: 2,
-                lectures: [],
+                lectures: [
+                  // {
+                  //   id: 407,
+                  //   title: "Lect4",
+                  //   type: "pdf",
+                  //   url: "",
+                  // },
+                  {
+                    id: 408,
+                    title: "Lect4",
+                    type: "video",
+                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect4_QBA.mp4",
+                  },
+                ],
               },
               {
                 num: 3,
@@ -1514,7 +1544,18 @@ const MATERIALS = {
                 num: 2,
                 title: "",
                 lectures: [
-                  // { id: 103, title: "", type: "video", url: "" }
+                   // {
+                  //   id: 107,
+                  //   title: "Lect4",
+                  //   type: "pdf",
+                  //   url: "",
+                  // },
+                  {
+                    id: 108,
+                    title: "Lect4",
+                    type: "video",
+                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect4_QBA.mp4",
+                  },
                 ],
               },
               {
