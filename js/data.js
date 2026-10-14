@@ -61,7 +61,7 @@ const MATERIALS = {
                   {
                     id: 106,
                     title: "Lect4",
-                    type: "pdf",
+                    type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect4_Company.mp4",
                   },
                 ],
@@ -679,29 +679,16 @@ const MATERIALS = {
                 num: 2,
                 lectures: [
                   {
+                    id: 502,
+                    title: "Lect2",
+                    type: "video",
+                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Ch2_FM_Dr.Wessam.mp4",
+                  },
+                  {
                     id: 503,
                     title: "Lect3'Hand'",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/FM/Chapter 1/week2/Lect3_FM_Hand.pdf",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            num: 2,
-            title: "Ch2",
-            time: "",
-            weeks: [
-              {
-                num: 1,
-                title: "",
-                lectures: [
-                  {
-                    id: 103,
-                    title: "Lect2",
-                    type: "video",
-                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Ch2_FM_Dr.Wessam.mp4",
                   },
                 ],
               },
@@ -1621,18 +1608,19 @@ const MATERIALS = {
           {
             num: 1,
             title: "Part 1",
+            time: "",
             weeks: [
               {
                 num: 1,
                 lectures: [
                   {
-                    id: 201,
+                    id: 501,
                     title: "Lect1'Hand'",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/FM/Chapter 1/Week1/FM_lect_1_(Dr.Wessam)_'handwriting'.pdf",
                   },
                   {
-                    id: 202,
+                    id: 502,
                     title: "Lect1",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_FM_Dr.Wesaam.mp4",
@@ -1643,7 +1631,13 @@ const MATERIALS = {
                 num: 2,
                 lectures: [
                   {
-                    id: 203,
+                    id: 502,
+                    title: "Lect2",
+                    type: "video",
+                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Ch2_FM_Dr.Wessam.mp4",
+                  },
+                  {
+                    id: 503,
                     title: "Lect3'Hand'",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/FM/Chapter 1/week2/Lect3_FM_Hand.pdf",
@@ -1652,25 +1646,7 @@ const MATERIALS = {
               },
             ],
           },
-          {
-            num: 2,
-            title: "Ch2",
-            time: "",
-            weeks: [
-              {
-                num: 1,
-                title: "",
-                lectures: [
-                  {
-                    id: 103,
-                    title: "Lect2",
-                    type: "video",
-                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Ch2_FM_Dr.Wessam.mp4",
-                  },
-                ],
-              },
-            ],
-          },
+          
         ],
         quizzes: [
           {
