@@ -14,8 +14,7 @@ const MATERIALS = {
         chapters: [
           {
             num: 1,
-            title: "Ch1",
-            time: "...",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
@@ -62,12 +61,10 @@ const MATERIALS = {
         quizzes: [
           {
             num: 1,
-            title: "Quizzes - Part 1",
-            time: "",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   {
                     id: 1001,
@@ -83,8 +80,7 @@ const MATERIALS = {
         sections: [
           {
             num: 1,
-            title: "Section",
-            time: "",
+            title: "Part 1",
             weeks: [
               // {
               //   num: 1,
@@ -99,8 +95,7 @@ const MATERIALS = {
         summaries: [
           {
             num: 1,
-            title: "Summarie",
-            time: "",
+            title: "Part 1",
             weeks: [
               // {
               //   num: 1,
@@ -115,8 +110,7 @@ const MATERIALS = {
         qa: [
           {
             num: 1,
-            title: "",
-            time: "",
+            title: "Part 1",
             weeks: [
               // {
               //   num: 1,
@@ -127,52 +121,8 @@ const MATERIALS = {
               // },
             ],
           },
-          {
-            num: 2,
-            title: "",
-            time: "",
-            weeks: [
-              {
-                num: 1,
-                title: "",
-                lectures: [
-                  // { id: 4004, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 2,
-                title: "",
-                lectures: [
-                  // { id: 4005, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                title: "",
-                lectures: [
-                  // { id: 4006, title: "", type: "pdf", url: "" }
-                ],
-              },
-            ],
-          },
         ],
-        finalReview: [
-          // {
-          //   num: 1,
-          //   title: "Final Review",
-          //   time: "",
-          //   weeks: [
-          //     {
-          //       num: 1,
-          //       title: "",
-          //       lectures: [
-          //         // { id: 5001, title: "", type: "pdf", url: "" },
-          //         // { id: 5002, title: "", type: "video", url: "" }
-          //       ],
-          //     },
-          //   ],
-          // },
-        ],
+        finalReview: [],
       },
     },
     {
@@ -185,54 +135,37 @@ const MATERIALS = {
         chapters: [
           {
             num: 1,
-            title: "Ch1",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
                 lectures: [
                   {
-                    id: 101,
-                    title: "Lect 1 ",
+                    id: 201,
+                    title: "Lect1",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/Cost_Dr.Ebtsam/Ch 1/week1/Lect1_Cost_Dr.Ebtsam.pdf",
                   },
                   {
-                    id: 102,
-                    title: "Lect 1 ",
+                    id: 202,
+                    title: "Lect1",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_Cost_Dr.Ebtsam.mp4",
                   },
                   {
-                    id: 103,
-                    title: "Lect 2 ",
+                    id: 203,
+                    title: "Lect1",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/Cost_Dr.Ebtsam/Ch 1/week1/Lect2_Cost_Dr.Ebtsam.pdf",
                   },
                   {
-                    id: 104,
-                    title: "Lect 2 ",
+                    id: 204,
+                    title: "Lect1",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_Cost_Dr.Ebtsam.mp4",
                   },
                 ],
               },
-              {
-                num:2,
-                lectures: [
-                  // {
-                  //   id: 104,
-                  //   title: "Lect3",
-                  //   type: "pdf",
-                  //   url: "",
-                  // },
-                  {
-                    id: 105,
-                    title: "Lect3",
-                    type: "video",
-                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect3_Cost.mp4",
-                  },
-                ]
-              }
             ],
           },
         ],
@@ -299,42 +232,11 @@ const MATERIALS = {
             ],
           },
         ],
-        finalReview: [
-          // {
-          //   num: 1,
-          //   title: "Final Review",
-          //   time: "",
-          //   weeks: [
-          //     {
-          //       num: 1,
-          //       title: "",
-          //       lectures: [
-          //         // { id: 5001, title: "", type: "pdf", url: "" },
-          //         // { id: 5002, title: "", type: "video", url: "" }
-          //       ],
-          //     },
-          //     {
-          //       num: 2,
-          //       title: "",
-          //       lectures: [
-          //         // { id: 5003, title: "", type: "video", url: "" }
-          //       ],
-          //     },
-          //     {
-          //       num: 3,
-          //       title: "",
-          //       lectures: [
-          //         // { id: 5004, title: "", type: "video", url: "" }
-          //       ],
-          //     },
-          //   ],
-          // },
-        ],
       },
     },
     {
       id: "a3",
-      title: "Specialized Accounting Systems",
+      title: "SAS",
       icon: "🔍",
       color: "#dcfce7",
       accent: "#16a34a",
@@ -342,19 +244,19 @@ const MATERIALS = {
         chapters: [
           {
             num: 1,
-            title: "Ch1",
+            title: "Part1",
             weeks: [
               {
                 num: 1,
                 lectures: [
                   {
-                    id: 101,
+                    id: 301,
                     title: "Lect1",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/SAS/Ch1/week1/Lect1_SAS_Dr.Norhan.pdf",
                   },
                   {
-                    id: 102,
+                    id: 302,
                     title: "Lect 1",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_SAS_Dr.Norhan.mp4",
@@ -365,23 +267,17 @@ const MATERIALS = {
                 num: 2,
                 lectures: [
                   {
-                    id: 103,
+                    id: 303,
                     title: "Lect 2",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_SAS.mp4",
                   },
                   {
-                    id: 104,
+                    id: 304,
                     title: "Lect 3",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect3_SAS.mp4",
                   },
-                ],
-              },
-              {
-                num: 3,
-                lectures: [
-                  // { id: 104, title: "", type: "video", url: "" }
                 ],
               },
             ],
@@ -398,25 +294,13 @@ const MATERIALS = {
                   // { id: 1001, title: "", type: "pdf", url: "" },
                 ],
               },
-              {
-                num: 2,
-                lectures: [
-                  // { id: 1002, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                lectures: [
-                  // { id: 1003, title: "", type: "pdf", url: "" }
-                ],
-              },
             ],
           },
         ],
         sections: [
           {
             num: 1,
-            title: "Section",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
@@ -457,76 +341,10 @@ const MATERIALS = {
                   // { id: 4001, title: "", type: "pdf", url: "" }
                 ],
               },
-              {
-                num: 2,
-                lectures: [
-                  // { id: 4002, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                lectures: [
-                  // { id: 4003, title: "", type: "pdf", url: "" }
-                ],
-              },
-            ],
-          },
-          {
-            num: 2,
-            title: "",
-            weeks: [
-              {
-                num: 1,
-                lectures: [
-                  // { id: 4004, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 2,
-                lectures: [
-                  // { id: 4005, title: "", type: "pdf", url: "" }
-                ],
-              },
-              {
-                num: 3,
-                lectures: [
-                  // { id: 4006, title: "", type: "pdf", url: "" }
-                ],
-              },
             ],
           },
         ],
-        finalReview: [
-          // {
-          //   num: 1,
-          //   title: "Final Review",
-          //   time: "",
-          //   weeks: [
-          //     {
-          //       num: 1,
-          //       title: "",
-          //       lectures: [
-          //         // { id: 5001, title: "", type: "pdf", url: "" },
-          //         // { id: 5002, title: "", type: "video", url: "" }
-          //       ],
-          //     },
-          //     {
-          //       num: 2,
-          //       title: "",
-          //       lectures: [
-          //         // { id: 5003, title: "", type: "video", url: "" }
-          //       ],
-          //     },
-          //     {
-          //       num: 3,
-          //       title: "",
-          //       lectures: [
-          //         // { id: 5004, title: "", type: "video", url: "" }
-          //       ],
-          //     },
-          //   ],
-          // },
-        ],
+        finalReview: [],
       },
     },
     {
@@ -539,7 +357,7 @@ const MATERIALS = {
         chapters: [
           {
             num: 1,
-            title: "Ch1",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
@@ -586,12 +404,6 @@ const MATERIALS = {
               {
                 num: 2,
                 lectures: [
-                  // {
-                  //   id: 407,
-                  //   title: "Lect4",
-                  //   type: "pdf",
-                  //   url: "",
-                  // },
                   {
                     id: 408,
                     title: "Lect4",
@@ -600,19 +412,13 @@ const MATERIALS = {
                   },
                 ],
               },
-              {
-                num: 3,
-                lectures: [
-                  // { id: 104, title: "", type: "video", url: "" }
-                ],
-              },
             ],
           },
         ],
         quizzes: [
           {
             num: 1,
-            title: "Quizzes - Part 1",
+            title: "Part 1",
             time: "",
             weeks: [
               {
@@ -642,7 +448,7 @@ const MATERIALS = {
         sections: [
           {
             num: 1,
-            title: "Section",
+            title: "Part 1",
             time: "",
             weeks: [
               {
@@ -672,7 +478,7 @@ const MATERIALS = {
         summaries: [
           {
             num: 1,
-            title: "Summarie",
+            title: "Part 1",
             time: "",
             weeks: [
               {
@@ -1487,7 +1293,7 @@ const MATERIALS = {
   business: [
     {
       id: "b1",
-      title: "Quantitative Analysis for Business",
+      title: "Quantitative Business Analysis",
       icon: "📈",
       color: "#dbeafe",
       accent: "#2563eb",
@@ -1544,7 +1350,7 @@ const MATERIALS = {
                 num: 2,
                 title: "",
                 lectures: [
-                   // {
+                  // {
                   //   id: 107,
                   //   title: "Lect4",
                   //   type: "pdf",
