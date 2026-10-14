@@ -55,6 +55,17 @@ const MATERIALS = {
                   },
                 ],
               },
+              {
+                num: 2,
+                lectures: [
+                  {
+                    id: 106,
+                    title: "Lect4",
+                    type: "pdf",
+                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect4_Company.mp4",
+                  },
+                ],
+              },
             ],
           },
         ],
@@ -2107,25 +2118,25 @@ const MATERIALS = {
                 title: "",
                 lectures: [
                   {
-                    id: 101,
+                    id: 401,
                     title: "Lect 1",
                     type: "pdf",
                     url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/Lect1_CA_(Dr.Saeed).pdf",
                   },
                   {
-                    id: 102,
+                    id: 402,
                     title: "Lect1 'Handwriting'",
                     type: "pdf",
                     url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/CA_lect_1_(Dr.Saeed)_'handwriting'.pdf",
                   },
                   {
-                    id: 103,
+                    id: 403,
                     title: "Lect 1",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_.CA._.Dr.Saeed.mp4",
                   },
                   {
-                    id: 104,
+                    id: 404,
                     title: "Lect 2",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_CA.mp4",
@@ -2134,14 +2145,13 @@ const MATERIALS = {
               },
               {
                 num: 2,
-                title: "",
-                lectures: [],
-              },
-              {
-                num: 3,
-                title: "",
                 lectures: [
-                  // { id: 104, title: "", type: "video", url: "" }
+                  {
+                    id: 405,
+                    title: "Lect3'Hand'",
+                    type: "pdf",
+                    url: "materials/Pdfs/Business/First_Term/CA/Chapter_1/week2/Lect3_Company_Hand.pdf",
+                  },
                 ],
               },
             ],
