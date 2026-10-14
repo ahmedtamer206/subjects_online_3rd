@@ -154,15 +154,26 @@ const MATERIALS = {
                   },
                   {
                     id: 203,
-                    title: "Lect1",
+                    title: "Lect2",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/Cost_Dr.Ebtsam/Ch 1/week1/Lect2_Cost_Dr.Ebtsam.pdf",
                   },
                   {
                     id: 204,
-                    title: "Lect1",
+                    title: "Lect2",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect2_Cost_Dr.Ebtsam.mp4",
+                  },
+                ],
+              },
+              {
+                num: 2,
+                lectures: [
+                  {
+                    id: 205,
+                    title: "Lect3",
+                    type: "video",
+                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect3_Cost.mp4",
                   },
                 ],
               },
