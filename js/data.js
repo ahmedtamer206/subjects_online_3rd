@@ -266,11 +266,17 @@ const MATERIALS = {
         chapters: [
           {
             num: 1,
-            title: "Part1",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
                 lectures: [
+                  {
+                    id: 300,
+                    title: "Lect1&2",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/SAS/Ch1/week2/Lect1&2_SAS_Hand.pdf",
+                  },
                   {
                     id: 301,
                     title: "Lect1",
