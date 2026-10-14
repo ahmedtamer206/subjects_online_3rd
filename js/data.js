@@ -371,7 +371,7 @@ const MATERIALS = {
     },
     {
       id: "a4",
-      title: "Quantitative Analysis for Business",
+      title: "Quantitative Business Analysis",
       icon: "📈",
       color: "#fef9c3",
       accent: "#ca8a04",
@@ -477,7 +477,12 @@ const MATERIALS = {
                 num: 1,
                 title: "",
                 lectures: [
-                  // { id: 2001, title: "", type: "pdf", url: "" },
+                  {
+                    id: 4001,
+                    title: "No.1",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Section/Section1_QBA.pdf",
+                  },
                 ],
               },
               {
@@ -1333,12 +1338,10 @@ const MATERIALS = {
         chapters: [
           {
             num: 1,
-            title: "Ch1:Intro",
-            time: "...",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   {
                     id: 101,
@@ -1439,14 +1442,17 @@ const MATERIALS = {
         sections: [
           {
             num: 1,
-            title: "Section",
-            time: "",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
-                  // { id: 2001, title: "", type: "pdf", url: "" },
+                  {
+                    id: 2001,
+                    title: "No.1",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Section/Section1_QBA.pdf",
+                  },
                 ],
               },
               {
