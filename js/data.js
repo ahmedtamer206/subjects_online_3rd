@@ -189,7 +189,7 @@ const MATERIALS = {
                 num: 1,
 
                 lectures: [
-                  // { id: 1001, title: "", type: "pdf", url: "" },
+                  { id: 1001, title: "Quiz 1", type: "pdf", url: "materials/Pdfs/Accounting/first_term/Cost_Dr.Ebtsam/Quizzes/Quiz 1.pdf" },
                 ],
               },
             ],
