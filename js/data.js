@@ -444,6 +444,12 @@ const MATERIALS = {
                 num: 2,
                 lectures: [
                   {
+                    id: 407,
+                    title: "Lect4",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Lectures/Lect4_QBA.pdf",
+                  },
+                  {
                     id: 408,
                     title: "Lect4",
                     type: "video",
@@ -1387,14 +1393,13 @@ const MATERIALS = {
               },
               {
                 num: 2,
-                title: "",
                 lectures: [
-                  // {
-                  //   id: 107,
-                  //   title: "Lect4",
-                  //   type: "pdf",
-                  //   url: "",
-                  // },
+                  {
+                    id: 107,
+                    title: "Lect4",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Lectures/Lect4_QBA.pdf",
+                  },
                   {
                     id: 108,
                     title: "Lect4",
