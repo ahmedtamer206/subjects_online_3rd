@@ -1910,7 +1910,7 @@ const MATERIALS = {
                     type: "pdf",
                     url: "materials/Pdfs/Business/First_Term/PA/Quizzes/Combined_Quizzes_Public_Administration_261006_000306.pdf",
                   },
-                  // { id: 1001, title: "", type: "pdf", url: "" },
+                  { id: 1003, title: "Quiz4", type: "pdf", url: "materials/Pdfs/Business/First_Term/PA/Quizzes/PA_Quiz4.pdf" },
                 ],
               },
               {
