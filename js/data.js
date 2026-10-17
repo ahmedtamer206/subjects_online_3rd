@@ -676,6 +676,12 @@ const MATERIALS = {
                   {
                     id: 502,
                     title: "Lect1",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/FM/Letcures/Ch1_FM.pdf",
+                  },
+                  {
+                    id: 503,
+                    title: "Lect1",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_FM_Dr.Wesaam.mp4",
                   },
@@ -685,13 +691,13 @@ const MATERIALS = {
                 num: 2,
                 lectures: [
                   {
-                    id: 502,
+                    id: 504,
                     title: "Lect2",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Ch2_FM_Dr.Wessam.mp4",
                   },
                   {
-                    id: 503,
+                    id: 505,
                     title: "Lect3'Hand'",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/FM/Chapter 1/week2/Lect3_FM_Hand.pdf",
@@ -1627,6 +1633,12 @@ const MATERIALS = {
                   {
                     id: 502,
                     title: "Lect1",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/FM/Letcures/Ch1_FM.pdf",
+                  },
+                  {
+                    id: 503,
+                    title: "Lect1",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Lect1_FM_Dr.Wesaam.mp4",
                   },
@@ -1636,19 +1648,20 @@ const MATERIALS = {
                 num: 2,
                 lectures: [
                   {
-                    id: 502,
+                    id: 504,
                     title: "Lect2",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/Ch2_FM_Dr.Wessam.mp4",
                   },
                   {
-                    id: 503,
+                    id: 505,
                     title: "Lect3'Hand'",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/FM/Chapter 1/week2/Lect3_FM_Hand.pdf",
                   },
                 ],
               },
+              
             ],
           },
           
