@@ -1,5 +1,5 @@
 /* =========================================================
-   qa.js — Timeline Renderer with Weeks Accordion
+   cs.js — Timeline Renderer with Weeks Accordion
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const subjectId = params.get("id");
 
   // Section configurations
-  const SECTION_KEY = "qa";
-  const STORE_KEY = "soCompletedQA";
+  const SECTION_KEY = "cs";
+  const STORE_KEY = "soCompletedCS";
   const THEME_COLOR = "amber";
   const LABEL_PREFIX = "Part";
   const THEME_ACCENT = "#f59e0b";
@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
         '-50/50">' +
         '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>' +
         weeks.reduce((acc, w) => acc + (w.lectures || []).length, 0) +
-        " Q&A Items" +
+        " Items" +
         "</div>" +
         (ch.time
           ? '<div class="chap-meta-item shadow-sm border border-' +

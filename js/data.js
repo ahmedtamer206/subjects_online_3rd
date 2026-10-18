@@ -118,18 +118,28 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "Part 1",
             weeks: [
-              // {
-              //   num: 1,
-              //   title: "",
-              //   lectures: [
-              //     // { id: 4001, title: "", type: "pdf", url: "" }
-              //   ],
-              // },
+              {
+                num: 1,
+                lectures: [
+                  {
+                    id: 4001,
+                    title: "Lect1&2",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/CA_Dr.Hana/Students/Lect1&2.pdf",
+                  },
+                  {
+                    id: 4002,
+                    title: "Revision ch1",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/CA_Dr.Hana/Students/Revision-Ch1.pdf",
+                  },
+                ],
+              },
             ],
           },
         ],
@@ -249,7 +259,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -369,7 +379,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -494,17 +504,21 @@ const MATERIALS = {
           {
             num: 1,
             title: "Part 1",
-            time: "",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
                   {
-                    id: 4001,
-                    title: "No.1",
+                    id: 1001,
+                    title: "Section 1",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/QBA/Section/Section1_QBA.pdf",
+                  },
+                  {
+                    id: 1002,
+                    title: "section 2",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Section/Section2_QBA.pdf",
                   },
                 ],
               },
@@ -560,17 +574,26 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
-            title: "",
-            time: "",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
-                  // { id: 4001, title: "", type: "pdf", url: "" }
+                  {
+                    id: 4001,
+                    title: "Lect1",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Students/QPA lecture1.pdf",
+                  },
+                  {
+                    id: 4002,
+                    title: "Lect1&2",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Students/Lect1&2 QBA .pdf",
+                  },
                 ],
               },
               {
@@ -802,7 +825,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -1021,7 +1044,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -1251,7 +1274,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -1463,10 +1486,16 @@ const MATERIALS = {
                 num: 1,
                 lectures: [
                   {
-                    id: 2001,
-                    title: "No.1",
+                    id: 1001,
+                    title: "Section 1",
                     type: "pdf",
                     url: "materials/Pdfs/Accounting/first_term/QBA/Section/Section1_QBA.pdf",
+                  },
+                  {
+                    id: 1002,
+                    title: "section 2",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Section/Section2_QBA.pdf",
                   },
                 ],
               },
@@ -1517,17 +1546,26 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
-            title: "",
-            time: "",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
-                  // { id: 4001, title: "", type: "pdf", url: "" }
+                  {
+                    id: 4001,
+                    title: "Lect1",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Students/QPA lecture1.pdf",
+                  },
+                  {
+                    id: 4002,
+                    title: "Lect1&2",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Students/Lect1&2 QBA .pdf",
+                  },
                 ],
               },
               {
@@ -1661,10 +1699,8 @@ const MATERIALS = {
                   },
                 ],
               },
-              
             ],
           },
-          
         ],
         quizzes: [
           {
@@ -1761,7 +1797,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -1923,7 +1959,12 @@ const MATERIALS = {
                     type: "pdf",
                     url: "materials/Pdfs/Business/First_Term/PA/Quizzes/Combined_Quizzes_Public_Administration_261006_000306.pdf",
                   },
-                  { id: 1003, title: "Quiz4", type: "pdf", url: "materials/Pdfs/Business/First_Term/PA/Quizzes/PA_Quiz4.pdf" },
+                  {
+                    id: 1003,
+                    title: "Quiz4",
+                    type: "pdf",
+                    url: "materials/Pdfs/Business/First_Term/PA/Quizzes/PA_Quiz4.pdf",
+                  },
                 ],
               },
               {
@@ -2003,7 +2044,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -2241,7 +2282,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -2482,7 +2523,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -2701,7 +2742,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -2935,7 +2976,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -3156,7 +3197,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -3375,7 +3416,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -3594,7 +3635,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -3813,7 +3854,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -4032,7 +4073,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -4257,7 +4298,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -4476,7 +4517,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -4697,7 +4738,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -4916,7 +4957,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -5135,7 +5176,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -5359,7 +5400,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -5584,7 +5625,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -5803,7 +5844,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -6022,7 +6063,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -6243,7 +6284,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -6462,7 +6503,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -6681,7 +6722,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -6900,7 +6941,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -7124,7 +7165,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -7349,7 +7390,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -7568,7 +7609,7 @@ const MATERIALS = {
             ],
           },
         ],
-        qa: [
+        cs: [
           {
             num: 1,
             title: "",
@@ -7730,7 +7771,7 @@ const SECTION_STORE_MAP = {
   quizzes: "soCompletedQuizzes",
   sections: "soCompletedSections",
   summaries: "soCompletedSummaries",
-  qa: "soCompletedQA",
+  cs: "soCompletedcs",
   finalReview: "soCompletedFinalReview",
 };
 
@@ -7849,7 +7890,7 @@ const DEFAULT_SECTION_DATA = {
       ],
     },
   ],
-  qa: [
+  cs: [
     {
       num: 1,
       title: "Q&A - Part One",
@@ -7956,7 +7997,7 @@ function getSubjectProgress(item) {
       ) {
         doneLectures++;
       } else if (
-        sec === "qa" &&
+        sec === "cs" &&
         completedStore[sid + "_101"] &&
         lec.id === 4001
       ) {
@@ -7971,7 +8012,7 @@ function getSubjectProgress(item) {
       "quizzes",
       "sections",
       "summaries",
-      "qa",
+      "cs",
       "finalReview",
     ];
     sections.forEach((sec) => {
@@ -8004,7 +8045,7 @@ function getSubjectModulesCount(item) {
       "quizzes",
       "sections",
       "summaries",
-      "qa",
+      "cs",
       "finalReview",
     ];
     let total = 0;

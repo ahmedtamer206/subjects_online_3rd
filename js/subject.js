@@ -113,32 +113,32 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     {
-      id: "qa",
-      img: "images/sections/qa.png",
+      id: "cs",
+      img: "images/sections/course-content.png",
       icon: `<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
       iconBg: "#fef3c7",
       accent: "#f59e0b",
       glow: "rgba(245,158,11,0.3)",
-      title: "Questions & Answers",
-      tag: "Test Bank + Extra Q",
+      title: "Students Contributions",
+      tag: "Students Contributions",
       tagColor: "#92400e",
       tagBg: "#fef3c7",
-      desc: "Complete test bank solutions supplemented with extra practice questions to solidify your mastery of the material.",
+      desc: "Students who want to share theire notes",
     },
 
-    {
-      id: "fr",
-      img: "images/sections/final-review.png",
-      icon: `<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
-      iconBg: "#fee2e2",
-      accent: "#ef4444",
-      glow: "rgba(239,68,68,0.3)",
-      title: "Final Review",
-      tag: "End-of-Term Revision",
-      tagColor: "#991b1b",
-      tagBg: "#fee2e2",
-      desc: "Comprehensive end-of-term revision guides, comparative tables, and essential exam prep material formatted for quick reference.",
-    },
+    // {
+    //   id: "fr",
+    //   img: "images/sections/final-review.png",
+    //   icon: `<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`,
+    //   iconBg: "#fee2e2",
+    //   accent: "#ef4444",
+    //   glow: "rgba(239,68,68,0.3)",
+    //   title: "Final Review",
+    //   tag: "End-of-Term Revision",
+    //   tagColor: "#991b1b",
+    //   tagBg: "#fee2e2",
+    //   desc: "Comprehensive end-of-term revision guides, comparative tables, and essential exam prep material formatted for quick reference.",
+    // },
   ];
 
   // ── Render Tab Nav ────────────────────────────────────
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p class="sp-desc">${s.desc}</p>
 
                 <div class="sp-cta-row">
-                    <a href="${s.id === "cc" ? `chapters.html?id=${subjectId}` : s.id === "qz" ? `quizzes.html?id=${subjectId}` : s.id === "sc" ? `sections.html?id=${subjectId}` : s.id === "sk" ? `summaries.html?id=${subjectId}` : s.id === "qa" ? `qa.html?id=${subjectId}` : "#"}" class="sp-cta-btn" style="background: linear-gradient(135deg, ${s.accent}, ${darkenHex(s.accent, 15)});">
+                    <a href="${s.id === "cc" ? `chapters.html?id=${subjectId}` : s.id === "qz" ? `quizzes.html?id=${subjectId}` : s.id === "sc" ? `sections.html?id=${subjectId}` : s.id === "sk" ? `summaries.html?id=${subjectId}` : s.id === "cs" ? `cs.html?id=${subjectId}` : "#"}" class="sp-cta-btn" style="background: linear-gradient(135deg, ${s.accent}, ${darkenHex(s.accent, 15)});">
                         <span>Open Section</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
