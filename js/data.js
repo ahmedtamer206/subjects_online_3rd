@@ -467,6 +467,17 @@ const MATERIALS = {
                   },
                 ],
               },
+              {
+                num: 3,
+                lectures: [
+                  {
+                    id: 410,
+                    title: "Lect5",
+                    type: "video",
+                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/QBA_Lect5.mp4",
+                  },
+                ],
+              },
             ],
           },
         ],
@@ -1439,9 +1450,13 @@ const MATERIALS = {
               },
               {
                 num: 3,
-                title: "",
                 lectures: [
-                  // { id: 104, title: "", type: "video", url: "" }
+                  {
+                    id: 110,
+                    title: "Lect5",
+                    type: "video",
+                    url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/QBA_Lect5.mp4",
+                  },
                 ],
               },
             ],
