@@ -473,6 +473,12 @@ const MATERIALS = {
                   {
                     id: 410,
                     title: "Lect5",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Lectures/QBA_lect5.pdf",
+                  },
+                  {
+                    id: 411,
+                    title: "Lect5",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/QBA_Lect5.mp4",
                   },
@@ -968,14 +974,17 @@ const MATERIALS = {
         quizzes: [
           {
             num: 1,
-            title: "Quizzes - Part 1",
-            time: "",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
-                  // { id: 1001, title: "", type: "pdf", url: "" },
+                  {
+                    id: 1001,
+                    title: "Quiz 1",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/Money/Quizzes/Quiz 1 .pdf",
+                  },
                 ],
               },
               {
@@ -998,14 +1007,17 @@ const MATERIALS = {
         sections: [
           {
             num: 1,
-            title: "Section",
-            time: "",
+            title: "Part 1",
             weeks: [
               {
                 num: 1,
-                title: "",
                 lectures: [
-                  // { id: 2001, title: "", type: "pdf", url: "" },
+                  {
+                    id: 2001,
+                    title: "Section 3",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/Money/Sections/Money section 3 notes.pdf",
+                  },
                 ],
               },
               {
@@ -1453,6 +1465,12 @@ const MATERIALS = {
                 lectures: [
                   {
                     id: 110,
+                    title: "Lect5",
+                    type: "pdf",
+                    url: "materials/Pdfs/Accounting/first_term/QBA/Lectures/QBA_lect5.pdf",
+                  },
+                  {
+                    id: 111,
                     title: "Lect5",
                     type: "video",
                     url: "https://github.com/ahmedtamer206/subjects_online_3rd/releases/download/v1.0/QBA_Lect5.mp4",
